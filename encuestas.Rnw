@@ -13,12 +13,12 @@ ahora segunda linea\\
 se agrega la tercera desde (Rstudio)\\
 se agrega la cuarta fila desde aca (github internet)
 <<tabla_uno, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
-#   library(knitr)
-#   library(kableExtra)
-#   library(dplyr)
-#   setwd("H:/Gore Cusco/Geragri/papas nativas/latex")
-#   datos <- read.csv("H:/Gore Cusco/Geragri/papas nativas/proyecto/encuesta/data/data.csv")
-#   
+   library(knitr)
+   library(kableExtra)
+   library(dplyr)
+   setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+   datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+   
 #   datos$age[datos$age == ""] <- NA
 #   datos$age[datos$age == 0] <- NA
 #   datos$age[datos$age == 410] <- 41
