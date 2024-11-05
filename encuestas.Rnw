@@ -13,6 +13,7 @@ ahora segunda linea\\
 se agrega la tercera desde (Rstudio)\\
 se agrega la cuarta fila desde aca (github internet)\\
 quinta fila desde github (internet)\\
+se hace la sexta fila desde github\\
 <<tabla_uno, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
    library(knitr)
    library(kableExtra)
