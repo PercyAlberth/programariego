@@ -1,0 +1,50 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+
+\begin{document}
+hola mundo
+<<tabla_uno, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+#   library(knitr)
+#   library(kableExtra)
+#   library(dplyr)
+#   setwd("H:/Gore Cusco/Geragri/papas nativas/latex")
+#   datos <- read.csv("H:/Gore Cusco/Geragri/papas nativas/proyecto/encuesta/data/data.csv")
+#   
+#   datos$age[datos$age == ""] <- NA
+#   datos$age[datos$age == 0] <- NA
+#   datos$age[datos$age == 410] <- 41
+#   datos$age[datos$age == 11] <- 31
+#   datos$age[datos$age == 15] <- 25
+#   datos$age[datos$age == 19] <- 29
+#   datos <- datos[!is.na(datos$age), ]
+#   
+# 	filtered_data <- datos %>% 
+# 	  select(age)
+# 	
+# 	#agrega automaticamente las edades en intervalos de igual tamaño
+# 	filtered_data <- filtered_data %>% 
+# 	  mutate(Rango = cut(age, breaks = 7)) #en este caso 5 esta definiendo el numero de intervalos
+# 	#contar  el numero de edades en cada grupo
+# 	tabla <- filtered_data %>% 
+# 	  group_by(Rango) %>% 
+# 	  summarise(Conteo = n()) %>% 
+# 	  arrange(Rango)
+# 	
+# 	#opcion caso con porcentajes
+# 	tabla <- tabla %>% 
+# 	  mutate(Porcentaje = round((Conteo / sum(Conteo)) *100, 2))
+# 	
+# 	#genera la tabla con 
+# 	tabla_latex <- kable(tabla, format = "latex", booktabs = TRUE, align = c("l", "c", "l")) %>%
+# 	  row_spec(0, background = '#ff4040', color = 'black', bold = TRUE)
+#   print(tabla_latex)
+
+@
+
+
+\end{document}
