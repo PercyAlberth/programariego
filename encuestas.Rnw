@@ -8,7 +8,8 @@
 
 \begin{document}
 hola mundo\\
-Se agrega una nueva linea desde github
+Se agrega una nueva linea desde github\\
+ahora segunda linea
 <<tabla_uno, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
 #   library(knitr)
 #   library(kableExtra)
