@@ -7,49 +7,54 @@
 \usepackage[table]{xcolor}
 
 \begin{document}
-hola mundo\\
-Se agrega una nueva linea desde github\\
-ahora segunda linea\\
-se agrega la tercera desde (Rstudio)\\
-se agrega la cuarta fila desde aca (github internet)\\
-quinta fila desde github (internet)\\
-se hace la sexta fila desde github\\
-se hace la septima fila
+Se realizara el analisis de las encuestas de todas la encuestas realizadas en el trabajo de campo.\\
+
 <<tabla_uno, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
    library(knitr)
    library(kableExtra)
    library(dplyr)
    setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
    datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+   #datos$EDAD
    
-#   datos$age[datos$age == ""] <- NA
-#   datos$age[datos$age == 0] <- NA
-#   datos$age[datos$age == 410] <- 41
-#   datos$age[datos$age == 11] <- 31
-#   datos$age[datos$age == 15] <- 25
-#   datos$age[datos$age == 19] <- 29
-#   datos <- datos[!is.na(datos$age), ]
-#   
-# 	filtered_data <- datos %>% 
-# 	  select(age)
-# 	
-# 	#agrega automaticamente las edades en intervalos de igual tamaño
-# 	filtered_data <- filtered_data %>% 
-# 	  mutate(Rango = cut(age, breaks = 7)) #en este caso 5 esta definiendo el numero de intervalos
-# 	#contar  el numero de edades en cada grupo
-# 	tabla <- filtered_data %>% 
-# 	  group_by(Rango) %>% 
-# 	  summarise(Conteo = n()) %>% 
-# 	  arrange(Rango)
-# 	
-# 	#opcion caso con porcentajes
-# 	tabla <- tabla %>% 
-# 	  mutate(Porcentaje = round((Conteo / sum(Conteo)) *100, 2))
-# 	
-# 	#genera la tabla con 
-# 	tabla_latex <- kable(tabla, format = "latex", booktabs = TRUE, align = c("l", "c", "l")) %>%
-# 	  row_spec(0, background = '#ff4040', color = 'black', bold = TRUE)
-#   print(tabla_latex)
+   datos$EDAD[datos$EDAD == ""] <- NA
+   datos$EDAD[datos$EDAD == "54 A"] <- 54
+   datos$EDAD[datos$EDAD == "50 A"] <- 50
+   datos$EDAD[datos$EDAD == "49 A"] <- 49
+   datos$EDAD[datos$EDAD == "44 A"] <- 44
+   datos$EDAD[datos$EDAD == "54 A"] <- 54
+
+   datos <- datos[!is.na(datos$EDAD), ]
+ 
+   
+   datos$EDAD <- as.numeric(datos$EDAD)
+   #class(datos$EDAD)
+  
+  
+  
+  
+ 	filtered_data <- datos %>% 
+ 	  select(EDAD)
+ 	
+ 	
+ 	
+ 	#agrega automaticamente las edades en intervalos de igual tamaño
+ 	filtered_data <- filtered_data %>% 
+ 	  mutate(Rango = cut(EDAD, breaks = 7)) #en este caso 5 esta definiendo el numero de intervalos
+ 	#contar  el numero de edades en cada grupo
+ 	tabla <- filtered_data %>% 
+ 	  group_by(Rango) %>% 
+ 	  summarise(Conteo = n()) %>% 
+ 	  arrange(Rango)
+ 	
+ 	#opcion caso con porcentajes
+ 	tabla <- tabla %>% 
+ 	  mutate(Porcentaje = round((Conteo / sum(Conteo)) *100, 2))
+ 	
+ 	#genera la tabla con 
+ 	tabla_latex <- kable(tabla, format = "latex", booktabs = TRUE, align = c("l", "c", "l")) %>%
+ 	  row_spec(0, background = '#ff4040', color = 'black', bold = TRUE)
+   print(tabla_latex)
 
 @
 interpretacion
