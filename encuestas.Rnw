@@ -94,3 +94,44 @@ aca se inserta la imagen
 \end{figure}
 
 \end{document}
+
+Se analizara el genero de los encuestados
+\begin{table}[H]
+  \centering
+  \caption{Genero de los encuestados}
+<<tabla_dos, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  library(knitr)
+  library(kableExtra)
+  library(dplyr)
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+  #datos$GENERO
+  
+  #datos$GENERO[datos$GENERO == ""] <- "Femenino"
+	#para realizar un filtro
+	filtered_data <- datos %>% 
+	  select(GENERO)
+	
+	#caso porcentaje
+	#contar  el numero de edades en cada grupo
+	tabla <- filtered_data %>% 
+	  group_by(GENERO) %>% 
+	  summarise(Conteo = n()) %>% 
+	  arrange(GENERO)
+	#opcion caso con porcentajes
+	tabla <- tabla %>% 
+	  mutate(Porcentaje = round((Conteo / sum(Conteo)) *100, 2))
+	
+	
+	#alternativa mejorada, ojala funciones, si funciona :)
+	tabla_latex <- kable(tabla, format = "latex", booktabs = TRUE, align = c("l", "c", "l")) %>% #
+	  row_spec(0, background = '#87A96B', color = 'black', bold = TRUE)
+	
+	print(tabla_latex)
+	
+	
+	
+	
+@
+  \caption*{Fuente: Trabajo de campo}
+\end{table}  
