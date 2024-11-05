@@ -83,7 +83,8 @@ Aca ira la interpretacion de la tabla
 	  #scale_x_continuous(breaks = seq(0,100, by = 5), limits = c(0, 100))
 	graph1 + theme_bw()
 	@
-mas interpretacion de la grafica
+mas interpretacion de la grafica\\
+aca se inserta la imagen
 
 \begin{figure}[H]
   \centering
