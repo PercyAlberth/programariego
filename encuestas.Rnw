@@ -83,6 +83,13 @@ Aca ira la interpretacion de la tabla
 	  #scale_x_continuous(breaks = seq(0,100, by = 5), limits = c(0, 100))
 	graph1 + theme_bw()
 	@
+mas interpretacion de la grafica
 
+\begin{figure}[H]
+  \centering
+  \caption{Aplicando encuesta}
+  \includegraphics[scale=0.5]{C:/Users/PERCY/Desktop/img000001.png}
+  \caption*{Fuente: trabajo de campo}
+\end{figure}
 
 \end{document}
