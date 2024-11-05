@@ -9,7 +9,8 @@
 \begin{document}
 hola mundo\\
 Se agrega una nueva linea desde github\\
-ahora segunda linea
+ahora segunda linea\\
+se agrega la tercera desde (Rstudio)
 <<tabla_uno, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
 #   library(knitr)
 #   library(kableExtra)
