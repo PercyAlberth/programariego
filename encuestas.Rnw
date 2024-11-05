@@ -52,6 +52,7 @@ se hace la septima fila
 #   print(tabla_latex)
 
 @
+interpretacion
 
 
 \end{document}
