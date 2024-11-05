@@ -93,7 +93,7 @@ aca se inserta la imagen
   \caption*{Fuente: trabajo de campo}
 \end{figure}
 
-\end{document}
+
 
 Se analizara el genero de los encuestados
 \begin{table}[H]
@@ -106,6 +106,8 @@ Se analizara el genero de los encuestados
   setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
   datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
   #datos$GENERO
+  datos$GENERO[datos$GENERO == ""] <- NA
+  datos <- datos[!is.na(datos$GENERO), ]
   
   #datos$GENERO[datos$GENERO == ""] <- "Femenino"
 	#para realizar un filtro
@@ -135,3 +137,25 @@ Se analizara el genero de los encuestados
 @
   \caption*{Fuente: Trabajo de campo}
 \end{table}  
+
+<< fig_dos, echo = FALSE, fig.width=4, fig.height=3>>=
+	
+  
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+
+  library(stringr)
+	library(ggplot2)
+  
+	#para realizar un filtro
+	#datos2 <- subset(datos, Comunidad == "chilloroya")
+	#datos$GENERO[datos$genero == ""] <- "Femenino"
+  datos$GENERO[datos$GENERO == ""] <- NA
+  datos <- datos[!is.na(datos$GENERO), ]
+  
+	graph1 <- ggplot(datos, aes(GENERO)) +
+  geom_bar( fill = rgb(0.53, 0.66, 0.42), colour = "white") + xlab("") + ylab("") 
+	graph1 + theme_bw()
+   
+	@
+	\end{document}
