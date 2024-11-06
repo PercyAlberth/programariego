@@ -9,7 +9,9 @@
 \begin{document}
 modificacion desde github desktop\\
 Se realizara el analisis de las encuestas de todas la encuestas realizadas en el trabajo de campo.\\
-
+\begin{table}[H]
+  \centering
+  \caption{Edad de los encuestados}
 <<tabla_uno, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
    library(knitr)
    library(kableExtra)
@@ -55,6 +57,8 @@ Se realizara el analisis de las encuestas de todas la encuestas realizadas en el
    print(tabla_latex)
 
 @
+  \caption*{Fuente trabajo de campo}
+\end{table}
 Aca ira la interpretacion de la tabla
 << fig_uno, echo = FALSE, fig.width=4, fig.height=3>>=
 	
