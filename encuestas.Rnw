@@ -60,7 +60,10 @@ Se realizara el analisis de las encuestas de todas la encuestas realizadas en el
   \caption*{Fuente trabajo de campo}
 \end{table}
 Aca ira la interpretacion de la tabla
-<< fig_uno, echo = FALSE, fig.width=4, fig.height=3>>=
+\begin{figure}[H]
+  \centering
+  \caption{Porcentaje de edad de los encuestados}
+<< fig_uno, echo = FALSE, fig.width=7, fig.height=4>>=
 	
   library(stringr)
 	library(ggplot2)
@@ -88,17 +91,18 @@ Aca ira la interpretacion de la tabla
 	  #scale_x_continuous(breaks = seq(0,100, by = 5), limits = c(0, 100))
 	graph1 + theme_bw()
 	@
+  \caption*{Fuente: trabajo de campo}
+\end{figure}
 mas interpretacion de la grafica\\
 aca se inserta la imagen
 
+
 \begin{figure}[H]
   \centering
-  \caption{Aplicando encuesta}
-  \includegraphics[scale=0.5]{C:/Users/PERCY/Desktop/img000001.png}
+  \caption{Aplicando encuestas}
+  \includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/1.jpg}
   \caption*{Fuente: trabajo de campo}
 \end{figure}
-
-
 
 Se analizara el genero de los encuestados
 \begin{table}[H]
@@ -143,6 +147,9 @@ Se analizara el genero de los encuestados
   \caption*{Fuente: Trabajo de campo}
 \end{table}  
 
+\begin{figure}[H]
+  \centering
+  \caption{Frecuencia del genero de los encuestados}
 << fig_dos, echo = FALSE, fig.width=4, fig.height=3>>=
 	
   
@@ -163,4 +170,712 @@ Se analizara el genero de los encuestados
 	graph1 + theme_bw()
    
 	@
-	\end{document}
+  \caption*{Fuente: Trabajo de campo}
+\end{figure}
+
+\begin{table}[H]
+  \centering
+  \caption{Grado de instruccion}
+<<tabla_trs, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  library(knitr)
+  library(kableExtra)
+  library(dplyr)
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+  #datos$GENERO
+  datos$GRADO.DE.INSTRUCCION[datos$GRADO.DE.INSTRUCCION == ""] <- NA
+  datos <- datos[!is.na(datos$GRADO.DE.INSTRUCCION), ]
+  
+  #datos$GENERO[datos$GENERO == ""] <- "Femenino"
+	#para realizar un filtro
+	filtered_data <- datos %>% 
+	  select(GRADO.DE.INSTRUCCION)
+	
+	#?rename()
+	filtered_data <- filtered_data %>% 
+	  rename("Grado" = GRADO.DE.INSTRUCCION)
+	
+	#caso porcentaje
+	#contar  el numero de edades en cada grupo
+	tabla <- fil %>% 
+	  group_by(Grado) %>% 
+	  summarise(Conteo = n()) %>% 
+	  arrange(Grado)
+	#opcion caso con porcentajes
+	tabla <- tabla %>% 
+	  mutate(Porcentaje = round((Conteo / sum(Conteo)) *100, 2))
+	
+	#alternativa mejorada, ojala funciones, si funciona :)
+	tabla_latex <- kable(tabla, format = "latex", booktabs = TRUE, align = c("l", "c", "l")) %>% #
+	  row_spec(0, background = '#87A96B', color = 'black', bold = TRUE)
+	
+	print(tabla_latex)
+@
+  \caption*{Fuente: Trabajo de campo}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \caption{Distribucion del grado de instruccion}
+<< fig_tres, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+  library(stringr)
+	library(ggplot2)
+  datos$GRADO.DE.INSTRUCCION[datos$GRADO.DE.INSTRUCCION == ""] <- NA
+  datos <- datos[!is.na(datos$GRADO.DE.INSTRUCCION), ]
+	graph1 <- ggplot(datos, aes(GRADO.DE.INSTRUCCION)) +
+  geom_bar( fill = rgb(0.53, 0.66, 0.42), colour = "white") + xlab("") + ylab("") 
+	graph1 + theme_bw()
+	@
+  \caption*{Fuente: Trabajo de campo}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \caption{Aplicando encuestas}
+  \includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/2.jpg}
+  \caption*{Fuente: trabajo de campo}
+\end{figure}
+
+
+\begin{table}[H]
+  \centering
+  \caption{Tipo de ingreso familiar}
+<<tabla_cinco, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  library(knitr)
+  library(kableExtra)
+  library(dplyr)
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+  #datos$X.CÓMO.ES.SU.INGRESO.FAMILIAR.
+  datos$X.CÓMO.ES.SU.INGRESO.FAMILIAR.[datos$X.CÓMO.ES.SU.INGRESO.FAMILIAR. == ""] <- NA
+  datos <- datos[!is.na(datos$X.CÓMO.ES.SU.INGRESO.FAMILIAR.), ]
+  #datos$GENERO[datos$GENERO == ""] <- "Femenino"
+	#para realizar un filtro
+	filtered_data <- datos %>% 
+	  select(X.CÓMO.ES.SU.INGRESO.FAMILIAR.)
+	
+	filtered_data <- filtered_data %>% 
+	  rename("Ingreso" = X.CÓMO.ES.SU.INGRESO.FAMILIAR.)
+	
+	#caso porcentaje
+	#contar  el numero de edades en cada grupo
+	tabla <- filtered_data %>% 
+	  group_by(Ingreso) %>% 
+	  summarise(Conteo = n()) %>% 
+	  arrange(Ingreso)
+	#opcion caso con porcentajes
+	tabla <- tabla %>% 
+	  mutate(Porcentaje = round((Conteo / sum(Conteo)) *100, 2))
+	
+	#alternativa mejorada, ojala funciones, si funciona :)
+	tabla_latex <- kable(tabla, format = "latex", booktabs = TRUE, align = c("l", "c", "l")) %>% #
+	  row_spec(0, background = '#87A96B', color = 'black', bold = TRUE)
+	
+	print(tabla_latex)
+@
+  \caption*{Fuente: Trabajo de campo}
+\end{table}
+
+
+\begin{figure}[H]
+  \centering
+  \caption{Distribucion del tipo de ingreso familiar}
+<< fig_cinco, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+  library(stringr)
+	library(ggplot2)
+  datos$X.CÓMO.ES.SU.INGRESO.FAMILIAR.[datos$X.CÓMO.ES.SU.INGRESO.FAMILIAR. == ""] <- NA
+  datos <- datos[!is.na(datos$X.CÓMO.ES.SU.INGRESO.FAMILIAR.), ]
+	graph1 <- ggplot(datos, aes(X.CÓMO.ES.SU.INGRESO.FAMILIAR.)) +
+  geom_bar( fill = rgb(0.53, 0.66, 0.42), colour = "white") + xlab("") + ylab("") 
+	graph1 + theme_bw()
+	@
+  \caption*{Fuente: Trabajo de campo}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \caption{Aplicacion de encuestas}
+  \includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/3.jpg}
+  \caption*{Fuente: trabajo de campo}
+\end{figure}
+
+\begin{table}[H]
+  \centering
+  \caption{Ingreso familiar}
+<<tabla_seis, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  library(knitr)
+  library(kableExtra)
+  library(dplyr)
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+  #datos$X.CÓMO.ES.SU.INGRESO.FAMILIAR.
+  datos$X.CUANTO.ES.EL.INGRESO.FAMILIAR.[datos$X.CUANTO.ES.EL.INGRESO.FAMILIAR. == ""] <- NA
+  datos <- datos[!is.na(datos$X.CUANTO.ES.EL.INGRESO.FAMILIAR.), ]
+  #datos$GENERO[datos$GENERO == ""] <- "Femenino"
+	#para realizar un filtro
+	filtered_data <- datos %>% 
+	  select(X.CUANTO.ES.EL.INGRESO.FAMILIAR.)
+	filtered_data <- filtered_data %>% 
+	  rename("Ingreso_familiar" = X.CUANTO.ES.EL.INGRESO.FAMILIAR.)
+	
+	#caso porcentaje
+	#contar  el numero de edades en cada grupo
+	tabla <- filtered_data %>% 
+	  group_by(Ingreso_familiar) %>% 
+	  summarise(Conteo = n()) %>% 
+	  arrange(Ingreso_familiar)
+	#opcion caso con porcentajes
+	tabla <- tabla %>% 
+	  mutate(Porcentaje = round((Conteo / sum(Conteo)) *100, 2))
+	
+	#alternativa mejorada, ojala funciones, si funciona :)
+	tabla_latex <- kable(tabla, format = "latex", booktabs = TRUE, align = c("l", "c", "l")) %>% #
+	  row_spec(0, background = '#87A96B', color = 'black', bold = TRUE)
+	
+	print(tabla_latex)
+@
+  \caption*{Fuente: Trabajo de campo}
+\end{table}
+
+
+\begin{figure}[H]
+  \centering
+  \caption{Distribucion del tipo de ingreso familiar}
+<< fig_seis, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+  library(stringr)
+	library(ggplot2)
+  datos$X.CUANTO.ES.EL.INGRESO.FAMILIAR.[datos$X.CUANTO.ES.EL.INGRESO.FAMILIAR. == ""] <- NA
+  datos$X.CÓMO.ES.SU.INGRESO.FAMILIAR.[datos$X.CÓMO.ES.SU.INGRESO.FAMILIAR. == ""] <- NA
+  
+  datos <- datos[!is.na(datos$X.CUANTO.ES.EL.INGRESO.FAMILIAR.), ]
+  datos <- datos[!is.na(datos$X.CÓMO.ES.SU.INGRESO.FAMILIAR.), ]
+  
+  datos$X.CUANTO.ES.EL.INGRESO.FAMILIAR. <- as.factor(datos$X.CUANTO.ES.EL.INGRESO.FAMILIAR.)
+	datos$X.CÓMO.ES.SU.INGRESO.FAMILIAR. <- as.factor(datos$X.CÓMO.ES.SU.INGRESO.FAMILIAR.)
+	
+	
+	ggplot(datos, aes(x = X.CUANTO.ES.EL.INGRESO.FAMILIAR., fill = X.CÓMO.ES.SU.INGRESO.FAMILIAR.)) +
+	  geom_bar(position = "dodge") +
+	  labs(x = "Ingreso familiar", y = "Frecuencia de ingreso", fill = "Tipo de ingreso familiar") +
+	  theme_bw()
+	
+  #apilado
+# 	ggplot(datos, aes(x = X.CUANTO.ES.EL.INGRESO.FAMILIAR., fill = X.CÓMO.ES.SU.INGRESO.FAMILIAR.)) +
+#     geom_bar(position = "stack") +
+#     labs(x = "Frecuencia de ingreso", y = "Ingreso familiar", fill = "X.CÓMO.ES.SU.INGRESO.FAMILIAR.")+
+# 	  theme_bw()
+	
+	
+	  
+	
+	
+	
+	
+	
+	
+
+
+	@
+  \caption*{Fuente: Trabajo de campo}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \caption{Sensibililzacion a los beneficiarios}
+  \includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/4.jpg}
+  \caption*{Fuente: trabajo de campo}
+\end{figure}
+
+
+\begin{table}[H]
+  \centering
+  \caption{Numero de integrantes que conforman su familia}
+<<tabla_siete, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  library(knitr)
+  library(kableExtra)
+  library(dplyr)
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+  #datos$X.CÓMO.ES.SU.INGRESO.FAMILIAR.
+  datos$X.CUANTO.ES.EL.INGRESO.FAMILIAR.[datos$X.CÚANTOS.INTEGRANTES.CONFORMAN.SU.FAMILIA. == ""] <- NA
+  datos <- datos[!is.na(datos$X.CÚANTOS.INTEGRANTES.CONFORMAN.SU.FAMILIA.), ]
+  #datos$GENERO[datos$GENERO == ""] <- "Femenino"
+	#para realizar un filtro
+	filtered_data <- datos %>% 
+	  select(X.CÚANTOS.INTEGRANTES.CONFORMAN.SU.FAMILIA.)
+	filtered_data <- filtered_data %>% 
+	  rename("Integrantes" = X.CÚANTOS.INTEGRANTES.CONFORMAN.SU.FAMILIA.)
+	
+	#caso porcentaje
+	#contar  el numero de edades en cada grupo
+	tabla <- filtered_data %>% 
+	  group_by(Integrantes) %>% 
+	  summarise(Conteo = n()) %>% 
+	  arrange(Integrantes)
+	#opcion caso con porcentajes
+	tabla <- tabla %>% 
+	  mutate(Porcentaje = round((Conteo / sum(Conteo)) *100, 2))
+	
+	#alternativa mejorada, ojala funciones, si funciona :)
+	tabla_latex <- kable(tabla, format = "latex", booktabs = TRUE, align = c("l", "c", "l")) %>% #
+	  row_spec(0, background = '#87A96B', color = 'black', bold = TRUE)
+	
+	print(tabla_latex)
+@
+  \caption*{Fuente: Trabajo de campo}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \caption{Distribucion del tipo de ingreso familiar}
+<< fig_siete, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+  library(stringr)
+	library(ggplot2)
+  datos$X.CÚANTOS.INTEGRANTES.CONFORMAN.SU.FAMILIA.[datos$X.CÚANTOS.INTEGRANTES.CONFORMAN.SU.FAMILIA. == ""] <- NA
+  datos <- datos[!is.na(datos$X.CÚANTOS.INTEGRANTES.CONFORMAN.SU.FAMILIA.), ]
+	graph1 <- ggplot(datos, aes(X.CÚANTOS.INTEGRANTES.CONFORMAN.SU.FAMILIA.)) +
+  geom_bar( fill = rgb(0.53, 0.66, 0.42), colour = "white") + xlab("") + ylab("") 
+	graph1 + theme_bw()
+	@
+  \caption*{Fuente: Trabajo de campo}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \caption{Sensibililzacion a los beneficiarios}
+  \includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/5.jpg}
+  \caption*{Fuente: trabajo de campo}
+\end{figure}
+
+
+\begin{table}[H]
+  \centering
+  \caption{Actividad economica a la que se dedica}
+<<tabla_ocho, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  library(knitr)
+  library(kableExtra)
+  library(dplyr)
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+  #datos$X.CÓMO.ES.SU.INGRESO.FAMILIAR.
+  datos$X.CÚAL.ES.LA.ACTIVIDAD.A.LA.QUE.SE.DEDICA.ACTUALMENTE.[datos$X.CÚAL.ES.LA.ACTIVIDAD.A.LA.QUE.SE.DEDICA.ACTUALMENTE. == ""] <- NA
+  datos <- datos[!is.na(datos$X.CÚAL.ES.LA.ACTIVIDAD.A.LA.QUE.SE.DEDICA.ACTUALMENTE.), ]
+  #datos$GENERO[datos$GENERO == ""] <- "Femenino"
+	#para realizar un filtro
+	filtered_data <- datos %>% 
+	  select(X.CÚAL.ES.LA.ACTIVIDAD.A.LA.QUE.SE.DEDICA.ACTUALMENTE.)
+	filtered_data <- filtered_data %>% 
+	  rename("Actividad" = X.CÚAL.ES.LA.ACTIVIDAD.A.LA.QUE.SE.DEDICA.ACTUALMENTE.)
+	
+	#caso porcentaje
+	#contar  el numero de edades en cada grupo
+	tabla <- filtered_data %>% 
+	  group_by(Actividad) %>% 
+	  summarise(Conteo = n()) %>% 
+	  arrange(Actividad)
+	#opcion caso con porcentajes
+	tabla <- tabla %>% 
+	  mutate(Porcentaje = round((Conteo / sum(Conteo)) *100, 2))
+	
+	#alternativa mejorada, ojala funciones, si funciona :)
+	tabla_latex <- kable(tabla, format = "latex", booktabs = TRUE, align = c("l", "c", "l")) %>% #
+	  row_spec(0, background = '#87A96B', color = 'black', bold = TRUE)
+	
+	print(tabla_latex)
+@
+  \caption*{Fuente: Trabajo de campo}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \caption{Actividad economica a la que se dedica}
+<< fig_ocho, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+  library(stringr)
+	library(ggplot2)
+  datos$X.CÚAL.ES.LA.ACTIVIDAD.A.LA.QUE.SE.DEDICA.ACTUALMENTE.[datos$X.CÚAL.ES.LA.ACTIVIDAD.A.LA.QUE.SE.DEDICA.ACTUALMENTE. == ""] <- NA
+  datos <- datos[!is.na(datos$X.CÚAL.ES.LA.ACTIVIDAD.A.LA.QUE.SE.DEDICA.ACTUALMENTE.), ]
+	graph1 <- ggplot(datos, aes(X.CÚAL.ES.LA.ACTIVIDAD.A.LA.QUE.SE.DEDICA.ACTUALMENTE.)) +
+  geom_bar( fill = rgb(0.53, 0.66, 0.42), colour = "white") + xlab("") + ylab("") 
+	graph1 + theme_bw()
+	@
+  \caption*{Fuente: Trabajo de campo}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \caption{Aplicacion de encuestas en el area de influencia}
+  \includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/6.jpg}
+  \caption*{Fuente: trabajo de campo}
+\end{figure}
+
+
+\begin{table}[H]
+  \centering
+  \caption{Cuenta con el servicio de agua potable}
+<<tabla_nueve, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  library(knitr)
+  library(kableExtra)
+  library(dplyr)
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+  #datos$X.CÓMO.ES.SU.INGRESO.FAMILIAR.
+  datos$X.EN.LA.COMUNIDAD.LAS.VIVIENDAS.CUENTAN.CON.AGUA.[datos$X.EN.LA.COMUNIDAD.LAS.VIVIENDAS.CUENTAN.CON.AGUA. == ""] <- NA
+  datos <- datos[!is.na(datos$X.EN.LA.COMUNIDAD.LAS.VIVIENDAS.CUENTAN.CON.AGUA.), ]
+  #datos$GENERO[datos$GENERO == ""] <- "Femenino"
+	#para realizar un filtro
+	filtered_data <- datos %>% 
+	  select(X.EN.LA.COMUNIDAD.LAS.VIVIENDAS.CUENTAN.CON.AGUA.)
+	filtered_data <- filtered_data %>% 
+	  rename("Agua" = X.EN.LA.COMUNIDAD.LAS.VIVIENDAS.CUENTAN.CON.AGUA.)
+	
+	#caso porcentaje
+	#contar  el numero de edades en cada grupo
+	tabla <- filtered_data %>% 
+	  group_by(Agua) %>% 
+	  summarise(Conteo = n()) %>% 
+	  arrange(Agua)
+	#opcion caso con porcentajes
+	tabla <- tabla %>% 
+	  mutate(Porcentaje = round((Conteo / sum(Conteo)) *100, 2))
+	
+	#alternativa mejorada, ojala funciones, si funciona :)
+	tabla_latex <- kable(tabla, format = "latex", booktabs = TRUE, align = c("l", "c", "l")) %>% #
+	  row_spec(0, background = '#87A96B', color = 'black', bold = TRUE)
+	
+	print(tabla_latex)
+@
+  \caption*{Fuente: Trabajo de campo}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \caption{Cuenta con el servicio de agua potable}
+<< fig_nueve, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+  library(stringr)
+	library(ggplot2)
+  datos$X.EN.LA.COMUNIDAD.LAS.VIVIENDAS.CUENTAN.CON.AGUA.[datos$X.EN.LA.COMUNIDAD.LAS.VIVIENDAS.CUENTAN.CON.AGUA. == ""] <- NA
+  datos <- datos[!is.na(datos$X.EN.LA.COMUNIDAD.LAS.VIVIENDAS.CUENTAN.CON.AGUA.), ]
+	graph1 <- ggplot(datos, aes(X.EN.LA.COMUNIDAD.LAS.VIVIENDAS.CUENTAN.CON.AGUA.)) +
+  geom_bar( fill = rgb(0.53, 0.66, 0.42), colour = "white") + xlab("") + ylab("") 
+	graph1 + theme_bw()
+	@
+  \caption*{Fuente: Trabajo de campo}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \caption{Aplicacion de encuestas en el area de influencia}
+  \includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/7.jpg}
+  \caption*{Fuente: trabajo de campo}
+\end{figure}
+
+
+\begin{table}[H]
+  \centering
+  \caption{Cuenta con el servicio de agua potable}
+<<tabla_diez, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  library(knitr)
+  library(kableExtra)
+  library(dplyr)
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+  #datos$X.CÓMO.ES.SU.INGRESO.FAMILIAR.
+  datos$EL.AGUA.QUE.CONSUMEN.ES[datos$EL.AGUA.QUE.CONSUMEN.ES == ""] <- NA
+  datos <- datos[!is.na(datos$EL.AGUA.QUE.CONSUMEN.ES), ]
+  #datos$GENERO[datos$GENERO == ""] <- "Femenino"
+	#para realizar un filtro
+	filtered_data <- datos %>% 
+	  select(EL.AGUA.QUE.CONSUMEN.ES)
+	filtered_data <- filtered_data %>% 
+	  rename("Agua_que_consume" = EL.AGUA.QUE.CONSUMEN.ES)
+	
+	#caso porcentaje
+	#contar  el numero de edades en cada grupo
+	tabla <- filtered_data %>% 
+	  group_by(Agua_que_consume) %>% 
+	  summarise(Conteo = n()) %>% 
+	  arrange(Agua_que_consume)
+	#opcion caso con porcentajes
+	tabla <- tabla %>% 
+	  mutate(Porcentaje = round((Conteo / sum(Conteo)) *100, 2))
+	
+	#alternativa mejorada, ojala funciones, si funciona :)
+	tabla_latex <- kable(tabla, format = "latex", booktabs = TRUE, align = c("l", "c", "l")) %>% #
+	  row_spec(0, background = '#87A96B', color = 'black', bold = TRUE)
+	
+	print(tabla_latex)
+@
+  \caption*{Fuente: Trabajo de campo}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \caption{Cuenta con el servicio de agua potable}
+<< fig_diez, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+  library(stringr)
+	library(ggplot2)
+  datos$EL.AGUA.QUE.CONSUMEN.ES[datos$EL.AGUA.QUE.CONSUMEN.ES == ""] <- NA
+  datos <- datos[!is.na(datos$EL.AGUA.QUE.CONSUMEN.ES), ]
+	graph1 <- ggplot(datos, aes(EL.AGUA.QUE.CONSUMEN.ES)) +
+  geom_bar( fill = rgb(0.53, 0.66, 0.42), colour = "white") + xlab("") + ylab("") 
+	graph1 + theme_bw()
+	@
+  \caption*{Fuente: Trabajo de campo}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \caption{Aplicacion de encuestas en el area de influencia}
+  \includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/8.jpg}
+  \caption*{Fuente: trabajo de campo}
+\end{figure}
+
+
+
+
+\begin{table}[H]
+  \centering
+  \caption{Abastecimiento de agua}
+<<tabla_once, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  library(knitr)
+  library(kableExtra)
+  library(dplyr)
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+  #datos$X.CÓMO.ES.SU.INGRESO.FAMILIAR.
+  datos$EL.ABASTECIMIENTO.DE.AGUA.PROVIENE.PRINCIPALMENTE.DE[datos$EL.ABASTECIMIENTO.DE.AGUA.PROVIENE.PRINCIPALMENTE.DE == ""] <- NA
+  datos <- datos[!is.na(datos$EL.ABASTECIMIENTO.DE.AGUA.PROVIENE.PRINCIPALMENTE.DE), ]
+  #datos$GENERO[datos$GENERO == ""] <- "Femenino"
+	#para realizar un filtro
+	filtered_data <- datos %>% 
+	  select(EL.ABASTECIMIENTO.DE.AGUA.PROVIENE.PRINCIPALMENTE.DE)
+	filtered_data <- filtered_data %>% 
+	  rename("Abastecimiento_agua" = EL.ABASTECIMIENTO.DE.AGUA.PROVIENE.PRINCIPALMENTE.DE)
+	
+	#caso porcentaje
+	#contar  el numero de edades en cada grupo
+	tabla <- filtered_data %>% 
+	  group_by(Abastecimiento_agua) %>% 
+	  summarise(Conteo = n()) %>% 
+	  arrange(Abastecimiento_agua)
+	#opcion caso con porcentajes
+	tabla <- tabla %>% 
+	  mutate(Porcentaje = round((Conteo / sum(Conteo)) *100, 2))
+	
+	#alternativa mejorada, ojala funciones, si funciona :)
+	tabla_latex <- kable(tabla, format = "latex", booktabs = TRUE, align = c("l", "c", "l")) %>% #
+	  row_spec(0, background = '#87A96B', color = 'black', bold = TRUE)
+	
+	print(tabla_latex)
+@
+  \caption*{Fuente: Trabajo de campo}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \caption{Fuente de abastecimiento de agua}
+<< fig_once, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+  library(stringr)
+	library(ggplot2)
+  datos$EL.ABASTECIMIENTO.DE.AGUA.PROVIENE.PRINCIPALMENTE.DE[datos$EL.ABASTECIMIENTO.DE.AGUA.PROVIENE.PRINCIPALMENTE.DE == ""] <- NA
+  datos <- datos[!is.na(datos$EL.ABASTECIMIENTO.DE.AGUA.PROVIENE.PRINCIPALMENTE.DE), ]
+	graph1 <- ggplot(datos, aes(EL.ABASTECIMIENTO.DE.AGUA.PROVIENE.PRINCIPALMENTE.DE)) +
+  geom_bar( fill = rgb(0.53, 0.66, 0.42), colour = "white") + xlab("") + ylab("") 
+	graph1 + theme_bw()
+	@
+  \caption*{Fuente: Trabajo de campo}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \caption{Sensibilizacion a los productores}
+  \includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/9.jpg}
+  \caption*{Fuente: trabajo de campo}
+\end{figure}
+
+
+\begin{table}[H]
+  \centering
+  \caption{Energia electrica}
+<<tabla_doce, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  library(knitr)
+  library(kableExtra)
+  library(dplyr)
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+  #datos$X.CÓMO.ES.SU.INGRESO.FAMILIAR.
+  datos$X.EN.LA.COMUNIDAD.LAS.VIVIENDAS.CUENTAN.CON.ENERGIA.ELECTRICA.[datos$X.EN.LA.COMUNIDAD.LAS.VIVIENDAS.CUENTAN.CON.ENERGIA.ELECTRICA. == ""] <- NA
+  datos <- datos[!is.na(datos$X.EN.LA.COMUNIDAD.LAS.VIVIENDAS.CUENTAN.CON.ENERGIA.ELECTRICA.), ]
+  #datos$GENERO[datos$GENERO == ""] <- "Femenino"
+	#para realizar un filtro
+	filtered_data <- datos %>% 
+	  select(X.EN.LA.COMUNIDAD.LAS.VIVIENDAS.CUENTAN.CON.ENERGIA.ELECTRICA.)
+	filtered_data <- filtered_data %>% 
+	  rename("Electricidad" = X.EN.LA.COMUNIDAD.LAS.VIVIENDAS.CUENTAN.CON.ENERGIA.ELECTRICA.)
+	
+	#caso porcentaje
+	#contar  el numero de edades en cada grupo
+	tabla <- filtered_data %>% 
+	  group_by(Electricidad) %>% 
+	  summarise(Conteo = n()) %>% 
+	  arrange(Electricidad)
+	#opcion caso con porcentajes
+	tabla <- tabla %>% 
+	  mutate(Porcentaje = round((Conteo / sum(Conteo)) *100, 2))
+	
+	#alternativa mejorada, ojala funciones, si funciona :)
+	tabla_latex <- kable(tabla, format = "latex", booktabs = TRUE, align = c("l", "c", "l")) %>% #
+	  row_spec(0, background = '#87A96B', color = 'black', bold = TRUE)
+	
+	print(tabla_latex)
+@
+  \caption*{Fuente: Trabajo de campo}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \caption{Energia electrica}
+<< fig_doce, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+  library(stringr)
+	library(ggplot2)
+  datos$X.EN.LA.COMUNIDAD.LAS.VIVIENDAS.CUENTAN.CON.ENERGIA.ELECTRICA.[datos$X.EN.LA.COMUNIDAD.LAS.VIVIENDAS.CUENTAN.CON.ENERGIA.ELECTRICA. == ""] <- NA
+  datos <- datos[!is.na(datos$X.EN.LA.COMUNIDAD.LAS.VIVIENDAS.CUENTAN.CON.ENERGIA.ELECTRICA.), ]
+	graph1 <- ggplot(datos, aes(X.EN.LA.COMUNIDAD.LAS.VIVIENDAS.CUENTAN.CON.ENERGIA.ELECTRICA.)) +
+  geom_bar( fill = rgb(0.53, 0.66, 0.42), colour = "white") + xlab("") + ylab("") 
+	graph1 + theme_bw()
+	@
+  \caption*{Fuente: Trabajo de campo}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \caption{Sensibilizacion a los productores}
+  \includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/10.jpg}
+  \caption*{Fuente: trabajo de campo}
+\end{figure}
+
+
+
+
+
+
+\begin{table}[H]
+  \centering
+  \caption{Energia electrica}
+<<tabla_trece, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  library(knitr)
+  library(kableExtra)
+  library(dplyr)
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+  #datos$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS.
+  stat(datos$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS.)
+  
+  datos$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS.[datos$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS. == ""] <- NA
+  datos <- datos[!is.na(datos$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS.), ]
+  
+	filtered_data <- datos %>% 
+	  select(X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS.)
+	
+	#aca se extrae solo el numero
+	library(stringr)
+	
+	#otra opcion para extraer numeros con decimales, solo extrae numeros con decimales y sin decimales
+	filtered_data <- filtered_data %>% 
+	  mutate(numerode = as.numeric(str_extract(X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS., "\\d+\\.?\\d*")))
+	
+	#filtered_data$numeros <- str_extract(filtered_data$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS., "\\d+")
+	#filtered_data$numeros
+	#filtered_data$numeros <- as.numeric(filtered_data$numeros)
+	#aca se extrae solo el texto
+	filtered_data$texto <- str_remove_all(filtered_data$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS., "\\d+")
+	filtered_data$texto
+	#se debera convertir los valores a hectareas todos
+	filtered_data <- filtered_data %>% 
+	  mutate(
+	    nuevo = case_when(
+	      str_detect(texto, "H") ~ numerode * 1,
+	      str_detect(texto, "h") ~ numerode * 1,
+	      str_detect(texto, "TOPO") ~ numerode * 0.3,
+	      str_detect(texto, "M") ~ numerode * 0.0001,
+	      
+	      TRUE ~ numerode
+	    )
+	  )
+	class(filtered_data$nuevo)
+	stat(filtered_data$nuevo)
+	hist(filtered_data$nuevo)
+	ggplot() +
+	  geom_bar()
+	
+	
+	graph1 <- ggplot(filtered_data, aes(nuevo)) +
+  geom_bar( fill = rgb(0.53, 0.66, 0.42), colour = "white") + xlab("") + ylab("") 
+	graph1 + theme_bw()
+	
+	
+	
+	filtered_data <- filtered_data %>% 
+	  rename("area" = X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS.)
+	
+	#caso porcentaje
+	#contar  el numero de edades en cada grupo
+	tabla <- filtered_data %>% 
+	  group_by(area) %>% 
+	  summarise(Conteo = n()) %>% 
+	  arrange(area)
+	#opcion caso con porcentajes
+	tabla <- tabla %>% 
+	  mutate(Porcentaje = round((Conteo / sum(Conteo)) *100, 2))
+	
+	#alternativa mejorada, ojala funciones, si funciona :)
+	tabla_latex <- kable(tabla, format = "latex", booktabs = TRUE, align = c("l", "c", "l")) %>% #
+	  row_spec(0, background = '#87A96B', color = 'black', bold = TRUE)
+	
+	print(tabla_latex)
+@
+  \caption*{Fuente: Trabajo de campo}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \caption{Energia electrica}
+<< fig_trece, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+  library(stringr)
+	library(ggplot2)
+  datos$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS.[datos$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS. == ""] <- NA
+  datos <- datos[!is.na(datos$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS.), ]
+	graph1 <- ggplot(datos, aes(X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS.)) +
+  geom_bar( fill = rgb(0.53, 0.66, 0.42), colour = "white") + xlab("") + ylab("") 
+	graph1 + theme_bw()
+	@
+  \caption*{Fuente: Trabajo de campo}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \caption{Sensibilizacion a los productores}
+  \includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/10.jpg}
+  \caption*{Fuente: trabajo de campo}
+\end{figure}
+\end{document}
