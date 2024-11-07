@@ -55,8 +55,37 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage[table]{xcolor}
+
+\newenvironment{tablas}[2]
+{\begin{table}[H]
+		\centering
+		\caption{#1}
+		#2
+		\caption*{Fuente trabajo de campo}}
+	{\end{table}}
+
+
+\newenvironment{fotos}[2]
+{\begin{figure}[H]
+	\centering
+	\caption{#1}
+	\includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/#2.jpg}
+	\caption*{Fuente: trabajo de campo}}
+{\end{figure}}
+
+
+\newenvironment{graficas}[2]
+{\begin{figure}[H]
+		\centering
+		\caption{#1}
+		#2
+		\caption*{Fuente trabajo de campo}}
+{\end{figure}}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
+
+
+
 modificacion desde github desktop\\
 Se realizara el analisis de las encuestas de todas la encuestas realizadas en el trabajo de campo.\\
 \begin{table}[H]
@@ -453,180 +482,40 @@ SI & 420 & 94.17\\
   \caption*{Fuente: trabajo de campo}
 \end{figure}
 
-
-
-
-
-
 \begin{table}[H]
   \centering
   \caption{Energia electrica}
 
+  \caption*{Fuente: Trabajo de campo}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \caption{Energia electrica}
+
+  \caption*{Fuente: Trabajo de campo}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \caption{Sensibilizacion a los productores}
+  \includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/11.jpg}
+  \caption*{Fuente: trabajo de campo}
+\end{figure}
+
+
+\begin{table}[H]
+  \centering
+  \caption{Persona que trabaja en la parcela}
+
 \begin{tabular}{lcl}
 \toprule
-\cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{area}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Conteo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Porcentaje}}}\\
+\cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Trabaja}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Conteo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Porcentaje}}}\\
 \midrule
-0.01 HA & 2 & 0.45\\
-0.06 HA & 1 & 0.23\\
-0.07 HA & 1 & \vphantom{1} 0.23\\
-0.1  HA & 1 & 0.23\\
-0.1 HA & 4 & 0.90\\
-\addlinespace
-0.10 HA & 3 & 0.68\\
-0.100 HA & 1 & 0.23\\
-0.12 HA & 2 & 0.45\\
-0.13 HA & 1 & 0.23\\
-0.14 HA & 1 & 0.23\\
-\addlinespace
-0.15 HA & 7 & 1.58\\
-0.2 H & 1 & 0.23\\
-0.20 HA & 1 & 0.23\\
-0.25 HA & 3 & 0.68\\
-0.3 & 2 & 0.45\\
-\addlinespace
-0.3 HA & 4 & 0.90\\
-0.30 H & 1 & 0.23\\
-0.30 HA & 1 & 0.23\\
-0.35 HA & 2 & 0.45\\
-0.5 H & 1 & 0.23\\
-\addlinespace
-0.5 HA & 6 & 1.35\\
-0.5 TOPO & 11 & 2.48\\
-0.5 TOPOS & 1 & 0.23\\
-0.6 H & 4 & 0.90\\
-0.6 HA & 1 & 0.23\\
-\addlinespace
-1 & 3 & 0.68\\
-1  TOPO & 1 & 0.23\\
-1 1/2 HA & 1 & 0.23\\
-1 1/2 TOPO & 6 & 1.35\\
-1 H & 7 & 1.58\\
-\addlinespace
-1 HA & 13 & 2.93\\
-1 HA Y 1 TOPO & 1 & 0.23\\
-1 TOPO & 46 & 10.36\\
-1 TPO & 1 & 0.23\\
-1 topo & 1 & 0.23\\
-\addlinespace
-1.2 TOPO & 1 & 0.23\\
-1.30 H & 1 & 0.23\\
-1.5 & 1 & 0.23\\
-1.5 H & 3 & 0.68\\
-1.5 HA & 3 & 0.68\\
-\addlinespace
-1.5 TOPO & 2 & 0.45\\
-1.5 TOPOS & 1 & 0.23\\
-1/2  TOPO & 1 & 0.23\\
-1/2 H & 1 & 0.23\\
-1/2 HA & 18 & 4.05\\
-\addlinespace
-1/2 TOPO & 79 & 17.79\\
-1/2 TOPOS & 1 & 0.23\\
-1/4 & 1 & 0.23\\
-1/4  TOPO & 1 & 0.23\\
-1/4 HA & 1 & 0.23\\
-\addlinespace
-1/4 TOPO & 26 & 5.86\\
-1/4 TOTAL & 1 & 0.23\\
-1/4 h & 1 & 0.23\\
-10 HA & 2 & 0.45\\
-100 M & 5 & 1.13\\
-\addlinespace
-100 MTS2 & 1 & 0.23\\
-1000 M & 3 & 0.68\\
-1000 M2 & 1 & 0.23\\
-1000 MTS & 1 & 0.23\\
-12 HA & 2 & 0.45\\
-\addlinespace
-1200 MT & 1 & 0.23\\
-12800 MT & 1 & 0.23\\
-1400 MTS 2 & 1 & 0.23\\
-15 HA & 2 & 0.45\\
-1500 MT & 1 & 0.23\\
-\addlinespace
-1500 MTS & 1 & 0.23\\
-1500 MTS 2 & 1 & 0.23\\
-1OO M & 1 & 0.23\\
-2 & 3 & 0.68\\
-2 1/2 TOPO & 2 & 0.45\\
-\addlinespace
-2 HA & 14 & 3.15\\
-2 TOPO & 3 & 0.68\\
-2 TOPOS & 12 & 2.70\\
-2.5 & 1 & 0.23\\
-2.5 H & 1 & 0.23\\
-\addlinespace
-2.5 TOPOS & 1 & 0.23\\
-20 HA & 2 & 0.45\\
-200  M & 1 & 0.23\\
-200 M & 1 & 0.23\\
-200 MTS2 & 1 & 0.23\\
-\addlinespace
-2000 M & 1 & 0.23\\
-2000 M2 & 1 & 0.23\\
-2000 MTS 2 & 1 & 0.23\\
-2000 MTS2 & 1 & 0.23\\
-25 HA & 1 & 0.23\\
-\addlinespace
-2500 MT & 4 & 0.90\\
-3 H & 1 & 0.23\\
-3 HA & 4 & 0.90\\
-3 TOPO & 2 & 0.45\\
-3 TOPOS & 7 & 1.58\\
-\addlinespace
-3 TOPOS & 1 & 0.23\\
-3/4 TOPO & 2 & 0.45\\
-300 M & 2 & 0.45\\
-300 MTS & 3 & 0.68\\
-3000 MTS2 & 1 & 0.23\\
-\addlinespace
-3400 MT & 1 & 0.23\\
-3700 M2 & 1 & 0.23\\
-4  TOPOS & 1 & 0.23\\
-4 HA & 6 & 1.35\\
-4 TOPOS & 5 & 1.13\\
-\addlinespace
-400 MTS 2 & 1 & 0.23\\
-400 MTS2 & 1 & 0.23\\
-4000 MT & 1 & 0.23\\
-4500 MT & 1 & 0.23\\
-4543 MTS 2 & 1 & 0.23\\
-\addlinespace
-5 HA & 6 & 1.35\\
-5 TOPO & 1 & 0.23\\
-5 TOPOS & 4 & 0.90\\
-5.5 & 1 & 0.23\\
-5/8 TOPO & 1 & 0.23\\
-\addlinespace
-500 M & 1 & 0.23\\
-500 M2 & 1 & 0.23\\
-500 MT & 1 & 0.23\\
-500 MTS & 1 & 0.23\\
-5200 MTS2 & 1 & 0.23\\
-\addlinespace
-550MT & 1 & 0.23\\
-6 HA & 2 & 0.45\\
-6 TOPOS & 2 & 0.45\\
-60 MTS2 & 1 & 0.23\\
-600 MTS & 2 & 0.45\\
-\addlinespace
-6HA & 1 & 0.23\\
-7 HA & 1 & 0.23\\
-7 HA & 1 & 0.23\\
-7000 MT & 1 & 0.23\\
-71/2 HA & 1 & 0.23\\
-\addlinespace
-8 HA & 1 & 0.23\\
-80 M & 1 & 0.23\\
-800 M2 & 1 & 0.23\\
-800 MTS 2 & 1 & 0.23\\
-8000 M2 & 1 & 0.23\\
-\addlinespace
-8000 MT & 1 & 0.23\\
-8000 MTS2 & 1 & 0.23\\
-9 HA & 1 & 0.23\\
-900 MTS2 & 1 & 0.23\\
-PEQUEÑO & 1 & 0.23\\
+OTRO & 4 & 0.89\\
+UN AMIGO & 5 & 1.12\\
+UN FAMILIAR & 35 & 7.83\\
+USTED MISMO & 403 & 90.16\\
 \bottomrule
 \end{tabular}
 
@@ -635,10 +524,10 @@ PEQUEÑO & 1 & 0.23\\
 
 \begin{figure}[H]
   \centering
-  \caption{Energia electrica}
+  \caption{Persona que trabaja en la parcela}
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/fig_trece-1} 
+\includegraphics[width=\maxwidth]{figure/fig_catorce-1} 
 \end{knitrout}
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
@@ -646,7 +535,654 @@ PEQUEÑO & 1 & 0.23\\
 \begin{figure}[H]
   \centering
   \caption{Sensibilizacion a los productores}
-  \includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/10.jpg}
+  \includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/12.jpg}
   \caption*{Fuente: trabajo de campo}
 \end{figure}
+
+
+
+\begin{tablas}
+{uso de la parcela en el ultimo año}{
+
+\begin{tabular}{lcl}
+\toprule
+\cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Uso\_parcela}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Conteo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Porcentaje}}}\\
+\midrule
+CULTIVOS PERMANENTES & 252 & 57.27\\
+CULTIVOS TRANSITORIOS & 165 & 37.50\\
+PASTOS NATURALES & 23 & 5.23\\
+\bottomrule
+\end{tabular}
+
+}
+\end{tablas}
+
+\begin{graficas}
+{uso de la parcela en el ultimo año}{
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/fig_quince-1} 
+\end{knitrout}
+
+}
+\end{graficas}
+
+\begin{fotos}
+{sensibilizacion a la poblacion}{13}
+\end{fotos}
+
+
+
+\begin{tablas}
+{Modalidad de tenencia de la parcela}{
+
+\begin{tabular}{lcl}
+\toprule
+\cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{tenencia}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Conteo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Porcentaje}}}\\
+\midrule
+ALQUILER & 1 & 0.22\\
+OTRO & 8 & 1.78\\
+PRESTADO O CEDIDO & 1 & 0.22\\
+PROPIA & 242 & 53.90\\
+TIERRAS COMUNALES & 197 & 43.88\\
+\bottomrule
+\end{tabular}
+
+}
+\end{tablas}
+
+\begin{graficas}
+{Modalidad de tenencia de la parcela}{
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/fig_dieciseis-1} 
+\end{knitrout}
+}
+\end{graficas}
+
+\begin{fotos}
+{aplicacion de encuestas}{14}
+\end{fotos}
+
+
+\begin{tablas}
+{Tipo de documento de la parcela}{
+
+\begin{tabular}{lcl}
+\toprule
+\cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Documento\_parcela}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Conteo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Porcentaje}}}\\
+\midrule
+HERENCIA & 41 & 9.19\\
+OTRO & 31 & 6.95\\
+POSESIONARIO & 139 & 31.17\\
+TITULO COMUNAL & 200 & 44.84\\
+TITULO PROPIO & 35 & 7.85\\
+\bottomrule
+\end{tabular}
+
+}
+\end{tablas}
+
+\begin{graficas}
+{Tipo de documento de la parcela}{
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/fig_diesiete-1} 
+\end{knitrout}
+}
+\end{graficas}
+
+\begin{fotos}
+{reconocimiento en campo}{15}
+\end{fotos}
+
+
+\begin{tablas}
+{Organizacion a la que pertenece}{
+
+\begin{tabular}{lcl}
+\toprule
+\cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Tipo\_organizacion}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Conteo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Porcentaje}}}\\
+\midrule
+COMISION DE REGANTES & 201 & 45.48\\
+COMITE DE USUARIOS & 171 & 38.69\\
+JUNTA DE USUARIOS & 70 & 15.84\\
+\bottomrule
+\end{tabular}
+
+
+}
+\end{tablas}
+
+\begin{graficas}
+{Organizacion a la que pertenece}{
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/fig_dieciocho-1} 
+\end{knitrout}
+}
+\end{graficas}
+
+\begin{fotos}
+{reconocimiento en campo}{16}
+\end{fotos}
+
+\begin{tablas}
+{Organizacion a la que pertenece}{
+
+\begin{tabular}{lcl}
+\toprule
+\cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Tiempo\_organizacion}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Conteo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Porcentaje}}}\\
+\midrule
+0.5 H & 1 & 0.27\\
+05 A & 1 & 0.27\\
+1 A & 5 & 1.36\\
+1 AÑO & 2 & 0.54\\
+1 TOPO & 1 & 0.27\\
+\addlinespace
+1/2 TOPO & 1 & 0.27\\
+10 & 17 & 4.62\\
+10 A & 8 & 2.17\\
+10 AÑOS & 19 & 5.16\\
+10 AÑOS & 2 & 0.54\\
+\addlinespace
+11 AÑOS & 2 & 0.54\\
+11 AÑOS & 1 & 0.27\\
+12 & 1 & 0.27\\
+12 A & 5 & 1.36\\
+12 AÑOS & 4 & 1.09\\
+\addlinespace
+12 AÑOS & 1 & 0.27\\
+13 A & 2 & 0.54\\
+13 AÑOS & 5 & 1.36\\
+14 & 1 & 0.27\\
+14 A & 3 & 0.82\\
+\addlinespace
+15 & 20 & 5.43\\
+15 A & 4 & 1.09\\
+15 AÑ0S & 1 & 0.27\\
+15 AÑOS & 25 & 6.79\\
+15 AÑOS & 2 & 0.54\\
+\addlinespace
+16 AÑOS & 1 & \vphantom{1} 0.27\\
+17 & 1 & 0.27\\
+17 A & 2 & 0.54\\
+17 AÑOS & 1 & 0.27\\
+18 & 2 & 0.54\\
+\addlinespace
+18 A & 16 & 4.35\\
+18 AÑOS & 4 & 1.09\\
+18 AÑOS & 1 & 0.27\\
+19 AÑOS & 1 & 0.27\\
+2 A & 3 & 0.82\\
+\addlinespace
+2 AÑOS & 8 & 2.17\\
+20 & 4 & 1.09\\
+20 A & 9 & 2.45\\
+20 AÑOS & 22 & 5.98\\
+20 AÑOS & 3 & 0.82\\
+\addlinespace
+22 & 1 & 0.27\\
+22 A & 3 & 0.82\\
+23 A & 3 & 0.82\\
+24 A & 2 & 0.54\\
+24 AÑOS & 8 & 2.17\\
+\addlinespace
+25 & 1 & 0.27\\
+25 A & 8 & 2.17\\
+25 AÑOS & 5 & 1.36\\
+25 HA & 1 & 0.27\\
+25 años & 1 & 0.27\\
+\addlinespace
+27 A & 1 & 0.27\\
+27 AÑOS & 1 & 0.27\\
+28 & 1 & 0.27\\
+3 A & 12 & 3.26\\
+3 AÑOS & 3 & 0.82\\
+\addlinespace
+30 & 1 & 0.27\\
+30 A & 6 & 1.63\\
+30 AÑOS & 8 & 2.17\\
+31 A & 1 & 0.27\\
+35 AÑOS & 1 & 0.27\\
+\addlinespace
+36 A & 1 & 0.27\\
+39 A & 2 & 0.54\\
+4 A & 7 & 1.90\\
+4 AÑOS & 4 & 1.09\\
+40 & 3 & 0.82\\
+\addlinespace
+40 A & 2 & 0.54\\
+40 AÑOS & 9 & 2.45\\
+40 AÑOS & 1 & 0.27\\
+45 A & 1 & 0.27\\
+45 AÑOS & 1 & 0.27\\
+\addlinespace
+5 & 2 & 0.54\\
+5 A & 4 & 1.09\\
+5 AÑOS & 7 & 1.90\\
+5 AÑOS & 1 & 0.27\\
+50 A & 1 & 0.27\\
+\addlinespace
+50 AÑOS & 2 & 0.54\\
+6 & 1 & 0.27\\
+6 AÑOS & 1 & 0.27\\
+6 AÑOS & 1 & 0.27\\
+60 A & 1 & 0.27\\
+\addlinespace
+60 AÑOS & 3 & 0.82\\
+7 & 1 & 0.27\\
+7 A & 2 & 0.54\\
+70 AÑOS & 1 & 0.27\\
+8 & 2 & 0.54\\
+\addlinespace
+8 A & 14 & 3.80\\
+8 AÑOS & 2 & 0.54\\
+DESDE SIEMPRE & 1 & 0.27\\
+MAS DE 12 A & 1 & 0.27\\
+MAS DE 15 AÑOS & 8 & 2.17\\
+\addlinespace
+MAS DE 20 AÑOS & 1 & 0.27\\
+\bottomrule
+\end{tabular}
+
+
+}
+\end{tablas}
+
+\begin{graficas}
+{Organizacion a la que pertenece}{
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/fig_diecinueve-1} 
+\end{knitrout}
+}
+\end{graficas}
+
+\begin{fotos}
+{reconocimiento en campo}{17}
+\end{fotos}
+
+
+\begin{tablas}
+{Organizacion a la que pertenece}{
+
+\begin{tabular}{lcl}
+\toprule
+\cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Fuente\_riego}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Conteo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Porcentaje}}}\\
+\midrule
+LAGO O LAGUNA & 2 & 0.45\\
+MANANTIAL & 217 & 48.55\\
+OTRO & 18 & 4.03\\
+POZOS & 1 & 0.22\\
+RIO & 209 & 46.76\\
+\bottomrule
+\end{tabular}
+
+
+}
+\end{tablas}
+\begin{graficas}
+{Organizacion a la que pertenece}{
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/fig_veinte-1} 
+\end{knitrout}
+}
+\end{graficas}
+\begin{fotos}
+{reconocimiento en campo}{18}
+\end{fotos}
+
+
+\begin{tablas}
+{Fuente de agua para riego}{
+
+\begin{tabular}{lcl}
+\toprule
+\cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Fuente\_riego}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Conteo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Porcentaje}}}\\
+\midrule
+LAGO O LAGUNA & 2 & 0.45\\
+MANANTIAL & 217 & 48.55\\
+OTRO & 18 & 4.03\\
+POZOS & 1 & 0.22\\
+RIO & 209 & 46.76\\
+\bottomrule
+\end{tabular}
+
+
+}
+\end{tablas}
+\begin{graficas}
+{Fuente de agua para riego}{
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/fig_veintiuno-1} 
+\end{knitrout}
+}
+\end{graficas}
+\begin{fotos}
+{reconocimiento en campo}{19}
+\end{fotos}
+
+
+\begin{tablas}
+{Frecuencia de riego de la parcela}{
+
+\begin{tabular}{lcl}
+\toprule
+\cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Frecuencia\_riego}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Conteo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Porcentaje}}}\\
+\midrule
+OTRO & 31 & 7.01\\
+POR DIAS & 83 & 18.78\\
+POR HORAS & 20 & 4.52\\
+POR TURNOS & 305 & 69.00\\
+POR VOLUMEN & 3 & 0.68\\
+\bottomrule
+\end{tabular}
+
+
+}
+\end{tablas}
+\begin{graficas}
+{Frecuencia de riego de la parcela}{
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/fig_veintidos-1} 
+\end{knitrout}
+}
+\end{graficas}
+\begin{fotos}
+{reconocimiento en campo}{20}
+\end{fotos}
+
+\begin{tablas}
+{Infraestructura de riego}{
+
+\begin{tabular}{lcl}
+\toprule
+\cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Tipo\_infraestructura}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Conteo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Porcentaje}}}\\
+\midrule
+REBESTIDO & 259 & 72.35\\
+TAJO ABIERTO & 99 & 27.65\\
+\bottomrule
+\end{tabular}
+
+
+}
+\end{tablas}
+\begin{graficas}
+{Infraestructura de riego}{
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/fig_veintitres-1} 
+\end{knitrout}
+}
+\end{graficas}
+\begin{fotos}
+{reconocimiento en campo}{21}
+\end{fotos}
+
+
+\begin{tablas}
+{Tipo de riego que utiliza}{
+
+\begin{tabular}{lcl}
+\toprule
+\cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Tipo\_riego}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Conteo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Porcentaje}}}\\
+\midrule
+OTRO & 9 & 2.04\\
+POR GRAVEDAD & 43 & 9.73\\
+POZO O AGUA SUBTERRANEA & 1 & 0.23\\
+TECNIFICADO & 389 & 88.01\\
+\bottomrule
+\end{tabular}
+
+
+}
+\end{tablas}
+\begin{graficas}
+{Tipo de riego que utiliza}{
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/fig_veinticuatro-1} 
+\end{knitrout}
+}
+\end{graficas}
+\begin{fotos}
+{reconocimiento en campo}{22}
+\end{fotos}
+
+
+\begin{tablas}
+{Pago por uso de agua para riego}{
+
+\begin{tabular}{lcl}
+\toprule
+\cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Pago\_agua}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Conteo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Porcentaje}}}\\
+\midrule
+NO & 27 & 6.15\\
+SI & 412 & 93.85\\
+\bottomrule
+\end{tabular}
+
+
+}
+\end{tablas}
+\begin{graficas}
+{Pago por uso de agua para riego}{
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/fig_veinticinco-1} 
+\end{knitrout}
+}
+\end{graficas}
+\begin{fotos}
+{reconocimiento en campo}{23}
+\end{fotos}
+
+
+\begin{tablas}
+{Frecuencia por uso de agua para riego}{
+
+\begin{tabular}{lcl}
+\toprule
+\cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Frecuencia\_pago}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Conteo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Porcentaje}}}\\
+\midrule
+ANUAL & 348 & 85.93\\
+DIARIO & 24 & 5.93\\
+MENSUAL & 18 & 4.44\\
+QUINCENAL & 6 & 1.48\\
+SEMESTRAL & 9 & 2.22\\
+\bottomrule
+\end{tabular}
+
+
+}
+\end{tablas}
+\begin{graficas}
+{Frecuencia por uso de agua para riego}{
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/fig_veintiseis-1} 
+\end{knitrout}
+}
+\end{graficas}
+\begin{fotos}
+{reconocimiento en campo}{24}
+\end{fotos}
+
+
+\begin{tablas}
+{Derecho de uso de agua}{
+
+\begin{tabular}{lcl}
+\toprule
+\cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Derecho}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Conteo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Porcentaje}}}\\
+\midrule
+NO & 6 & 1.36\\
+SI & 434 & 98.64\\
+\bottomrule
+\end{tabular}
+
+
+}
+\end{tablas}
+\begin{graficas}
+{Derecho de uso de agua}{
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/fig_veintisiete-1} 
+\end{knitrout}
+}
+\end{graficas}
+\begin{fotos}
+{aplicacion de encuesta}{25}
+\end{fotos}
+
+
+\begin{tablas}
+{Produccion predominante}{
+
+\begin{tabular}{lcl}
+\toprule
+\cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Cultivo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Conteo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Porcentaje}}}\\
+\midrule
+HORTALIZAS & 9 & 2.03\\
+MAIZ CHOCLO & 40 & 9.03\\
+MAIZ CHOCLO, HORTALIZAS & 7 & 1.58\\
+MAIZ CHOCLO, HORTALIZAS, OTRO & 1 & 0.23\\
+MAIZ CHOCLO, OTRO & 2 & 0.45\\
+\addlinespace
+OTRO & 2 & 0.45\\
+PAPA & 12 & 2.71\\
+PAPA, HORTALIZAS & 1 & 0.23\\
+PAPA, MAIZ CHOCLO & 47 & 10.61\\
+PAPA, MAIZ CHOCLO, HORTALIZAS & 10 & 2.26\\
+\addlinespace
+PAPA, MAIZ CHOCLO, HORTALIZAS, OTRO & 1 & 0.23\\
+PAPA, MAIZ CHOCLO, OTRO & 1 & 0.23\\
+PAPA, OTRO & 1 & 0.23\\
+PASTOS & 60 & 13.54\\
+PASTOS, HORTALIZAS & 1 & 0.23\\
+\addlinespace
+PASTOS, MAIZ CHOCLO & 5 & 1.13\\
+PASTOS, MAIZ CHOCLO, HORTALIZAS & 1 & 0.23\\
+PASTOS, PAPA & 7 & 1.58\\
+PASTOS, PAPA, HORTALIZAS & 27 & 6.09\\
+PASTOS, PAPA, HORTALIZAS, OTRO & 4 & 0.90\\
+\addlinespace
+PASTOS, PAPA, MAIZ CHOCLO & 50 & 11.29\\
+PASTOS, PAPA, MAIZ CHOCLO, HORTALIZAS & 141 & 31.83\\
+PASTOS, PAPA, MAIZ CHOCLO, HORTALIZAS, OTRO & 5 & 1.13\\
+PASTOS, PAPA, MAIZ CHOCLO, OTRO & 4 & 0.90\\
+PASTOS, PAPA, OTRO & 4 & 0.90\\
+\bottomrule
+\end{tabular}
+
+
+}
+\end{tablas}
+%\begin{graficas}
+%{Produccion predominante}{
+
+%}
+%\end{graficas}
+\begin{fotos}
+{aplicacion de encuesta}{26}
+\end{fotos}
+
+
+\begin{tablas}
+{Tiempo que se dedica al cultivo}{
+
+\begin{tabular}{lcl}
+\toprule
+\cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Tiempo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Conteo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Porcentaje}}}\\
+\midrule
+HACE 02 AÑOS & 3 & 0.71\\
+HACE 1 AÑO & 3 & 0.71\\
+MAS DE 3 AÑOS & 56 & 13.30\\
+MAS DE 5 AÑOS & 359 & 85.27\\
+\bottomrule
+\end{tabular}
+
+
+}
+\end{tablas}
+\begin{graficas}
+{Tiempo que se dedica al cultivo}{
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/fig_veintinueve-1} 
+\end{knitrout}
+}
+\end{graficas}
+\begin{fotos}
+{socializacion del proyecto}{27}
+\end{fotos}
+
+
+\begin{tablas}
+{Finalidad de cosecha}{
+
+\begin{tabular}{lcl}
+\toprule
+\cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Finalidad}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Conteo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Porcentaje}}}\\
+\midrule
+CONSUMO & 144 & 35.29\\
+VENTA & 2 & 0.49\\
+VENTA Y CONSUMO & 262 & 64.22\\
+\bottomrule
+\end{tabular}
+
+
+}
+\end{tablas}
+\begin{graficas}
+{Finalidad de cosecha}{
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/fig_treinta-1} 
+\end{knitrout}
+}
+\end{graficas}
+\begin{fotos}
+{socializacion del proyecto}{28}
+\end{fotos}
+
+
+\begin{tablas}
+{Causas que ocasionan la disminucion de la produccion de cultivo}{
+
+\begin{tabular}{lcl}
+\toprule
+\cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Causas}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Conteo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Porcentaje}}}\\
+\midrule
+FACTORES ADVERSOS (HELADAS Y GRANIZADAS) & 22 & 5.07\\
+FALTA DE AGUA & 24 & 5.53\\
+FALTA DE AGUA, FACTORES ADVERSOS (HELADAS Y GRANIZADAS) & 100 & 23.04\\
+FALTA DE AGUA, SUELOS PROBRES Y ERIAZOS & 7 & 1.61\\
+FALTA DE AGUA, SUELOS PROBRES Y ERIAZOS, FACTORES ADVERSOS (HELADAS Y GRANIZADAS) & 267 & 61.52\\
+\addlinespace
+SUELOS PROBRES Y ERIAZOS & 5 & 1.15\\
+SUELOS PROBRES Y ERIAZOS, FACTORES ADVERSOS (HELADAS Y GRANIZADAS) & 9 & 2.07\\
+\bottomrule
+\end{tabular}
+
+
+}
+\end{tablas}
+\begin{graficas}
+{Causas que ocasionan la disminucion de la produccion de cultivo}{
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/fig_treintayuno-1} 
+\end{knitrout}
+}
+\end{graficas}
+\begin{fotos}
+{socializacion del proyecto}{29}
+\end{fotos}
+
 \end{document}

@@ -6,7 +6,73 @@
 \usepackage{booktabs}
 \usepackage[table]{xcolor}
 
+\newenvironment{tablas}[2]
+{\begin{table}[H]
+		\centering
+		\caption{#1}
+		#2
+		\caption*{Fuente trabajo de campo}}
+	{\end{table}}
+
+
+\newenvironment{fotos}[2]
+{\begin{figure}[H]
+	\centering
+	\caption{#1}
+	\includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/#2.jpg}
+	\caption*{Fuente: trabajo de campo}}
+{\end{figure}}
+
+
+\newenvironment{graficas}[2]
+{\begin{figure}[H]
+		\centering
+		\caption{#1}
+		#2
+		\caption*{Fuente trabajo de campo}}
+{\end{figure}}
+
+
 \begin{document}
+<<setup, include=FALSE, cache=FALSE>>=
+#cargar librerias
+library(knitr)
+library(kableExtra)
+library(dplyr)
+library(stringr)
+library(ggplot2)
+
+crear_tabla <- function(datos, columna, nuevo_nombre) {
+#setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+#datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")  
+  
+  tabla <- datos %>%
+    select(!!sym(columna)) %>%
+    rename(!!nuevo_nombre := !!sym(columna)) %>%
+    group_by(!!sym(nuevo_nombre)) %>%
+    summarise(Conteo = n()) %>%
+    arrange(!!sym(nuevo_nombre)) %>%
+    mutate(Porcentaje = round((Conteo / sum(Conteo)) * 100, 2))
+  
+  tabla_latex <- kable(tabla, format = "latex", booktabs = TRUE, align = c("l", "c", "l")) %>%
+    row_spec(0, background = '#87A96B', color = 'black', bold = TRUE)
+  
+  return(tabla_latex)
+}
+
+
+crear_grafica <- function(datos, columna){
+  grafica <- ggplot(datos,aes(!!sym(columna))) +
+    geom_bar( fill = rgb(0.53, 0.66, 0.42), colour = "white") + xlab("") + ylab("") 
+	grafica + theme_bw()
+	
+return(grafica)	
+    
+}
+
+@
+
+
 modificacion desde github desktop\\
 Se realizara el analisis de las encuestas de todas la encuestas realizadas en el trabajo de campo.\\
 \begin{table}[H]
@@ -772,76 +838,158 @@ Se analizara el genero de los encuestados
   \caption*{Fuente: trabajo de campo}
 \end{figure}
 
-
-
-
-
-
 \begin{table}[H]
   \centering
   \caption{Energia electrica}
 <<tabla_trece, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+#   library(knitr)
+#   library(kableExtra)
+#   library(dplyr)
+#   library(ggplot2)
+# 	setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+#   datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+#   #datos$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS.
+#   stat(datos$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS.)
+#   
+#   datos$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS.[datos$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS. == ""] <- NA
+#   datos$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS.[datos$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS. == "PEQUEÑO"] <- NA
+#   datos$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS.[datos$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS. == "1OO M"] <- "100 M"
+#   datos <- datos[!is.na(datos$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS.), ]
+#   
+# 	filtered_data <- datos %>% 
+# 	  select(X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS.)
+# 	
+# 	#aca se extrae solo el numero
+# 	library(stringr)
+# 	
+# 	#otra opcion para extraer numeros con decimales, solo extrae numeros con decimales y sin decimales
+# 	filtered_data <- filtered_data %>% 
+# 	  mutate(numerode = as.numeric(str_extract(X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS., "\\d+\\.?\\d*")))
+# 	
+# 	#filtered_data$numeros <- str_extract(filtered_data$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS., "\\d+")
+# 	#filtered_data$numeros
+# 	#filtered_data$numeros <- as.numeric(filtered_data$numeros)
+# 	#aca se extrae solo el texto
+# 	filtered_data$texto <- str_remove_all(filtered_data$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS., "\\d+")
+# 	filtered_data$texto
+# 	#se debera convertir los valores a hectareas todos
+# 	filtered_data <- filtered_data %>% 
+# 	  mutate(
+# 	    nuevo = case_when(
+# 	      str_detect(texto, "H") ~ numerode * 1,
+# 	      str_detect(texto, "h") ~ numerode * 1,
+# 	      str_detect(texto, "TOPO") ~ numerode * 0.3,
+# 	      str_detect(texto, "M") ~ numerode * 0.0001,
+# 	      
+# 	      TRUE ~ numerode
+# 	    )
+# 	  )
+# 	class(filtered_data$nuevo)
+# 	stat(filtered_data$nuevo)
+# 	hist(filtered_data$nuevo)
+# 	
+# 	
+# 	
+# 	graph1 <- ggplot(filtered_data, aes(nuevo)) +
+#   geom_bar( fill = rgb(0.53, 0.66, 0.42), colour = "white") + xlab("") + ylab("") 
+# 	graph1 + theme_bw()
+# 	
+# 	
+# 	summary(filtered_data$nuevo)
+# 	
+# 	
+# 	class(filtered_data$nuevo)
+# 	
+# 	#viendo diagrama de cajas
+# 	ggplot(filtered_data, mapping = aes(y=nuevo)) +
+# 	  geom_boxplot(outlier.color = "green")
+# 	
+# 	#viendo cuartiles
+# 	q1 <- quantile(x = filtered_data$nuevo, probs = c(0.25, 0.50, 0.75), type = 6)
+# 	q1
+# 	
+# 	#se quitara los que tienen valores mayores a 20]
+# 	fil <- subset(filtered_data, filtered_data$nuevo <= 1.2)
+# 	head(fil)
+# 	
+# 	ggplot(fil, mapping = aes(y=nuevo)) +
+# 	  geom_boxplot(outlier.color = "green")
+# 	
+# 	
+# 	
+# 	
+# 	filtered_data <- filtered_data %>% 
+# 	  rename("area" = X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS.)
+# 	
+# 	#caso porcentaje
+# 	#contar  el numero de edades en cada grupo
+# 	tabla <- filtered_data %>% 
+# 	  group_by(area) %>% 
+# 	  summarise(Conteo = n()) %>% 
+# 	  arrange(area)
+# 	#opcion caso con porcentajes
+# 	tabla <- tabla %>% 
+# 	  mutate(Porcentaje = round((Conteo / sum(Conteo)) *100, 2))
+# 	
+# 	#alternativa mejorada, ojala funciones, si funciona :)
+# 	tabla_latex <- kable(tabla, format = "latex", booktabs = TRUE, align = c("l", "c", "l")) %>% #
+# 	  row_spec(0, background = '#87A96B', color = 'black', bold = TRUE)
+# 	
+# 	print(tabla_latex)
+@
+  \caption*{Fuente: Trabajo de campo}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \caption{Energia electrica}
+<< fig_trece, echo = FALSE, fig.width=7, fig.height=5>>=
+#   setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+#   datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+#   library(stringr)
+# 	library(ggplot2)
+#   datos$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS.[datos$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS. == ""] <- NA
+#   datos <- datos[!is.na(datos$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS.), ]
+# 	graph1 <- ggplot(datos, aes(X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS.)) +
+#   geom_bar( fill = rgb(0.53, 0.66, 0.42), colour = "white") + xlab("") + ylab("") 
+# 	graph1 + theme_bw()
+	@
+  \caption*{Fuente: Trabajo de campo}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \caption{Sensibilizacion a los productores}
+  \includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/11.jpg}
+  \caption*{Fuente: trabajo de campo}
+\end{figure}
+
+
+\begin{table}[H]
+  \centering
+  \caption{Persona que trabaja en la parcela}
+<<tabla_catorce, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
   library(knitr)
   library(kableExtra)
   library(dplyr)
   setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
   datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
-  #datos$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS.
-  stat(datos$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS.)
-  
-  datos$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS.[datos$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS. == ""] <- NA
-  datos <- datos[!is.na(datos$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS.), ]
-  
+  #datos$X.CÓMO.ES.SU.INGRESO.FAMILIAR.
+  datos$X.QUIÉN.TRABAJA.LA.PARCELA.[datos$X.QUIÉN.TRABAJA.LA.PARCELA. == ""] <- NA
+  datos <- datos[!is.na(datos$X.QUIÉN.TRABAJA.LA.PARCELA.), ]
+  #datos$GENERO[datos$GENERO == ""] <- "Femenino"
+	#para realizar un filtro
 	filtered_data <- datos %>% 
-	  select(X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS.)
-	
-	#aca se extrae solo el numero
-	library(stringr)
-	
-	#otra opcion para extraer numeros con decimales, solo extrae numeros con decimales y sin decimales
+	  select(X.QUIÉN.TRABAJA.LA.PARCELA.)
 	filtered_data <- filtered_data %>% 
-	  mutate(numerode = as.numeric(str_extract(X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS., "\\d+\\.?\\d*")))
-	
-	#filtered_data$numeros <- str_extract(filtered_data$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS., "\\d+")
-	#filtered_data$numeros
-	#filtered_data$numeros <- as.numeric(filtered_data$numeros)
-	#aca se extrae solo el texto
-	filtered_data$texto <- str_remove_all(filtered_data$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS., "\\d+")
-	filtered_data$texto
-	#se debera convertir los valores a hectareas todos
-	filtered_data <- filtered_data %>% 
-	  mutate(
-	    nuevo = case_when(
-	      str_detect(texto, "H") ~ numerode * 1,
-	      str_detect(texto, "h") ~ numerode * 1,
-	      str_detect(texto, "TOPO") ~ numerode * 0.3,
-	      str_detect(texto, "M") ~ numerode * 0.0001,
-	      
-	      TRUE ~ numerode
-	    )
-	  )
-	class(filtered_data$nuevo)
-	stat(filtered_data$nuevo)
-	hist(filtered_data$nuevo)
-	ggplot() +
-	  geom_bar()
-	
-	
-	graph1 <- ggplot(filtered_data, aes(nuevo)) +
-  geom_bar( fill = rgb(0.53, 0.66, 0.42), colour = "white") + xlab("") + ylab("") 
-	graph1 + theme_bw()
-	
-	
-	
-	filtered_data <- filtered_data %>% 
-	  rename("area" = X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS.)
+	  rename("Trabaja" = X.QUIÉN.TRABAJA.LA.PARCELA.)
 	
 	#caso porcentaje
 	#contar  el numero de edades en cada grupo
 	tabla <- filtered_data %>% 
-	  group_by(area) %>% 
+	  group_by(Trabaja) %>% 
 	  summarise(Conteo = n()) %>% 
-	  arrange(area)
+	  arrange(Trabaja)
 	#opcion caso con porcentajes
 	tabla <- tabla %>% 
 	  mutate(Porcentaje = round((Conteo / sum(Conteo)) *100, 2))
@@ -857,15 +1005,15 @@ Se analizara el genero de los encuestados
 
 \begin{figure}[H]
   \centering
-  \caption{Energia electrica}
-<< fig_trece, echo = FALSE, fig.width=7, fig.height=5>>=
+  \caption{Persona que trabaja en la parcela}
+<< fig_catorce, echo = FALSE, fig.width=7, fig.height=5>>=
   setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
   datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
   library(stringr)
 	library(ggplot2)
-  datos$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS.[datos$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS. == ""] <- NA
-  datos <- datos[!is.na(datos$X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS.), ]
-	graph1 <- ggplot(datos, aes(X.CUÁL.ES.EL.AREA.TOTAL.DE.SU.PARCELA.EN.HECTAREAS.)) +
+  datos$X.QUIÉN.TRABAJA.LA.PARCELA.[datos$X.QUIÉN.TRABAJA.LA.PARCELA. == ""] <- NA
+  datos <- datos[!is.na(datos$X.QUIÉN.TRABAJA.LA.PARCELA.), ]
+	graph1 <- ggplot(datos, aes(X.QUIÉN.TRABAJA.LA.PARCELA.)) +
   geom_bar( fill = rgb(0.53, 0.66, 0.42), colour = "white") + xlab("") + ylab("") 
 	graph1 + theme_bw()
 	@
@@ -875,7 +1023,591 @@ Se analizara el genero de los encuestados
 \begin{figure}[H]
   \centering
   \caption{Sensibilizacion a los productores}
-  \includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/10.jpg}
+  \includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/12.jpg}
   \caption*{Fuente: trabajo de campo}
 \end{figure}
+
+
+
+\begin{tablas}
+{uso de la parcela en el ultimo año}{
+<<tabla_quince, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  library(knitr)
+  library(kableExtra)
+  library(dplyr)
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+  #datos$X.CÓMO.ES.SU.INGRESO.FAMILIAR.
+  datos$X.EN.LOS.ULTIMOS.12.MESES.LA.PARCELA.SE.UTILIZO.PARA.[datos$X.EN.LOS.ULTIMOS.12.MESES.LA.PARCELA.SE.UTILIZO.PARA. == ""] <- NA
+  datos <- datos[!is.na(datos$X.EN.LOS.ULTIMOS.12.MESES.LA.PARCELA.SE.UTILIZO.PARA.), ]
+  #datos$GENERO[datos$GENERO == ""] <- "Femenino"
+	#para realizar un filtro
+	filtered_data <- datos %>% 
+	  select(X.EN.LOS.ULTIMOS.12.MESES.LA.PARCELA.SE.UTILIZO.PARA.)
+	filtered_data <- filtered_data %>% 
+	  rename("Uso_parcela" = X.EN.LOS.ULTIMOS.12.MESES.LA.PARCELA.SE.UTILIZO.PARA.)
+	
+	#caso porcentaje
+	#contar  el numero de edades en cada grupo
+	tabla <- filtered_data %>% 
+	  group_by(Uso_parcela) %>% 
+	  summarise(Conteo = n()) %>% 
+	  arrange(Uso_parcela)
+	#opcion caso con porcentajes
+	tabla <- tabla %>% 
+	  mutate(Porcentaje = round((Conteo / sum(Conteo)) *100, 2))
+	
+	#alternativa mejorada, ojala funciones, si funciona :)
+	tabla_latex <- kable(tabla, format = "latex", booktabs = TRUE, align = c("l", "c", "l")) %>% #
+	  row_spec(0, background = '#87A96B', color = 'black', bold = TRUE)
+	
+	print(tabla_latex)
+@
+}
+\end{tablas}
+
+\begin{graficas}
+{uso de la parcela en el ultimo año}{
+<< fig_quince, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+  library(stringr)
+	library(ggplot2)
+  datos$X.EN.LOS.ULTIMOS.12.MESES.LA.PARCELA.SE.UTILIZO.PARA.[datos$X.EN.LOS.ULTIMOS.12.MESES.LA.PARCELA.SE.UTILIZO.PARA. == ""] <- NA
+  datos <- datos[!is.na(datos$X.EN.LOS.ULTIMOS.12.MESES.LA.PARCELA.SE.UTILIZO.PARA.), ]
+	graph1 <- ggplot(datos, aes(X.EN.LOS.ULTIMOS.12.MESES.LA.PARCELA.SE.UTILIZO.PARA.)) +
+  geom_bar( fill = rgb(0.53, 0.66, 0.42), colour = "white") + xlab("") + ylab("") 
+	graph1 + theme_bw()
+	@
+
+}
+\end{graficas}
+
+\begin{fotos}
+{sensibilizacion a la poblacion}{13}
+\end{fotos}
+
+
+
+\begin{tablas}
+{Modalidad de tenencia de la parcela}{
+<<tabla_dieciseis, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  library(knitr)
+  library(kableExtra)
+  library(dplyr)
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+  #datos$X.CÓMO.ES.SU.INGRESO.FAMILIAR.
+  datos$MODAIDAD.DE.TENENCIA.DE.LA.PARCELA[datos$MODAIDAD.DE.TENENCIA.DE.LA.PARCELA == ""] <- NA
+  datos <- datos[!is.na(datos$MODAIDAD.DE.TENENCIA.DE.LA.PARCELA), ]
+  #datos$GENERO[datos$GENERO == ""] <- "Femenino"
+	#para realizar un filtro
+	filtered_data <- datos %>% 
+	  select(MODAIDAD.DE.TENENCIA.DE.LA.PARCELA)
+	filtered_data <- filtered_data %>% 
+	  rename("tenencia" = MODAIDAD.DE.TENENCIA.DE.LA.PARCELA)
+	
+	#caso porcentaje
+	#contar  el numero de edades en cada grupo
+	tabla <- filtered_data %>% 
+	  group_by(tenencia) %>% 
+	  summarise(Conteo = n()) %>% 
+	  arrange(tenencia)
+	#opcion caso con porcentajes
+	tabla <- tabla %>% 
+	  mutate(Porcentaje = round((Conteo / sum(Conteo)) *100, 2))
+	
+	#alternativa mejorada, ojala funciones, si funciona :)
+	tabla_latex <- kable(tabla, format = "latex", booktabs = TRUE, align = c("l", "c", "l")) %>% #
+	  row_spec(0, background = '#87A96B', color = 'black', bold = TRUE)
+	
+	print(tabla_latex)
+@
+}
+\end{tablas}
+
+\begin{graficas}
+{Modalidad de tenencia de la parcela}{
+<< fig_dieciseis, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+  library(stringr)
+	library(ggplot2)
+  datos$MODAIDAD.DE.TENENCIA.DE.LA.PARCELA[datos$MODAIDAD.DE.TENENCIA.DE.LA.PARCELA == ""] <- NA
+  datos <- datos[!is.na(datos$MODAIDAD.DE.TENENCIA.DE.LA.PARCELA), ]
+	graph1 <- ggplot(datos, aes(MODAIDAD.DE.TENENCIA.DE.LA.PARCELA)) +
+  geom_bar( fill = rgb(0.53, 0.66, 0.42), colour = "white") + xlab("") + ylab("") 
+	graph1 + theme_bw()
+	@
+}
+\end{graficas}
+
+\begin{fotos}
+{aplicacion de encuestas}{14}
+\end{fotos}
+
+
+\begin{tablas}
+{Tipo de documento de la parcela}{
+<<tabla_diesiete, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  library(knitr)
+  library(kableExtra)
+  library(dplyr)
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+  #datos$X.CÓMO.ES.SU.INGRESO.FAMILIAR.
+  datos$LA.PARCELA.CUENTA.CON[datos$LA.PARCELA.CUENTA.CON == ""] <- NA
+  datos <- datos[!is.na(datos$LA.PARCELA.CUENTA.CON), ]
+  #datos$GENERO[datos$GENERO == ""] <- "Femenino"
+	#para realizar un filtro
+	filtered_data <- datos %>% 
+	  select(LA.PARCELA.CUENTA.CON)
+	filtered_data <- filtered_data %>% 
+	  rename("Documento_parcela" = LA.PARCELA.CUENTA.CON)
+	
+	#caso porcentaje
+	#contar  el numero de edades en cada grupo
+	tabla <- filtered_data %>% 
+	  group_by(Documento_parcela) %>% 
+	  summarise(Conteo = n()) %>% 
+	  arrange(Documento_parcela)
+	#opcion caso con porcentajes
+	tabla <- tabla %>% 
+	  mutate(Porcentaje = round((Conteo / sum(Conteo)) *100, 2))
+	
+	#alternativa mejorada, ojala funciones, si funciona :)
+	tabla_latex <- kable(tabla, format = "latex", booktabs = TRUE, align = c("l", "c", "l")) %>% #
+	  row_spec(0, background = '#87A96B', color = 'black', bold = TRUE)
+	
+	print(tabla_latex)
+@
+}
+\end{tablas}
+
+\begin{graficas}
+{Tipo de documento de la parcela}{
+<< fig_diesiete, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+  library(stringr)
+	library(ggplot2)
+  datos$LA.PARCELA.CUENTA.CON[datos$LA.PARCELA.CUENTA.CON == ""] <- NA
+  datos <- datos[!is.na(datos$LA.PARCELA.CUENTA.CON), ]
+	graph1 <- ggplot(datos, aes(LA.PARCELA.CUENTA.CON)) +
+  geom_bar( fill = rgb(0.53, 0.66, 0.42), colour = "white") + xlab("") + ylab("") 
+	graph1 + theme_bw()
+	@
+}
+\end{graficas}
+
+\begin{fotos}
+{reconocimiento en campo}{15}
+\end{fotos}
+
+
+\begin{tablas}
+{Organizacion a la que pertenece}{
+<<tabla_dieciocho, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	
+	datos$X.A.QUE.TIPO.DE.ORGANIZACION.PERTENECE.PARA.EL.USO.DE.AGUA.PARA.RIEGO.[datos$X.A.QUE.TIPO.DE.ORGANIZACION.PERTENECE.PARA.EL.USO.DE.AGUA.PARA.RIEGO. == ""] <- NA
+  datos <- datos[!is.na(datos$X.A.QUE.TIPO.DE.ORGANIZACION.PERTENECE.PARA.EL.USO.DE.AGUA.PARA.RIEGO.), ]
+
+	crear_tabla(datos, "X.A.QUE.TIPO.DE.ORGANIZACION.PERTENECE.PARA.EL.USO.DE.AGUA.PARA.RIEGO.", "Tipo_organizacion")
+	
+	
+	
+@
+}
+\end{tablas}
+
+\begin{graficas}
+{Organizacion a la que pertenece}{
+<< fig_dieciocho, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	
+	datos$X.A.QUE.TIPO.DE.ORGANIZACION.PERTENECE.PARA.EL.USO.DE.AGUA.PARA.RIEGO.[datos$X.A.QUE.TIPO.DE.ORGANIZACION.PERTENECE.PARA.EL.USO.DE.AGUA.PARA.RIEGO. == ""] <- NA
+  datos <- datos[!is.na(datos$X.A.QUE.TIPO.DE.ORGANIZACION.PERTENECE.PARA.EL.USO.DE.AGUA.PARA.RIEGO.), ]
+  
+  crear_grafica(datos, "X.A.QUE.TIPO.DE.ORGANIZACION.PERTENECE.PARA.EL.USO.DE.AGUA.PARA.RIEGO.")
+	@
+}
+\end{graficas}
+
+\begin{fotos}
+{reconocimiento en campo}{16}
+\end{fotos}
+
+\begin{tablas}
+{Organizacion a la que pertenece}{
+<<tabla_diecinueve, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	
+	datos$X.CUANTO.TIEMPO.PARTICIPA.DE.ESTA.ORGANIZACIÓN.[datos$X.CUANTO.TIEMPO.PARTICIPA.DE.ESTA.ORGANIZACIÓN. == ""] <- NA
+  datos <- datos[!is.na(datos$X.CUANTO.TIEMPO.PARTICIPA.DE.ESTA.ORGANIZACIÓN.), ]
+
+	crear_tabla(datos, "X.CUANTO.TIEMPO.PARTICIPA.DE.ESTA.ORGANIZACIÓN.", "Tiempo_organizacion")
+	
+	
+	
+@
+}
+\end{tablas}
+
+\begin{graficas}
+{Organizacion a la que pertenece}{
+<< fig_diecinueve, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	
+	datos$X.CUANTO.TIEMPO.PARTICIPA.DE.ESTA.ORGANIZACIÓN.[datos$X.CUANTO.TIEMPO.PARTICIPA.DE.ESTA.ORGANIZACIÓN. == ""] <- NA
+  datos <- datos[!is.na(datos$X.CUANTO.TIEMPO.PARTICIPA.DE.ESTA.ORGANIZACIÓN.), ]
+  
+  crear_grafica(datos, "X.CUANTO.TIEMPO.PARTICIPA.DE.ESTA.ORGANIZACIÓN.")
+	@
+}
+\end{graficas}
+
+\begin{fotos}
+{reconocimiento en campo}{17}
+\end{fotos}
+
+
+\begin{tablas}
+{Organizacion a la que pertenece}{
+<<tabla_veinte, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$X.DE.QUE.FUENTE.PRINCIPALMENTE.PROVIENE.EL.AGUA.CON.LA.QUE.RIEGA.LA.PARCELA.[datos$X.DE.QUE.FUENTE.PRINCIPALMENTE.PROVIENE.EL.AGUA.CON.LA.QUE.RIEGA.LA.PARCELA. == ""] <- NA
+  datos <- datos[!is.na(datos$X.DE.QUE.FUENTE.PRINCIPALMENTE.PROVIENE.EL.AGUA.CON.LA.QUE.RIEGA.LA.PARCELA.), ]
+	crear_tabla(datos, "X.DE.QUE.FUENTE.PRINCIPALMENTE.PROVIENE.EL.AGUA.CON.LA.QUE.RIEGA.LA.PARCELA.", "Fuente_riego")
+@
+}
+\end{tablas}
+\begin{graficas}
+{Organizacion a la que pertenece}{
+<< fig_veinte, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$X.DE.QUE.FUENTE.PRINCIPALMENTE.PROVIENE.EL.AGUA.CON.LA.QUE.RIEGA.LA.PARCELA.[datos$X.DE.QUE.FUENTE.PRINCIPALMENTE.PROVIENE.EL.AGUA.CON.LA.QUE.RIEGA.LA.PARCELA. == ""] <- NA
+  datos <- datos[!is.na(datos$X.DE.QUE.FUENTE.PRINCIPALMENTE.PROVIENE.EL.AGUA.CON.LA.QUE.RIEGA.LA.PARCELA.), ]
+  crear_grafica(datos, "X.DE.QUE.FUENTE.PRINCIPALMENTE.PROVIENE.EL.AGUA.CON.LA.QUE.RIEGA.LA.PARCELA.")
+	@
+}
+\end{graficas}
+\begin{fotos}
+{reconocimiento en campo}{18}
+\end{fotos}
+
+
+\begin{tablas}
+{Fuente de agua para riego}{
+<<tabla_veintiuno, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$X.DE.QUE.FUENTE.PRINCIPALMENTE.PROVIENE.EL.AGUA.CON.LA.QUE.RIEGA.LA.PARCELA.[datos$X.DE.QUE.FUENTE.PRINCIPALMENTE.PROVIENE.EL.AGUA.CON.LA.QUE.RIEGA.LA.PARCELA. == ""] <- NA
+  datos <- datos[!is.na(datos$X.DE.QUE.FUENTE.PRINCIPALMENTE.PROVIENE.EL.AGUA.CON.LA.QUE.RIEGA.LA.PARCELA.), ]
+	crear_tabla(datos, "X.DE.QUE.FUENTE.PRINCIPALMENTE.PROVIENE.EL.AGUA.CON.LA.QUE.RIEGA.LA.PARCELA.", "Fuente_riego")
+@
+}
+\end{tablas}
+\begin{graficas}
+{Fuente de agua para riego}{
+<< fig_veintiuno, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$X.DE.QUE.FUENTE.PRINCIPALMENTE.PROVIENE.EL.AGUA.CON.LA.QUE.RIEGA.LA.PARCELA.[datos$X.DE.QUE.FUENTE.PRINCIPALMENTE.PROVIENE.EL.AGUA.CON.LA.QUE.RIEGA.LA.PARCELA. == ""] <- NA
+  datos <- datos[!is.na(datos$X.DE.QUE.FUENTE.PRINCIPALMENTE.PROVIENE.EL.AGUA.CON.LA.QUE.RIEGA.LA.PARCELA.), ]
+  crear_grafica(datos, "X.DE.QUE.FUENTE.PRINCIPALMENTE.PROVIENE.EL.AGUA.CON.LA.QUE.RIEGA.LA.PARCELA.")
+	@
+}
+\end{graficas}
+\begin{fotos}
+{reconocimiento en campo}{19}
+\end{fotos}
+
+
+\begin{tablas}
+{Frecuencia de riego de la parcela}{
+<<tabla_veintidos, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$EL.RIEGO.SU.PARCELA.SE.REALIZA[datos$EL.RIEGO.SU.PARCELA.SE.REALIZA == ""] <- NA
+  datos <- datos[!is.na(datos$EL.RIEGO.SU.PARCELA.SE.REALIZA), ]
+	crear_tabla(datos, "EL.RIEGO.SU.PARCELA.SE.REALIZA", "Frecuencia_riego")
+@
+}
+\end{tablas}
+\begin{graficas}
+{Frecuencia de riego de la parcela}{
+<< fig_veintidos, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$EL.RIEGO.SU.PARCELA.SE.REALIZA[datos$EL.RIEGO.SU.PARCELA.SE.REALIZA == ""] <- NA
+  datos <- datos[!is.na(datos$EL.RIEGO.SU.PARCELA.SE.REALIZA), ]
+  crear_grafica(datos, "EL.RIEGO.SU.PARCELA.SE.REALIZA")
+	@
+}
+\end{graficas}
+\begin{fotos}
+{reconocimiento en campo}{20}
+\end{fotos}
+
+\begin{tablas}
+{Infraestructura de riego}{
+<<tabla_veintitres, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$LA.INFRAESTRUTURA.DE.RIEGO.QUE.TIENE[datos$LA.INFRAESTRUTURA.DE.RIEGO.QUE.TIENE == ""] <- NA
+  datos <- datos[!is.na(datos$LA.INFRAESTRUTURA.DE.RIEGO.QUE.TIENE), ]
+	crear_tabla(datos, "LA.INFRAESTRUTURA.DE.RIEGO.QUE.TIENE", "Tipo_infraestructura")
+@
+}
+\end{tablas}
+\begin{graficas}
+{Infraestructura de riego}{
+<< fig_veintitres, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$LA.INFRAESTRUTURA.DE.RIEGO.QUE.TIENE[datos$LA.INFRAESTRUTURA.DE.RIEGO.QUE.TIENE == ""] <- NA
+  datos <- datos[!is.na(datos$LA.INFRAESTRUTURA.DE.RIEGO.QUE.TIENE), ]
+  crear_grafica(datos, "LA.INFRAESTRUTURA.DE.RIEGO.QUE.TIENE")
+	@
+}
+\end{graficas}
+\begin{fotos}
+{reconocimiento en campo}{21}
+\end{fotos}
+
+
+\begin{tablas}
+{Tipo de riego que utiliza}{
+<<tabla_veinticuatro, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$X.QUE.TIPO.DE.RIEGO.UTILIZA.[datos$X.QUE.TIPO.DE.RIEGO.UTILIZA. == ""] <- NA
+  datos <- datos[!is.na(datos$X.QUE.TIPO.DE.RIEGO.UTILIZA.), ]
+	crear_tabla(datos, "X.QUE.TIPO.DE.RIEGO.UTILIZA.", "Tipo_riego")
+@
+}
+\end{tablas}
+\begin{graficas}
+{Tipo de riego que utiliza}{
+<< fig_veinticuatro, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$X.QUE.TIPO.DE.RIEGO.UTILIZA.[datos$X.QUE.TIPO.DE.RIEGO.UTILIZA. == ""] <- NA
+  datos <- datos[!is.na(datos$X.QUE.TIPO.DE.RIEGO.UTILIZA.), ]
+  crear_grafica(datos, "X.QUE.TIPO.DE.RIEGO.UTILIZA.")
+	@
+}
+\end{graficas}
+\begin{fotos}
+{reconocimiento en campo}{22}
+\end{fotos}
+
+
+\begin{tablas}
+{Pago por uso de agua para riego}{
+<<tabla_veinticinco, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$REALIZA.ALGUN.PAGO.POR.ESTE.CONCEPTO.A.LA.ORG..QUE.PERNECE[datos$REALIZA.ALGUN.PAGO.POR.ESTE.CONCEPTO.A.LA.ORG..QUE.PERNECE == ""] <- NA
+  datos <- datos[!is.na(datos$REALIZA.ALGUN.PAGO.POR.ESTE.CONCEPTO.A.LA.ORG..QUE.PERNECE), ]
+	crear_tabla(datos, "REALIZA.ALGUN.PAGO.POR.ESTE.CONCEPTO.A.LA.ORG..QUE.PERNECE", "Pago_agua")
+@
+}
+\end{tablas}
+\begin{graficas}
+{Pago por uso de agua para riego}{
+<< fig_veinticinco, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$REALIZA.ALGUN.PAGO.POR.ESTE.CONCEPTO.A.LA.ORG..QUE.PERNECE[datos$REALIZA.ALGUN.PAGO.POR.ESTE.CONCEPTO.A.LA.ORG..QUE.PERNECE == ""] <- NA
+  datos <- datos[!is.na(datos$REALIZA.ALGUN.PAGO.POR.ESTE.CONCEPTO.A.LA.ORG..QUE.PERNECE), ]
+  crear_grafica(datos, "REALIZA.ALGUN.PAGO.POR.ESTE.CONCEPTO.A.LA.ORG..QUE.PERNECE")
+	@
+}
+\end{graficas}
+\begin{fotos}
+{reconocimiento en campo}{23}
+\end{fotos}
+
+
+\begin{tablas}
+{Frecuencia por uso de agua para riego}{
+<<tabla_veintiseis, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$X.CON.QUE.FRECUENCIA.REALIZA.EL.PAGO.[datos$X.CON.QUE.FRECUENCIA.REALIZA.EL.PAGO. == ""] <- NA
+  datos <- datos[!is.na(datos$X.CON.QUE.FRECUENCIA.REALIZA.EL.PAGO.), ]
+	crear_tabla(datos, "X.CON.QUE.FRECUENCIA.REALIZA.EL.PAGO.", "Frecuencia_pago")
+@
+}
+\end{tablas}
+\begin{graficas}
+{Frecuencia por uso de agua para riego}{
+<< fig_veintiseis, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$X.CON.QUE.FRECUENCIA.REALIZA.EL.PAGO.[datos$X.CON.QUE.FRECUENCIA.REALIZA.EL.PAGO. == ""] <- NA
+  datos <- datos[!is.na(datos$X.CON.QUE.FRECUENCIA.REALIZA.EL.PAGO.), ]
+  crear_grafica(datos, "X.CON.QUE.FRECUENCIA.REALIZA.EL.PAGO.")
+	@
+}
+\end{graficas}
+\begin{fotos}
+{reconocimiento en campo}{24}
+\end{fotos}
+
+
+\begin{tablas}
+{Derecho de uso de agua}{
+<<tabla_veintisiete, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$X.TIENE.USTED.DERECHO.DE.USO.DE.AGUA.[datos$X.TIENE.USTED.DERECHO.DE.USO.DE.AGUA. == ""] <- NA
+  datos <- datos[!is.na(datos$X.TIENE.USTED.DERECHO.DE.USO.DE.AGUA.), ]
+	crear_tabla(datos, "X.TIENE.USTED.DERECHO.DE.USO.DE.AGUA.", "Derecho")
+@
+}
+\end{tablas}
+\begin{graficas}
+{Derecho de uso de agua}{
+<< fig_veintisiete, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$X.TIENE.USTED.DERECHO.DE.USO.DE.AGUA.[datos$X.TIENE.USTED.DERECHO.DE.USO.DE.AGUA. == ""] <- NA
+  datos <- datos[!is.na(datos$X.TIENE.USTED.DERECHO.DE.USO.DE.AGUA.), ]
+  crear_grafica(datos, "X.TIENE.USTED.DERECHO.DE.USO.DE.AGUA.")
+	@
+}
+\end{graficas}
+\begin{fotos}
+{aplicacion de encuesta}{25}
+\end{fotos}
+
+
+\begin{tablas}
+{Produccion predominante}{
+<<tabla_veintiocho, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+  datos$EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN[datos$EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN == ""] <- NA
+  datos <- datos[!is.na(datos$EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN), ]
+	crear_tabla(datos, "EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN", "Cultivo")
+	
+	
+	setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+  datos$DISTRITO
+  espinar <- subset(datos, datos$DISTRITO == "LLUSCO")
+  espinar$EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN[espinar$EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN == ""] <- NA
+  espinars <- espinar[!is.na(espinar$EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN), ]
+	crear_tabla(espinar, "EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN", "Cultivo")
+	
+	
+	
+@
+}
+\end{tablas}
+%\begin{graficas}
+%{Produccion predominante}{
+<< fig_veintiocho, echo = FALSE, fig.width=7, fig.height=5>>=
+#   setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+#   datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+# 	datos$EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN[datos$EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN == ""] <- NA
+#   datos <- datos[!is.na(datos$EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN), ]
+#   crear_grafica(datos, "EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN")
+	@
+%}
+%\end{graficas}
+\begin{fotos}
+{aplicacion de encuesta}{26}
+\end{fotos}
+
+
+\begin{tablas}
+{Tiempo que se dedica al cultivo}{
+<<tabla_veintinueve, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$TIEMPO.QUE.SE.DEDICA.AL.CULTIVO[datos$TIEMPO.QUE.SE.DEDICA.AL.CULTIVO == ""] <- NA
+  datos <- datos[!is.na(datos$TIEMPO.QUE.SE.DEDICA.AL.CULTIVO), ]
+	crear_tabla(datos, "TIEMPO.QUE.SE.DEDICA.AL.CULTIVO", "Tiempo")
+@
+}
+\end{tablas}
+\begin{graficas}
+{Tiempo que se dedica al cultivo}{
+<< fig_veintinueve, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$TIEMPO.QUE.SE.DEDICA.AL.CULTIVO[datos$TIEMPO.QUE.SE.DEDICA.AL.CULTIVO == ""] <- NA
+  datos <- datos[!is.na(datos$TIEMPO.QUE.SE.DEDICA.AL.CULTIVO), ]
+  crear_grafica(datos, "TIEMPO.QUE.SE.DEDICA.AL.CULTIVO")
+	@
+}
+\end{graficas}
+\begin{fotos}
+{socializacion del proyecto}{27}
+\end{fotos}
+
+
+\begin{tablas}
+{Finalidad de cosecha}{
+<<tabla_treinta, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$FINALIDAD.DE.LA.COSECHA[datos$FINALIDAD.DE.LA.COSECHA == ""] <- NA
+  datos <- datos[!is.na(datos$FINALIDAD.DE.LA.COSECHA), ]
+	crear_tabla(datos, "FINALIDAD.DE.LA.COSECHA", "Finalidad")
+@
+}
+\end{tablas}
+\begin{graficas}
+{Finalidad de cosecha}{
+<< fig_treinta, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$FINALIDAD.DE.LA.COSECHA[datos$FINALIDAD.DE.LA.COSECHA == ""] <- NA
+  datos <- datos[!is.na(datos$FINALIDAD.DE.LA.COSECHA), ]
+  crear_grafica(datos, "FINALIDAD.DE.LA.COSECHA")
+	@
+}
+\end{graficas}
+\begin{fotos}
+{socializacion del proyecto}{28}
+\end{fotos}
+
+
+\begin{tablas}
+{Causas que ocasionan la disminucion de la produccion de cultivo}{
+<<tabla_treintayuno, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO[datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO == ""] <- NA
+  datos <- datos[!is.na(datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO), ]
+	crear_tabla(datos, "CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO", "Causas")
+@
+}
+\end{tablas}
+\begin{graficas}
+{Causas que ocasionan la disminucion de la produccion de cultivo}{
+<< fig_treintayuno, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO[datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO == ""] <- NA
+  datos <- datos[!is.na(datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO), ]
+  crear_grafica(datos, "CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO")
+	@
+}
+\end{graficas}
+\begin{fotos}
+{socializacion del proyecto}{29}
+\end{fotos}
+
 \end{document}
