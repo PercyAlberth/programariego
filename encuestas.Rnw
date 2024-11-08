@@ -1886,5 +1886,5 @@ Se analizara el genero de los encuestados
 %para subir la nueva rama a github
 %git push -u origin Marina
 
-
+cambio desde main
 \end{document}
