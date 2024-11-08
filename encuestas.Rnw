@@ -6,6 +6,7 @@
 \usepackage{booktabs}
 \usepackage[table]{xcolor}
 \usepackage{comment}
+\usepackage{caption}
 
 \newenvironment{tablas}[2]
 {\begin{table}[H]
@@ -172,9 +173,9 @@ Aca ira la interpretacion de la tabla
   \caption*{Fuente: trabajo de campo}
 \end{figure}
 
-%\begin{fotos}
-%{Aplicacion de encuestas}{1}
-%\end{fotos}
+\begin{fotos}
+{Aplicacion de encuestas}{1}
+\end{fotos}
 
 
 Se analizara el genero de los encuestados
@@ -279,9 +280,9 @@ Se analizara el genero de los encuestados
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
 
-%\begin{fotos}
-%{Aplicacion de encuestas}{2}
-%\end{fotos}
+\begin{fotos}
+{Aplicacion de encuestas}{2}
+\end{fotos}
 
 
 \begin{table}[H]
@@ -340,9 +341,9 @@ Se analizara el genero de los encuestados
 	@
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
-%\begin{fotos}
-%{Aplicacion de encuestas}{3}
-%\end{fotos}
+\begin{fotos}
+{Aplicacion de encuestas}{3}
+\end{fotos}
 
 
 \begin{table}[H]
@@ -427,9 +428,9 @@ Se analizara el genero de los encuestados
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
 
-%\begin{fotos}
-%{Sensibililzacion a los beneficiarios}{4}
-%\end{fotos}
+\begin{fotos}
+{Sensibililzacion a los beneficiarios}{4}
+\end{fotos}
 
 
 \begin{table}[H]
@@ -461,9 +462,9 @@ Se analizara el genero de los encuestados
 	@
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
-%\begin{fotos}
-%{Aplicacion de encuestas en el area de influencia}{5}
-%\end{fotos}
+\begin{fotos}
+{Aplicacion de encuestas en el area de influencia}{5}
+\end{fotos}
 
 
 \begin{table}[H]
@@ -520,9 +521,9 @@ Se analizara el genero de los encuestados
 	@
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
-%\begin{fotos}
-%{Aplicacion de encuestas en el area de influencia}{6}
-%\end{fotos}
+\begin{fotos}
+{Aplicacion de encuestas en el area de influencia}{6}
+\end{fotos}
 
 
 \begin{table}[H]
@@ -580,9 +581,9 @@ Se analizara el genero de los encuestados
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
 
-%\begin{fotos}
-%{Aplicacion de encuestas en el area de influencia}{7}
-%\end{fotos}
+\begin{fotos}
+{Aplicacion de encuestas en el area de influencia}{7}
+\end{fotos}
 
 
 \begin{table}[H]
@@ -640,9 +641,9 @@ Se analizara el genero de los encuestados
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
 
-%\begin{fotos}
-%{sensibilizacion a la poblacion}{8}
-%\end{fotos}
+\begin{fotos}
+{sensibilizacion a la poblacion}{8}
+\end{fotos}
 
 
 
@@ -701,9 +702,9 @@ Se analizara el genero de los encuestados
 	@
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
-%\begin{fotos}
-%{sensibilizacion a la poblacion}{9}
-%\end{fotos}
+\begin{fotos}
+{sensibilizacion a la poblacion}{9}
+\end{fotos}
 
 \begin{table}[H]
   \centering
@@ -760,9 +761,9 @@ Se analizara el genero de los encuestados
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
 
-%\begin{fotos}
-%{sensibilizacion a la poblacion}{10}
-%\end{fotos}
+\begin{fotos}
+{sensibilizacion a la poblacion}{10}
+\end{fotos}
 
 \begin{comment}
 \begin{table}[H]
@@ -883,12 +884,12 @@ Se analizara el genero de los encuestados
 	@
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
-\end{comment}
+
 
 %\begin{fotos}
 %{sensibilizacion a la poblacion}{11}
 %\end{fotos}
-
+\end{comment}
 
 \begin{table}[H]
   \centering
@@ -945,9 +946,9 @@ Se analizara el genero de los encuestados
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
 
-%\begin{fotos}
-%{sensibilizacion a la poblacion}{12}
-%\end{fotos}
+\begin{fotos}
+{sensibilizacion a la poblacion}{12}
+\end{fotos}
 
 
 \begin{tablas}
@@ -1004,9 +1005,9 @@ Se analizara el genero de los encuestados
 }
 \end{graficas}
 
-%\begin{fotos}
-%{sensibilizacion a la poblacion}{13}
-%\end{fotos}
+\begin{fotos}
+{sensibilizacion a la poblacion}{13}
+\end{fotos}
 
 
 
@@ -1063,9 +1064,9 @@ Se analizara el genero de los encuestados
 }
 \end{graficas}
 
-%\begin{fotos}
-%{aplicacion de encuestas}{14}
-%\end{fotos}
+\begin{fotos}
+{aplicacion de encuestas}{14}
+\end{fotos}
 
 
 \begin{tablas}
@@ -1121,9 +1122,9 @@ Se analizara el genero de los encuestados
 }
 \end{graficas}
 
-%\begin{fotos}
-%{reconocimiento en campo}{15}
-%\end{fotos}
+\begin{fotos}
+{reconocimiento en campo}{15}
+\end{fotos}
 
 
 \begin{tablas}
@@ -1157,9 +1158,9 @@ Se analizara el genero de los encuestados
 }
 \end{graficas}
 
-%\begin{fotos}
-%{reconocimiento en campo}{16}
-%\end{fotos}
+\begin{fotos}
+{reconocimiento en campo}{16}
+\end{fotos}
 
 \begin{comment}
 \begin{tablas}
@@ -1220,9 +1221,9 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-%\begin{fotos}
-%{reconocimiento en campo}{18}
-%\end{fotos}
+\begin{fotos}
+{reconocimiento en campo}{18}
+\end{fotos}
 
 \begin{comment}
 \begin{tablas}
@@ -1274,9 +1275,9 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-%\begin{fotos}
-%{reconocimiento en campo}{20}
-%\end{fotos}
+\begin{fotos}
+{reconocimiento en campo}{20}
+\end{fotos}
 
 \begin{tablas}
 {Infraestructura de riego}{
@@ -1300,9 +1301,9 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-%\begin{fotos}
-%{reconocimiento en campo}{21}
-%\end{fotos}
+\begin{fotos}
+{reconocimiento en campo}{21}
+\end{fotos}
 
 
 \begin{tablas}
@@ -1327,9 +1328,9 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-%\begin{fotos}
-%{reconocimiento en campo}{22}
-%\end{fotos}
+\begin{fotos}
+{reconocimiento en campo}{22}
+\end{fotos}
 
 
 \begin{tablas}
@@ -1354,9 +1355,9 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-%\begin{fotos}
-%{reconocimiento en campo}{23}
-%\end{fotos}
+\begin{fotos}
+{reconocimiento en campo}{23}
+\end{fotos}
 
 
 \begin{tablas}
@@ -1381,9 +1382,9 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-%\begin{fotos}
-%{reconocimiento en campo}{24}
-%\end{fotos}
+\begin{fotos}
+{reconocimiento en campo}{24}
+\end{fotos}
 
 
 \begin{tablas}
@@ -1408,9 +1409,9 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-%\begin{fotos}
-%{aplicacion de encuesta}{25}
-%\end{fotos}
+\begin{fotos}
+{aplicacion de encuesta}{25}
+\end{fotos}
 
 
 \begin{tablas}
@@ -1432,20 +1433,22 @@ Se analizara el genero de los encuestados
 @
 }
 \end{tablas}
-%\begin{graficas}
-%{Produccion predominante}{
-<< fig_veintiocho, echo = FALSE, fig.width=7, fig.height=5>>=
-#   setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
-#   datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
-# 	datos$EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN[datos$EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN == ""] <- NA
-#   datos <- datos[!is.na(datos$EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN), ]
-#   crear_grafica(datos, "EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN")
+
+\begin{graficas}
+{Produccion predominante}{
+<< fig_veintiocho, echo = FALSE, fig.width=7, fig.height=7>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN[datos$EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN == ""] <- NA
+  datos <- datos[!is.na(datos$EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN), ]
+  crear_graficav(datos, "EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN")
 	@
-%}
-%\end{graficas}
-%\begin{fotos}
-%{aplicacion de encuesta}{26}
-%\end{fotos}
+}
+\end{graficas}
+
+\begin{fotos}
+{aplicacion de encuesta}{26}
+\end{fotos}
 
 
 \begin{tablas}
@@ -1459,6 +1462,7 @@ Se analizara el genero de los encuestados
 @
 }
 \end{tablas}
+
 \begin{graficas}
 {Tiempo que se dedica al cultivo}{
 << fig_veintinueve, echo = FALSE, fig.width=7, fig.height=5>>=
@@ -1470,9 +1474,10 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-%\begin{fotos}
-%{socializacion del proyecto}{27}
-%\end{fotos}
+
+\begin{fotos}
+{socializacion del proyecto}{27}
+\end{fotos}
 
 
 \begin{tablas}
@@ -1486,6 +1491,7 @@ Se analizara el genero de los encuestados
 @
 }
 \end{tablas}
+
 \begin{graficas}
 {Finalidad de cosecha}{
 << fig_treinta, echo = FALSE, fig.width=7, fig.height=5>>=
@@ -1497,9 +1503,10 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-%\begin{fotos}
-%{socializacion del proyecto}{28}
-%\end{fotos}
+
+\begin{fotos}
+{socializacion del proyecto}{28}
+\end{fotos}
 
 
 \begin{tablas}
@@ -1520,6 +1527,7 @@ Se analizara el genero de los encuestados
 @
 }
 \end{tablas}
+
 \begin{graficas}
 {Causas que ocasionan la disminucion de la produccion de cultivo}{
 << fig_treintayuno, echo = FALSE, fig.width=7, fig.height=5>>=
@@ -1537,9 +1545,10 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-%\begin{fotos}
-%{socializacion del proyecto}{29}
-%\end{fotos}
+
+\begin{fotos}
+{socializacion del proyecto}{29}
+\end{fotos}
 
 \begin{tablas}
 {Registra la venta de su produccion}{
@@ -1552,6 +1561,7 @@ Se analizara el genero de los encuestados
 @
 }
 \end{tablas}
+
 \begin{graficas}
 {Registra la venta de su produccion}{
 << fig_treintaydos, echo = FALSE, fig.width=7, fig.height=5>>=
@@ -1563,9 +1573,10 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-%\begin{fotos}
-%{socializacion del proyecto}{30}
-%\end{fotos}
+
+\begin{fotos}
+{socializacion del proyecto}{30}
+\end{fotos}
 
 \begin{tablas}
 {Personas con las que realiza la cosecha}{
@@ -1578,6 +1589,7 @@ Se analizara el genero de los encuestados
 @
 }
 \end{tablas}
+
 \begin{graficas}
 {Personas con las que realiza la cosecha}{
 << fig_treintaytres, echo = FALSE, fig.width=7, fig.height=5>>=
@@ -1589,9 +1601,10 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-%\begin{fotos}
-%{socializacion del proyecto}{31}
-%\end{fotos}
+
+\begin{fotos}
+{socializacion del proyecto}{31}
+\end{fotos}
 
 
 \begin{tablas}
@@ -1610,6 +1623,7 @@ Se analizara el genero de los encuestados
 @
 }
 \end{tablas}
+
 \begin{graficas}
 {Practica de conservacion de suelos}{
 << fig_treintaycuatro, echo = FALSE, fig.width=7, fig.height=5>>=
@@ -1626,6 +1640,7 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
+
 \begin{fotos}
 {socializacion del proyecto}{32}
 \end{fotos}
@@ -1642,6 +1657,7 @@ Se analizara el genero de los encuestados
 @
 }
 \end{tablas}
+
 \begin{graficas}
 {Realiza manejo de post cosecha}{
 << fig_treintaycinco, echo = FALSE, fig.width=7, fig.height=5>>=
@@ -1653,6 +1669,7 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
+
 \begin{fotos}
 {socializacion del proyecto}{33}
 \end{fotos}
@@ -1669,6 +1686,7 @@ Se analizara el genero de los encuestados
 @
 }
 \end{tablas}
+
 \begin{graficas}
 {Ha recibido alguna capacitacion}{
 << fig_treintayseis, echo = FALSE, fig.width=7, fig.height=5>>=
@@ -1680,11 +1698,13 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
+
 \begin{fotos}
 {trabajo de campo}{34}
 \end{fotos}
 
 \begin{comment}
+
 \begin{tablas}
 {Temas de capacitacion}{
 <<tabla_treintaysiete, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
@@ -1705,6 +1725,7 @@ Se analizara el genero de los encuestados
 @
 }
 \end{tablas}
+
 \begin{graficas}
 {Temas de capacitacion}{
 << fig_treintaysiete, echo = FALSE, fig.width=7, fig.height=5>>=
@@ -1716,9 +1737,11 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-%\begin{fotos}
-%{trabajo de campo}{35}
-%\end{fotos}
+
+\begin{fotos}
+{trabajo de campo}{35}
+\end{fotos}
+
 \end{comment}
 
 \begin{tablas}
@@ -1732,6 +1755,7 @@ Se analizara el genero de los encuestados
 @
 }
 \end{tablas}
+
 \begin{graficas}
 {Donde realiza la comercializacion de su cosecha}{
 << fig_treintayocho, echo = FALSE, fig.width=7, fig.height=5>>=
@@ -1743,6 +1767,7 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
+
 \begin{fotos}
 {trabajo de campo}{36}
 \end{fotos}
@@ -1759,6 +1784,7 @@ Se analizara el genero de los encuestados
 @
 }
 \end{tablas}
+
 \begin{graficas}
 {Pertenece a alguna organizacion o asociacion}{
 << fig_treintaynueve, echo = FALSE, fig.width=7, fig.height=5>>=
@@ -1770,11 +1796,13 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
+
 \begin{fotos}
 {trabajo de campo}{37}
 \end{fotos}
 
 \begin{comment}
+
 \begin{tablas}
 {Meses en los que realiza la cosecha}{
 <<tabla_cuarenta, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
@@ -1786,6 +1814,7 @@ Se analizara el genero de los encuestados
 @
 }
 \end{tablas}
+
 \begin{graficas}
 {Meses en los que realiza la cosecha}{
 << fig_cuarenta, echo = FALSE, fig.width=7, fig.height=5>>=
@@ -1797,9 +1826,11 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-%\begin{fotos}
-%{trabajo de campo}{38}
-%\end{fotos}
+
+\begin{fotos}
+{trabajo de campo}{38}
+\end{fotos}
+
 \end{comment}
 
 \begin{tablas}
@@ -1818,6 +1849,7 @@ Se analizara el genero de los encuestados
 @
 }
 \end{tablas}
+
 \begin{graficas}
 {Insumos que usa para la produccion y cosecha}{
 << fig_cuarentayuno, echo = FALSE, fig.width=7, fig.height=5>>=
@@ -1834,6 +1866,7 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
+
 \begin{fotos}
 {trabajo de campo}{39}
 \end{fotos}
