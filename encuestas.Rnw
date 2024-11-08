@@ -35,6 +35,7 @@
 {\end{figure}}
 
 cambio desde la rama Marina
+cambio desde main
 \begin{document}
 <<setup, include=FALSE, cache=FALSE>>=
 #cargar librerias
