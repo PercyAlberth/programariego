@@ -55,6 +55,7 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage[table]{xcolor}
+\usepackage{comment}
 
 \newenvironment{tablas}[2]
 {\begin{table}[H]
@@ -155,22 +156,22 @@ VARON & 231 & 52.03\\
 \begin{table}[H]
   \centering
   \caption{Grado de instruccion}
-\begin{kframe}
 
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): objeto 'fil' no encontrado}}\end{kframe}
 \begin{tabular}{lcl}
 \toprule
-\cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{GENERO}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Conteo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Porcentaje}}}\\
+\cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Grado}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Conteo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Porcentaje}}}\\
 \midrule
-MUJER & 213 & 47.97\\
-VARON & 231 & 52.03\\
+NINGUNO & 95 & 22.73\\
+PRIMARIA & 209 & 50.00\\
+SECUNDARIA & 106 & 25.36\\
+SUPERIOR & 5 & 1.20\\
+TECNICO & 3 & 0.72\\
 \bottomrule
 \end{tabular}
 
+
   \caption*{Fuente: Trabajo de campo}
 \end{table}
-
 \begin{figure}[H]
   \centering
   \caption{Distribucion del grado de instruccion}
@@ -261,19 +262,19 @@ S/951 a S/1500 & 37 & 9.59\\
 \toprule
 \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Integrantes}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Conteo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Porcentaje}}}\\
 \midrule
- & 7 & 1.55\\
-3 A 5 PERSONAS & 228 & 50.55\\
-MAS DE 6 PERSONAS & 41 & 9.09\\
-MENOS DE 2 PERSONAS & 175 & 38.80\\
+3 A 5 PERSONAS & 228 & 51.35\\
+MAS DE 6 PERSONAS & 41 & 9.23\\
+MENOS DE 2 PERSONAS & 175 & 39.41\\
 \bottomrule
 \end{tabular}
+
 
   \caption*{Fuente: Trabajo de campo}
 \end{table}
 
 \begin{figure}[H]
   \centering
-  \caption{Distribucion del tipo de ingreso familiar}
+  \caption{Numero de integrantes que conforman su familia}
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 \includegraphics[width=\maxwidth]{figure/fig_siete-1} 
@@ -353,7 +354,7 @@ SI & 445 & 99.33\\
 
 \begin{table}[H]
   \centering
-  \caption{Cuenta con el servicio de agua potable}
+  \caption{Tipo de agua que consume}
 
 \begin{tabular}{lcl}
 \toprule
@@ -370,7 +371,7 @@ SIN TRATAR & 18 & 4.13\\
 
 \begin{figure}[H]
   \centering
-  \caption{Cuenta con el servicio de agua potable}
+  \caption{Tipo de agua que consume}
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 \includegraphics[width=\maxwidth]{figure/fig_diez-1} 
@@ -387,7 +388,7 @@ SIN TRATAR & 18 & 4.13\\
 
 \begin{table}[H]
   \centering
-  \caption{Abastecimiento de agua}
+  \caption{Fuente de agua}
 
 \begin{tabular}{lcl}
 \toprule
@@ -405,7 +406,7 @@ RIO O RIACHUELO & 13 & 2.93\\
 
 \begin{figure}[H]
   \centering
-  \caption{Fuente de abastecimiento de agua}
+  \caption{Fuente de agua}
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 \includegraphics[width=\maxwidth]{figure/fig_once-1} 
@@ -446,7 +447,7 @@ SI & 420 & 94.17\\
 %{sensibilizacion a la poblacion}{10}
 %\end{fotos}
 
-
+\begin{comment}
 \begin{table}[H]
   \centering
   \caption{Energia electrica}
@@ -460,7 +461,7 @@ SI & 420 & 94.17\\
 
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
-
+\end{comment}
 
 %\begin{fotos}
 %{sensibilizacion a la poblacion}{11}
@@ -626,6 +627,7 @@ JUNTA DE USUARIOS & 70 & 15.84\\
 %{reconocimiento en campo}{16}
 %\end{fotos}
 
+\begin{comment}
 \begin{tablas}
 {Organizacion a la que pertenece}{
 
@@ -761,10 +763,10 @@ MAS DE 20 AÑOS & 1 & 0.27\\
 %\begin{fotos}
 %{reconocimiento en campo}{17}
 %\end{fotos}
-
+\end{comment}
 
 \begin{tablas}
-{Organizacion a la que pertenece}{
+{Fuente del agua para riego}{
 
 \begin{tabular}{lcl}
 \toprule
@@ -782,7 +784,7 @@ RIO & 209 & 46.76\\
 }
 \end{tablas}
 \begin{graficas}
-{Organizacion a la que pertenece}{
+{Fuente del agua para riego}{
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 \includegraphics[width=\maxwidth]{figure/fig_veinte-1} 
@@ -793,7 +795,7 @@ RIO & 209 & 46.76\\
 %{reconocimiento en campo}{18}
 %\end{fotos}
 
-
+\begin{comment}
 \begin{tablas}
 {Fuente de agua para riego}{
 
@@ -823,7 +825,7 @@ RIO & 209 & 46.76\\
 %\begin{fotos}
 %{reconocimiento en campo}{19}
 %\end{fotos}
-
+\end{comment}
 
 \begin{tablas}
 {Frecuencia de riego de la parcela}{
@@ -1118,14 +1120,14 @@ VENTA Y CONSUMO & 262 & 64.22\\
 \toprule
 \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Causas}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Conteo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Porcentaje}}}\\
 \midrule
-FACTORES ADVERSOS (HELADAS Y GRANIZADAS) & 22 & 5.07\\
+FACTORES ADVERSOS & 22 & 5.07\\
 FALTA DE AGUA & 24 & 5.53\\
-FALTA DE AGUA, FACTORES ADVERSOS (HELADAS Y GRANIZADAS) & 100 & 23.04\\
+FALTA DE AGUA Y FACTORES ADVERSOS & 100 & 23.04\\
+FALTA DE AGUA, FACTORES ADVERSOS Y SUELOS POBRES & 267 & 61.52\\
 FALTA DE AGUA, SUELOS PROBRES Y ERIAZOS & 7 & 1.61\\
-FALTA DE AGUA, SUELOS PROBRES Y ERIAZOS, FACTORES ADVERSOS (HELADAS Y GRANIZADAS) & 267 & 61.52\\
 \addlinespace
-SUELOS PROBRES Y ERIAZOS & 5 & 1.15\\
-SUELOS PROBRES Y ERIAZOS, FACTORES ADVERSOS (HELADAS Y GRANIZADAS) & 9 & 2.07\\
+SUELOS POBRES & 5 & 1.15\\
+SUELOS POBRES Y FACTORES ADVERSOS & 9 & 2.07\\
 \bottomrule
 \end{tabular}
 
@@ -1211,17 +1213,17 @@ SOLO & 21 & 5.43\\
 \toprule
 \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Personas}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Conteo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Porcentaje}}}\\
 \midrule
+ABONOS ORGANICO Y MATERIA ORGANICA & 37 & 10.00\\
 INCORPORACION EN MATERIA ORGANICA & 4 & 1.08\\
 OTRO & 1 & 0.27\\
 ROTACION DE CULTIVOS & 22 & 5.95\\
-ROTACION DE CULTIVOS, INCORPORACION EN MATERIA ORGANICA & 18 & 4.86\\
 ROTACION DE CULTIVOS, USO DE ABONOS ORGANICOS & 129 & 34.86\\
 \addlinespace
-ROTACION DE CULTIVOS, USO DE ABONOS ORGANICOS, APLICACION DEL CAL & 2 & 0.54\\
-ROTACION DE CULTIVOS, USO DE ABONOS ORGANICOS, APLICACION DEL CAL, INCORPORACION EN MATERIA ORGANICA & 8 & 2.16\\
-ROTACION DE CULTIVOS, USO DE ABONOS ORGANICOS, INCORPORACION EN MATERIA ORGANICA & 81 & 21.89\\
+ROTACION Y MATERIA ORGANICA & 18 & 4.86\\
+ROTACION, ABONO ORGANICO Y CAL & 2 & 0.54\\
+ROTACION, ABONO ORGANICO, CAL Y MATERIA ORGANICA & 8 & 2.16\\
+ROTACION, ABONOS ORGANICO Y MATERIA ORGANICA & 81 & 21.89\\
 USO DE ABONOS ORGANICOS & 68 & 18.38\\
-USO DE ABONOS ORGANICOS, INCORPORACION EN MATERIA ORGANICA & 37 & 10.00\\
 \bottomrule
 \end{tabular}
 
@@ -1236,9 +1238,9 @@ USO DE ABONOS ORGANICOS, INCORPORACION EN MATERIA ORGANICA & 37 & 10.00\\
 \end{knitrout}
 }
 \end{graficas}
-%\begin{fotos}
-%{socializacion del proyecto}{32}
-%\end{fotos}
+\begin{fotos}
+{socializacion del proyecto}{32}
+\end{fotos}
 
 
 \begin{tablas}
@@ -1264,9 +1266,9 @@ SI & 186 & 44.82\\
 \end{knitrout}
 }
 \end{graficas}
-%\begin{fotos}
-%{socializacion del proyecto}{33}
-%\end{fotos}
+\begin{fotos}
+{socializacion del proyecto}{33}
+\end{fotos}
 
 
 \begin{tablas}
@@ -1292,11 +1294,11 @@ SI & 128 & 28.96\\
 \end{knitrout}
 }
 \end{graficas}
-%\begin{fotos}
-%{trabajo de campo}{34}
-%\end{fotos}
+\begin{fotos}
+{trabajo de campo}{34}
+\end{fotos}
 
-
+\begin{comment}
 \begin{tablas}
 {Temas de capacitacion}{
 
@@ -1314,34 +1316,34 @@ MEJORAMIENTO GENETICO & 2 & 1.48\\
 OTRO & 13 & 9.63\\
 PREPARACION DE TERRENO & 6 & 4.44\\
 PREPARACION DE TERRENO, COSECHA & 1 & 0.74\\
-PREPARACION DE TERRENO, FERTILIZACION Y ABONAMIENTO & 2 & 1.48\\
-\addlinespace
-PREPARACION DE TERRENO, FERTILIZACION Y ABONAMIENTO, CONTROL FITOSANITARIO, COSECHA & 1 & 0.74\\
-PREPARACION DE TERRENO, FERTILIZACION Y ABONAMIENTO, COSECHA & 4 & 2.96\\
-PREPARACION DE TERRENO, FERTILIZACION Y ABONAMIENTO, COSECHA, MEJORAMIENTO GENETICO & 1 & 0.74\\
 PREPARACION DE TERRENO, MEJORAMIENTO GENETICO & 1 & 0.74\\
-PREPARACION DE TERRENO, SIEMBRA & 12 & 8.89\\
 \addlinespace
-PREPARACION DE TERRENO, SIEMBRA, CONTROL FITOSANITARIO & 1 & 0.74\\
+PREPARACION DE TERRENO, SIEMBRA & 12 & 8.89\\
 PREPARACION DE TERRENO, SIEMBRA, COSECHA & 17 & 12.59\\
 PREPARACION DE TERRENO, SIEMBRA, COSECHA, MEJORAMIENTO GENETICO & 1 & 0.74\\
 PREPARACION DE TERRENO, SIEMBRA, FERTILIZACION Y ABONAMIENTO & 3 & 2.22\\
 PREPARACION DE TERRENO, SIEMBRA, FERTILIZACION Y ABONAMIENTO, CONTROL FITOSANITARIO & 5 & 3.70\\
 \addlinespace
 PREPARACION DE TERRENO, SIEMBRA, FERTILIZACION Y ABONAMIENTO, CONTROL FITOSANITARIO, COSECHA & 11 & 8.15\\
-PREPARACION DE TERRENO, SIEMBRA, FERTILIZACION Y ABONAMIENTO, CONTROL FITOSANITARIO, COSECHA, MEJORAMIENTO GENETICO & 12 & 8.89\\
 PREPARACION DE TERRENO, SIEMBRA, FERTILIZACION Y ABONAMIENTO, CONTROL FITOSANITARIO, MEJORAMIENTO GENETICO & 1 & 0.74\\
 PREPARACION DE TERRENO, SIEMBRA, FERTILIZACION Y ABONAMIENTO, COSECHA & 11 & 8.15\\
 PREPARACION DE TERRENO, SIEMBRA, FERTILIZACION Y ABONAMIENTO, COSECHA, MEJORAMIENTO GENETICO & 4 & 2.96\\
-\addlinespace
 PREPARACION DE TERRENO, SIEMBRA, FERTILIZACION Y ABONAMIENTO, MEJORAMIENTO GENETICO & 3 & 2.22\\
+\addlinespace
 PREPARACION DE TERRENO, SIEMBRA, OTRO & 1 & 0.74\\
 SIEMBRA & 7 & 5.19\\
 SIEMBRA, CONTROL FITOSANITARIO & 1 & 0.74\\
 SIEMBRA, COSECHA & 2 & 1.48\\
-\addlinespace
 SIEMBRA, FERTILIZACION Y ABONAMIENTO & 1 & 0.74\\
+\addlinespace
 SIEMBRA, FERTILIZACION Y ABONAMIENTO, CONTROL FITOSANITARIO, COSECHA & 2 & 1.48\\
+TERRENO Y FERTILIZACION & 2 & 1.48\\
+TERRENO, FERTILIZACION, COSECHA & 4 & 2.96\\
+TERRENO, FERTILIZACION, COSECHA, GENETICA & 1 & 0.74\\
+TERRENO, FERTILIZACION, FITOSANITARIO, COSECHA & 1 & 0.74\\
+\addlinespace
+TERRENO, SIEMBRA, FERTILIZACION, FITOSANITARIO, COSECHA, GENETICA & 12 & 8.89\\
+TERRENO, SIEMBRA, FITOSANITARIO & 1 & 0.74\\
 \bottomrule
 \end{tabular}
 
@@ -1359,10 +1361,10 @@ SIEMBRA, FERTILIZACION Y ABONAMIENTO, CONTROL FITOSANITARIO, COSECHA & 2 & 1.48\
 %\begin{fotos}
 %{trabajo de campo}{35}
 %\end{fotos}
-
+\end{comment}
 
 \begin{tablas}
-{Donde realizar la comercializacion de su cosecha}{
+{Donde realiza la comercializacion de su cosecha}{
 
 \begin{tabular}{lcl}
 \toprule
@@ -1380,16 +1382,16 @@ VENTAS EN MERCADOS REGIONALES & 29 & 10.28\\
 }
 \end{tablas}
 \begin{graficas}
-{Donde realizar la comercializacion de su cosecha}{
+{Donde realiza la comercializacion de su cosecha}{
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 \includegraphics[width=\maxwidth]{figure/fig_treintayocho-1} 
 \end{knitrout}
 }
 \end{graficas}
-%\begin{fotos}
-%{trabajo de campo}{36}
-%\end{fotos}
+\begin{fotos}
+{trabajo de campo}{36}
+\end{fotos}
 
 
 \begin{tablas}
@@ -1415,11 +1417,11 @@ SI & 124 & 31.23\\
 \end{knitrout}
 }
 \end{graficas}
-%\begin{fotos}
-%{trabajo de campo}{37}
-%\end{fotos}
+\begin{fotos}
+{trabajo de campo}{37}
+\end{fotos}
 
-
+\begin{comment}
 \begin{tablas}
 {Meses en los que realiza la cosecha}{
 
@@ -1509,7 +1511,7 @@ OCTUBRE & 1 & 0.24\\
 %\begin{fotos}
 %{trabajo de campo}{38}
 %\end{fotos}
-
+\end{comment}
 
 \begin{tablas}
 {Insumos que usa para la produccion y cosecha}{
@@ -1518,14 +1520,14 @@ OCTUBRE & 1 & 0.24\\
 \toprule
 \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Insumo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Conteo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Porcentaje}}}\\
 \midrule
-EQUIPO Y MAQUINARIA AGRICOLA (TRACTOR, MOTOGUADAÑA, MOLINOS, PICADORAS, ETC) & 24 & 5.96\\
+ANIMALES Y HERRAMIENTAS & 105 & 26.05\\
+ANIMALES Y MAQUINARIA AGRICOLA & 3 & 0.74\\
 HERRAMIENTAS MANUALES & 59 & 14.64\\
-HERRAMIENTAS MANUALES, EQUIPO Y MAQUINARIA AGRICOLA (TRACTOR, MOTOGUADAÑA, MOLINOS, PICADORAS, ETC) & 113 & 28.04\\
-HERRAMIENTAS MANUALES, IMPLEMENTOS TIRADO POR ANIMALES & 105 & 26.05\\
-HERRAMIENTAS MANUALES, IMPLEMENTOS TIRADO POR ANIMALES, EQUIPO Y MAQUINARIA AGRICOLA (TRACTOR, MOTOGUADAÑA, MOLINOS, PICADORAS, ETC) & 96 & 23.82\\
+HERRAMIENTAS Y MAQUINARIA AGRICOLA & 113 & 28.04\\
+HERRAMIENTAS, ANIMALES Y MAQUINARIA AGRICOLA & 96 & 23.82\\
 \addlinespace
 IMPLEMENTOS TIRADO POR ANIMALES & 3 & 0.74\\
-IMPLEMENTOS TIRADO POR ANIMALES, EQUIPO Y MAQUINARIA AGRICOLA (TRACTOR, MOTOGUADAÑA, MOLINOS, PICADORAS, ETC) & 3 & 0.74\\
+MAQUINARIA AGRICOLA & 24 & 5.96\\
 \bottomrule
 \end{tabular}
 
@@ -1540,10 +1542,9 @@ IMPLEMENTOS TIRADO POR ANIMALES, EQUIPO Y MAQUINARIA AGRICOLA (TRACTOR, MOTOGUAD
 \end{knitrout}
 }
 \end{graficas}
-
-%\begin{fotos}
-%{trabajo de campo}{39}
-%\end{fotos}
+\begin{fotos}
+{trabajo de campo}{39}
+\end{fotos}
 
 %para hacer commit desde la terminal:
 %git add .

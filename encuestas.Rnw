@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage[table]{xcolor}
+\usepackage{comment}
 
 \newenvironment{tablas}[2]
 {\begin{table}[H]
@@ -69,6 +70,17 @@ crear_grafica <- function(datos, columna){
 return(grafica)	
     
 }
+
+crear_graficav <- function(datos, columna){
+  grafica <- ggplot(datos,aes(!!sym(columna))) +
+    geom_bar( fill = rgb(0.53, 0.66, 0.42), colour = "white") + xlab("") + ylab("") +
+    coord_flip()
+	grafica + theme_bw()
+	
+return(grafica)	
+    
+}
+
 
 @
 
@@ -238,43 +250,18 @@ Se analizara el genero de los encuestados
   \centering
   \caption{Grado de instruccion}
 <<tabla_tres, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
-  library(knitr)
-  library(kableExtra)
-  library(dplyr)
-  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
-  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
-  #datos$GENERO
-  datos$GRADO.DE.INSTRUCCION[datos$GRADO.DE.INSTRUCCION == ""] <- NA
-  datos <- datos[!is.na(datos$GRADO.DE.INSTRUCCION), ]
   
-  #datos$GENERO[datos$GENERO == ""] <- "Femenino"
-	#para realizar un filtro
-	filtered_data <- datos %>% 
-	  select(GRADO.DE.INSTRUCCION)
 	
-	#?rename()
-	filtered_data <- filtered_data %>% 
-	  rename("Grado" = GRADO.DE.INSTRUCCION)
+	setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$GRADO.DE.INSTRUCCION[datos$GRADO.DE.INSTRUCCION == ""] <- NA
+  datos <- datos[!is.na(datos$GRADO.DE.INSTRUCCION), ]
+	crear_tabla(datos, "GRADO.DE.INSTRUCCION", "Grado")
+
 	
-	#caso porcentaje
-	#contar  el numero de edades en cada grupo
-	tabla <- fil %>% 
-	  group_by(Grado) %>% 
-	  summarise(Conteo = n()) %>% 
-	  arrange(Grado)
-	#opcion caso con porcentajes
-	tabla <- tabla %>% 
-	  mutate(Porcentaje = round((Conteo / sum(Conteo)) *100, 2))
-	
-	#alternativa mejorada, ojala funciones, si funciona :)
-	tabla_latex <- kable(tabla, format = "latex", booktabs = TRUE, align = c("l", "c", "l")) %>% #
-	  row_spec(0, background = '#87A96B', color = 'black', bold = TRUE)
-	
-	print(tabla_latex)
 @
   \caption*{Fuente: Trabajo de campo}
 \end{table}
-
 \begin{figure}[H]
   \centering
   \caption{Distribucion del grado de instruccion}
@@ -449,43 +436,18 @@ Se analizara el genero de los encuestados
   \centering
   \caption{Numero de integrantes que conforman su familia}
 <<tabla_siete, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
-  library(knitr)
-  library(kableExtra)
-  library(dplyr)
-  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
-  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
-  #datos$X.CÓMO.ES.SU.INGRESO.FAMILIAR.
-  datos$X.CUANTO.ES.EL.INGRESO.FAMILIAR.[datos$X.CÚANTOS.INTEGRANTES.CONFORMAN.SU.FAMILIA. == ""] <- NA
-  datos <- datos[!is.na(datos$X.CÚANTOS.INTEGRANTES.CONFORMAN.SU.FAMILIA.), ]
-  #datos$GENERO[datos$GENERO == ""] <- "Femenino"
-	#para realizar un filtro
-	filtered_data <- datos %>% 
-	  select(X.CÚANTOS.INTEGRANTES.CONFORMAN.SU.FAMILIA.)
-	filtered_data <- filtered_data %>% 
-	  rename("Integrantes" = X.CÚANTOS.INTEGRANTES.CONFORMAN.SU.FAMILIA.)
-	
-	#caso porcentaje
-	#contar  el numero de edades en cada grupo
-	tabla <- filtered_data %>% 
-	  group_by(Integrantes) %>% 
-	  summarise(Conteo = n()) %>% 
-	  arrange(Integrantes)
-	#opcion caso con porcentajes
-	tabla <- tabla %>% 
-	  mutate(Porcentaje = round((Conteo / sum(Conteo)) *100, 2))
-	
-	#alternativa mejorada, ojala funciones, si funciona :)
-	tabla_latex <- kable(tabla, format = "latex", booktabs = TRUE, align = c("l", "c", "l")) %>% #
-	  row_spec(0, background = '#87A96B', color = 'black', bold = TRUE)
-	
-	print(tabla_latex)
+    setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  	datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	  datos$X.CÚANTOS.INTEGRANTES.CONFORMAN.SU.FAMILIA.[datos$X.CÚANTOS.INTEGRANTES.CONFORMAN.SU.FAMILIA. == ""] <- NA
+  	datos <- datos[!is.na(datos$X.CÚANTOS.INTEGRANTES.CONFORMAN.SU.FAMILIA.), ]
+	  crear_tabla(datos, "X.CÚANTOS.INTEGRANTES.CONFORMAN.SU.FAMILIA.", "Integrantes")
 @
   \caption*{Fuente: Trabajo de campo}
 \end{table}
 
 \begin{figure}[H]
   \centering
-  \caption{Distribucion del tipo de ingreso familiar}
+  \caption{Numero de integrantes que conforman su familia}
 << fig_siete, echo = FALSE, fig.width=7, fig.height=5>>=
   setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
   datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
@@ -625,7 +587,7 @@ Se analizara el genero de los encuestados
 
 \begin{table}[H]
   \centering
-  \caption{Cuenta con el servicio de agua potable}
+  \caption{Tipo de agua que consume}
 <<tabla_diez, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
   library(knitr)
   library(kableExtra)
@@ -663,7 +625,7 @@ Se analizara el genero de los encuestados
 
 \begin{figure}[H]
   \centering
-  \caption{Cuenta con el servicio de agua potable}
+  \caption{Tipo de agua que consume}
 << fig_diez, echo = FALSE, fig.width=7, fig.height=5>>=
   setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
   datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
@@ -687,7 +649,7 @@ Se analizara el genero de los encuestados
 
 \begin{table}[H]
   \centering
-  \caption{Abastecimiento de agua}
+  \caption{Fuente de agua}
 <<tabla_once, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
   library(knitr)
   library(kableExtra)
@@ -725,7 +687,7 @@ Se analizara el genero de los encuestados
 
 \begin{figure}[H]
   \centering
-  \caption{Fuente de abastecimiento de agua}
+  \caption{Fuente de agua}
 << fig_once, echo = FALSE, fig.width=7, fig.height=5>>=
   setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
   datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
@@ -802,7 +764,7 @@ Se analizara el genero de los encuestados
 %{sensibilizacion a la poblacion}{10}
 %\end{fotos}
 
-
+\begin{comment}
 \begin{table}[H]
   \centering
   \caption{Energia electrica}
@@ -921,7 +883,7 @@ Se analizara el genero de los encuestados
 	@
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
-
+\end{comment}
 
 %\begin{fotos}
 %{sensibilizacion a la poblacion}{11}
@@ -1199,6 +1161,7 @@ Se analizara el genero de los encuestados
 %{reconocimiento en campo}{16}
 %\end{fotos}
 
+\begin{comment}
 \begin{tablas}
 {Organizacion a la que pertenece}{
 <<tabla_diecinueve, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
@@ -1233,10 +1196,10 @@ Se analizara el genero de los encuestados
 %\begin{fotos}
 %{reconocimiento en campo}{17}
 %\end{fotos}
-
+\end{comment}
 
 \begin{tablas}
-{Organizacion a la que pertenece}{
+{Fuente del agua para riego}{
 <<tabla_veinte, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
   setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
   datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
@@ -1247,7 +1210,7 @@ Se analizara el genero de los encuestados
 }
 \end{tablas}
 \begin{graficas}
-{Organizacion a la que pertenece}{
+{Fuente del agua para riego}{
 << fig_veinte, echo = FALSE, fig.width=7, fig.height=5>>=
   setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
   datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
@@ -1261,7 +1224,7 @@ Se analizara el genero de los encuestados
 %{reconocimiento en campo}{18}
 %\end{fotos}
 
-
+\begin{comment}
 \begin{tablas}
 {Fuente de agua para riego}{
 <<tabla_veintiuno, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
@@ -1287,7 +1250,7 @@ Se analizara el genero de los encuestados
 %\begin{fotos}
 %{reconocimiento en campo}{19}
 %\end{fotos}
-
+\end{comment}
 
 \begin{tablas}
 {Frecuencia de riego de la parcela}{
@@ -1544,8 +1507,15 @@ Se analizara el genero de los encuestados
 <<tabla_treintayuno, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
   setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
   datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
-	datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO[datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO == ""] <- NA
+  datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO[datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO == ""] <- NA
+  datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO[datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO == "FACTORES ADVERSOS (HELADAS Y GRANIZADAS)"] <- "FACTORES ADVERSOS"
+  datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO[datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO == "FALTA DE AGUA, FACTORES ADVERSOS (HELADAS Y GRANIZADAS)"] <- "FALTA DE AGUA Y FACTORES ADVERSOS"
+  datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO[datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO == "FALTA DE AGUA, SUELOS PROBRES Y ERIAZOS, FACTORES ADVERSOS (HELADAS Y GRANIZADAS)"] <- "FALTA DE AGUA, FACTORES ADVERSOS Y SUELOS POBRES"
+  datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO[datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO == "SUELOS PROBRES Y ERIAZOS, FACTORES ADVERSOS (HELADAS Y GRANIZADAS)"] <- "SUELOS POBRES Y FACTORES ADVERSOS"
+  datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO[datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO == "SUELOS PROBRES Y ERIAZOS"] <- "SUELOS POBRES"
   datos <- datos[!is.na(datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO), ]
+  #table(datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO)
+  
 	crear_tabla(datos, "CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO", "Causas")
 @
 }
@@ -1555,9 +1525,15 @@ Se analizara el genero de los encuestados
 << fig_treintayuno, echo = FALSE, fig.width=7, fig.height=5>>=
   setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
   datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
-	datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO[datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO == ""] <- NA
+  datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO[datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO == ""] <- NA
+  datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO[datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO == "FACTORES ADVERSOS (HELADAS Y GRANIZADAS)"] <- "FACTORES ADVERSOS"
+  datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO[datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO == "FALTA DE AGUA, FACTORES ADVERSOS (HELADAS Y GRANIZADAS)"] <- "FALTA DE AGUA Y FACTORES ADVERSOS"
+  datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO[datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO == "FALTA DE AGUA, SUELOS PROBRES Y ERIAZOS, FACTORES ADVERSOS (HELADAS Y GRANIZADAS)"] <- "FALTA DE AGUA, FACTORES ADVERSOS Y SUELOS POBRES"
+  datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO[datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO == "SUELOS PROBRES Y ERIAZOS, FACTORES ADVERSOS (HELADAS Y GRANIZADAS)"] <- "SUELOS POBRES Y FACTORES ADVERSOS"
+  datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO[datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO == "SUELOS PROBRES Y ERIAZOS"] <- "SUELOS POBRES"
   datos <- datos[!is.na(datos$CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO), ]
-  crear_grafica(datos, "CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO")
+  
+  crear_graficav(datos, "CAUSAS.QUE.OCASIONAN.LA.DISMINUCION.DE.LA.PRODUCCION.DEL.CULTIVO")
 	@
 }
 \end{graficas}
@@ -1624,8 +1600,13 @@ Se analizara el genero de los encuestados
   setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
   datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
 	datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD[datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD == ""] <- NA
+	datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD[datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD == "ROTACION DE CULTIVOS, INCORPORACION EN MATERIA ORGANICA"] <- "ROTACION Y MATERIA ORGANICA"
+	datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD[datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD == "ROTACION DE CULTIVOS, USO DE ABONOS ORGANICOS, APLICACION DEL CAL"] <- "ROTACION, ABONO ORGANICO Y CAL"
+	datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD[datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD == "ROTACION DE CULTIVOS, USO DE ABONOS ORGANICOS, APLICACION DEL CAL, INCORPORACION EN MATERIA ORGANICA"] <- "ROTACION, ABONO ORGANICO, CAL Y MATERIA ORGANICA"
+	datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD[datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD == "ROTACION DE CULTIVOS, USO DE ABONOS ORGANICOS, INCORPORACION EN MATERIA ORGANICA"] <- "ROTACION, ABONOS ORGANICO Y MATERIA ORGANICA"
+	datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD[datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD == "USO DE ABONOS ORGANICOS, INCORPORACION EN MATERIA ORGANICA"] <- "ABONOS ORGANICO Y MATERIA ORGANICA"
   datos <- datos[!is.na(datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD), ]
-	crear_tabla(datos, "QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD", "Personas")
+  crear_tabla(datos, "QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD", "Personas")
 @
 }
 \end{tablas}
@@ -1635,14 +1616,19 @@ Se analizara el genero de los encuestados
   setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
   datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
 	datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD[datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD == ""] <- NA
+	datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD[datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD == "ROTACION DE CULTIVOS, INCORPORACION EN MATERIA ORGANICA"] <- "ROTACION Y MATERIA ORGANICA"
+	datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD[datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD == "ROTACION DE CULTIVOS, USO DE ABONOS ORGANICOS, APLICACION DEL CAL"] <- "ROTACION, ABONO ORGANICO Y CAL"
+	datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD[datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD == "ROTACION DE CULTIVOS, USO DE ABONOS ORGANICOS, APLICACION DEL CAL, INCORPORACION EN MATERIA ORGANICA"] <- "ROTACION, ABONO ORGANICO, CAL Y MATERIA ORGANICA"
+	datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD[datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD == "ROTACION DE CULTIVOS, USO DE ABONOS ORGANICOS, INCORPORACION EN MATERIA ORGANICA"] <- "ROTACION, ABONOS ORGANICO Y MATERIA ORGANICA"
+	datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD[datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD == "USO DE ABONOS ORGANICOS, INCORPORACION EN MATERIA ORGANICA"] <- "ABONOS ORGANICO Y MATERIA ORGANICA"
   datos <- datos[!is.na(datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD), ]
-  crear_grafica(datos, "QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD")
+  crear_graficav(datos, "QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD")
 	@
 }
 \end{graficas}
-%\begin{fotos}
-%{socializacion del proyecto}{32}
-%\end{fotos}
+\begin{fotos}
+{socializacion del proyecto}{32}
+\end{fotos}
 
 
 \begin{tablas}
@@ -1667,9 +1653,9 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-%\begin{fotos}
-%{socializacion del proyecto}{33}
-%\end{fotos}
+\begin{fotos}
+{socializacion del proyecto}{33}
+\end{fotos}
 
 
 \begin{tablas}
@@ -1694,18 +1680,27 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-%\begin{fotos}
-%{trabajo de campo}{34}
-%\end{fotos}
+\begin{fotos}
+{trabajo de campo}{34}
+\end{fotos}
 
-
+\begin{comment}
 \begin{tablas}
 {Temas de capacitacion}{
 <<tabla_treintaysiete, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
   setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
   datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
 	datos$TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION[datos$TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION == ""] <- NA
-  datos <- datos[!is.na(datos$TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION), ]
+  datos$TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION[datos$TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION == "PREPARACION DE TERRENO, SIEMBRA, FERTILIZACION Y ABONAMIENTO, CONTROL FITOSANITARIO, COSECHA, MEJORAMIENTO GENETICO"] <- "TERRENO, SIEMBRA, FERTILIZACION, FITOSANITARIO, COSECHA, GENETICA"
+	datos$TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION[datos$TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION == "PREPARACION DE TERRENO, FERTILIZACION Y ABONAMIENTO, CONTROL FITOSANITARIO, COSECHA"] <- "TERRENO, FERTILIZACION, FITOSANITARIO, COSECHA"
+	datos$TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION[datos$TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION == "PREPARACION DE TERRENO, FERTILIZACION Y ABONAMIENTO, COSECHA, MEJORAMIENTO GENETICO"] <- "TERRENO, FERTILIZACION, COSECHA, GENETICA"
+	datos$TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION[datos$TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION == "PREPARACION DE TERRENO, FERTILIZACION Y ABONAMIENTO"] <- "TERRENO Y FERTILIZACION"
+	datos$TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION[datos$TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION == "PREPARACION DE TERRENO, FERTILIZACION Y ABONAMIENTO, COSECHA"] <- "TERRENO, FERTILIZACION, COSECHA"
+	datos$TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION[datos$TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION == "PREPARACION DE TERRENO, SIEMBRA, CONTROL FITOSANITARIO"] <- "TERRENO, SIEMBRA, FITOSANITARIO"
+	datos$TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION[datos$TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION == "PREPARACION DE TERRENO, SIEMBRA, CONTROL FITOSANITARIO"] <- "TERRENO, SIEMBRA, FITOSANITARIO"
+	
+  #table(datos$TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION)
+	datos <- datos[!is.na(datos$TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION), ]
 	crear_tabla(datos, "TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION", "Temas")
 @
 }
@@ -1717,17 +1712,17 @@ Se analizara el genero de los encuestados
   datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
 	datos$TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION[datos$TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION == ""] <- NA
   datos <- datos[!is.na(datos$TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION), ]
-  crear_grafica(datos, "TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION")
+  crear_graficav(datos, "TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION")
 	@
 }
 \end{graficas}
 %\begin{fotos}
 %{trabajo de campo}{35}
 %\end{fotos}
-
+\end{comment}
 
 \begin{tablas}
-{Donde realizar la comercializacion de su cosecha}{
+{Donde realiza la comercializacion de su cosecha}{
 <<tabla_treintayocho, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
   setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
   datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
@@ -1738,19 +1733,19 @@ Se analizara el genero de los encuestados
 }
 \end{tablas}
 \begin{graficas}
-{Donde realizar la comercializacion de su cosecha}{
+{Donde realiza la comercializacion de su cosecha}{
 << fig_treintayocho, echo = FALSE, fig.width=7, fig.height=5>>=
   setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
   datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
 	datos$DONDE.REALIZA.LA.COMERCIALIZACION.DE.SU.COSECHA[datos$DONDE.REALIZA.LA.COMERCIALIZACION.DE.SU.COSECHA == ""] <- NA
   datos <- datos[!is.na(datos$DONDE.REALIZA.LA.COMERCIALIZACION.DE.SU.COSECHA), ]
-  crear_grafica(datos, "DONDE.REALIZA.LA.COMERCIALIZACION.DE.SU.COSECHA")
+  crear_graficav(datos, "DONDE.REALIZA.LA.COMERCIALIZACION.DE.SU.COSECHA")
 	@
 }
 \end{graficas}
-%\begin{fotos}
-%{trabajo de campo}{36}
-%\end{fotos}
+\begin{fotos}
+{trabajo de campo}{36}
+\end{fotos}
 
 
 \begin{tablas}
@@ -1775,11 +1770,11 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-%\begin{fotos}
-%{trabajo de campo}{37}
-%\end{fotos}
+\begin{fotos}
+{trabajo de campo}{37}
+\end{fotos}
 
-
+\begin{comment}
 \begin{tablas}
 {Meses en los que realiza la cosecha}{
 <<tabla_cuarenta, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
@@ -1805,7 +1800,7 @@ Se analizara el genero de los encuestados
 %\begin{fotos}
 %{trabajo de campo}{38}
 %\end{fotos}
-
+\end{comment}
 
 \begin{tablas}
 {Insumos que usa para la produccion y cosecha}{
@@ -1813,7 +1808,12 @@ Se analizara el genero de los encuestados
   setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
   datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
 	datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO[datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO == ""] <- NA
-  datos <- datos[!is.na(datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO), ]
+  datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO[datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO == "EQUIPO Y MAQUINARIA AGRICOLA (TRACTOR, MOTOGUADAÑA, MOLINOS, PICADORAS, ETC)"] <- "MAQUINARIA AGRICOLA"
+  datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO[datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO == "HERRAMIENTAS MANUALES, EQUIPO Y MAQUINARIA AGRICOLA (TRACTOR, MOTOGUADAÑA, MOLINOS, PICADORAS, ETC)"] <- "HERRAMIENTAS Y MAQUINARIA AGRICOLA"
+  datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO[datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO == "HERRAMIENTAS MANUALES, IMPLEMENTOS TIRADO POR ANIMALES, EQUIPO Y MAQUINARIA AGRICOLA (TRACTOR, MOTOGUADAÑA, MOLINOS, PICADORAS, ETC)"] <- "HERRAMIENTAS, ANIMALES Y MAQUINARIA AGRICOLA"
+  datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO[datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO == "IMPLEMENTOS TIRADO POR ANIMALES, EQUIPO Y MAQUINARIA AGRICOLA (TRACTOR, MOTOGUADAÑA, MOLINOS, PICADORAS, ETC)"] <- "ANIMALES Y MAQUINARIA AGRICOLA"
+  datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO[datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO == "HERRAMIENTAS MANUALES, IMPLEMENTOS TIRADO POR ANIMALES"] <- "ANIMALES Y HERRAMIENTAS"
+	datos <- datos[!is.na(datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO), ]
 	crear_tabla(datos, "QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO", "Insumo")
 @
 }
@@ -1824,15 +1824,19 @@ Se analizara el genero de los encuestados
   setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
   datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
 	datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO[datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO == ""] <- NA
-  datos <- datos[!is.na(datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO), ]
-  crear_grafica(datos, "QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO")
+  datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO[datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO == "EQUIPO Y MAQUINARIA AGRICOLA (TRACTOR, MOTOGUADAÑA, MOLINOS, PICADORAS, ETC)"] <- "MAQUINARIA AGRICOLA"
+  datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO[datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO == "HERRAMIENTAS MANUALES, EQUIPO Y MAQUINARIA AGRICOLA (TRACTOR, MOTOGUADAÑA, MOLINOS, PICADORAS, ETC)"] <- "HERRAMIENTAS Y MAQUINARIA AGRICOLA"
+  datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO[datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO == "HERRAMIENTAS MANUALES, IMPLEMENTOS TIRADO POR ANIMALES, EQUIPO Y MAQUINARIA AGRICOLA (TRACTOR, MOTOGUADAÑA, MOLINOS, PICADORAS, ETC)"] <- "HERRAMIENTAS, ANIMALES Y MAQUINARIA AGRICOLA"
+  datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO[datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO == "IMPLEMENTOS TIRADO POR ANIMALES, EQUIPO Y MAQUINARIA AGRICOLA (TRACTOR, MOTOGUADAÑA, MOLINOS, PICADORAS, ETC)"] <- "ANIMALES Y MAQUINARIA AGRICOLA"
+  datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO[datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO == "HERRAMIENTAS MANUALES, IMPLEMENTOS TIRADO POR ANIMALES"] <- "ANIMALES Y HERRAMIENTAS"
+	datos <- datos[!is.na(datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO), ]
+  crear_graficav(datos, "QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO")
 	@
 }
 \end{graficas}
-
-%\begin{fotos}
-%{trabajo de campo}{39}
-%\end{fotos}
+\begin{fotos}
+{trabajo de campo}{39}
+\end{fotos}
 
 %para hacer commit desde la terminal:
 %git add .
