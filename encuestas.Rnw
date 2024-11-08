@@ -242,7 +242,7 @@ Se analizara el genero de los encuestados
 \begin{table}[H]
   \centering
   \caption{Grado de instruccion}
-<<tabla_trs, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+<<tabla_tres, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
   library(knitr)
   library(kableExtra)
   library(dplyr)
@@ -1500,17 +1500,13 @@ Se analizara el genero de los encuestados
   datos <- datos[!is.na(datos$EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN), ]
 	crear_tabla(datos, "EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN", "Cultivo")
 	
-	
-	setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
-  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
-  datos$DISTRITO
-  espinar <- subset(datos, datos$DISTRITO == "LLUSCO")
-  espinar$EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN[espinar$EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN == ""] <- NA
-  espinars <- espinar[!is.na(espinar$EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN), ]
-	crear_tabla(espinar, "EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN", "Cultivo")
-	
-	
-	
+# 	setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+#   datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+#   datos$DISTRITO
+#   espinar <- subset(datos, datos$DISTRITO == "LLUSCO")
+#   espinar$EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN[espinar$EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN == ""] <- NA
+#   espinars <- espinar[!is.na(espinar$EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN), ]
+# 	crear_tabla(espinar, "EN.LA.COMUNIDAD.USTED.DESARROLLA.QUE.TIPO.DE.PRODUCCIÓN", "Cultivo")
 @
 }
 \end{tablas}
@@ -1608,6 +1604,276 @@ Se analizara el genero de los encuestados
 \end{graficas}
 \begin{fotos}
 {socializacion del proyecto}{29}
+\end{fotos}
+
+\begin{tablas}
+{Registra la venta de su produccion}{
+<<tabla_treintaydos, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$REGISTRA.VENTA.POR.SU.PRODUCCIÓN[datos$REGISTRA.VENTA.POR.SU.PRODUCCIÓN == ""] <- NA
+  datos <- datos[!is.na(datos$REGISTRA.VENTA.POR.SU.PRODUCCIÓN), ]
+	crear_tabla(datos, "REGISTRA.VENTA.POR.SU.PRODUCCIÓN", "Registo_ventas")
+@
+}
+\end{tablas}
+\begin{graficas}
+{Registra la venta de su produccion}{
+<< fig_treintaydos, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$REGISTRA.VENTA.POR.SU.PRODUCCIÓN[datos$REGISTRA.VENTA.POR.SU.PRODUCCIÓN == ""] <- NA
+  datos <- datos[!is.na(datos$REGISTRA.VENTA.POR.SU.PRODUCCIÓN), ]
+  crear_grafica(datos, "REGISTRA.VENTA.POR.SU.PRODUCCIÓN")
+	@
+}
+\end{graficas}
+\begin{fotos}
+{socializacion del proyecto}{30}
+\end{fotos}
+
+\begin{tablas}
+{Personas con las que realiza la cosecha}{
+<<tabla_treintaytres, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$PERSONAS.CON.LAS.QUE.REALIZA.LA.COSECHA[datos$PERSONAS.CON.LAS.QUE.REALIZA.LA.COSECHA == ""] <- NA
+  datos <- datos[!is.na(datos$PERSONAS.CON.LAS.QUE.REALIZA.LA.COSECHA), ]
+	crear_tabla(datos, "PERSONAS.CON.LAS.QUE.REALIZA.LA.COSECHA", "Personas")
+@
+}
+\end{tablas}
+\begin{graficas}
+{Personas con las que realiza la cosecha}{
+<< fig_treintaytres, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$PERSONAS.CON.LAS.QUE.REALIZA.LA.COSECHA[datos$PERSONAS.CON.LAS.QUE.REALIZA.LA.COSECHA == ""] <- NA
+  datos <- datos[!is.na(datos$PERSONAS.CON.LAS.QUE.REALIZA.LA.COSECHA), ]
+  crear_grafica(datos, "PERSONAS.CON.LAS.QUE.REALIZA.LA.COSECHA")
+	@
+}
+\end{graficas}
+\begin{fotos}
+{socializacion del proyecto}{31}
+\end{fotos}
+
+
+\begin{tablas}
+{Practica de conservacion de suelos}{
+<<tabla_treintaycuatro, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD[datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD == ""] <- NA
+  datos <- datos[!is.na(datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD), ]
+	crear_tabla(datos, "QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD", "Personas")
+@
+}
+\end{tablas}
+\begin{graficas}
+{Practica de conservacion de suelos}{
+<< fig_treintaycuatro, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD[datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD == ""] <- NA
+  datos <- datos[!is.na(datos$QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD), ]
+  crear_grafica(datos, "QUE.PRACTICA.DE.CONSERVACION.DE.SUELOS.REALIZA.UD")
+	@
+}
+\end{graficas}
+\begin{fotos}
+{socializacion del proyecto}{32}
+\end{fotos}
+
+
+\begin{tablas}
+{Realiza manejo de post cosecha}{
+<<tabla_treintaycinco, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$REALIZA.MANEJO.DE.POST.COSECHA[datos$REALIZA.MANEJO.DE.POST.COSECHA == ""] <- NA
+  datos <- datos[!is.na(datos$REALIZA.MANEJO.DE.POST.COSECHA), ]
+	crear_tabla(datos, "REALIZA.MANEJO.DE.POST.COSECHA", "Manejo")
+@
+}
+\end{tablas}
+\begin{graficas}
+{Realiza manejo de post cosecha}{
+<< fig_treintaycinco, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$REALIZA.MANEJO.DE.POST.COSECHA[datos$REALIZA.MANEJO.DE.POST.COSECHA == ""] <- NA
+  datos <- datos[!is.na(datos$REALIZA.MANEJO.DE.POST.COSECHA), ]
+  crear_grafica(datos, "REALIZA.MANEJO.DE.POST.COSECHA")
+	@
+}
+\end{graficas}
+\begin{fotos}
+{socializacion del proyecto}{33}
+\end{fotos}
+
+
+\begin{tablas}
+{Ha recibido alguna capacitacion}{
+<<tabla_treintayseis, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$HA.RECIBIDO.ALGUNA.CAPACITACION[datos$HA.RECIBIDO.ALGUNA.CAPACITACION == ""] <- NA
+  datos <- datos[!is.na(datos$HA.RECIBIDO.ALGUNA.CAPACITACION), ]
+	crear_tabla(datos, "HA.RECIBIDO.ALGUNA.CAPACITACION", "Capacitacion")
+@
+}
+\end{tablas}
+\begin{graficas}
+{Ha recibido alguna capacitacion}{
+<< fig_treintayseis, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$HA.RECIBIDO.ALGUNA.CAPACITACION[datos$HA.RECIBIDO.ALGUNA.CAPACITACION == ""] <- NA
+  datos <- datos[!is.na(datos$HA.RECIBIDO.ALGUNA.CAPACITACION), ]
+  crear_grafica(datos, "HA.RECIBIDO.ALGUNA.CAPACITACION")
+	@
+}
+\end{graficas}
+\begin{fotos}
+{trabajo de campo}{34}
+\end{fotos}
+
+
+\begin{tablas}
+{Temas de capacitacion}{
+<<tabla_treintaysiete, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION[datos$TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION == ""] <- NA
+  datos <- datos[!is.na(datos$TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION), ]
+	crear_tabla(datos, "TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION", "Temas")
+@
+}
+\end{tablas}
+\begin{graficas}
+{Temas de capacitacion}{
+<< fig_treintaysiete, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION[datos$TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION == ""] <- NA
+  datos <- datos[!is.na(datos$TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION), ]
+  crear_grafica(datos, "TEMAS.EN.LO.QUE.HA.RECIBIDO.CAPACITACION")
+	@
+}
+\end{graficas}
+\begin{fotos}
+{trabajo de campo}{35}
+\end{fotos}
+
+
+\begin{tablas}
+{Donde realizar la comercializacion de su cosecha}{
+<<tabla_treintayocho, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$DONDE.REALIZA.LA.COMERCIALIZACION.DE.SU.COSECHA[datos$DONDE.REALIZA.LA.COMERCIALIZACION.DE.SU.COSECHA == ""] <- NA
+  datos <- datos[!is.na(datos$DONDE.REALIZA.LA.COMERCIALIZACION.DE.SU.COSECHA), ]
+	crear_tabla(datos, "DONDE.REALIZA.LA.COMERCIALIZACION.DE.SU.COSECHA", "Lugar")
+@
+}
+\end{tablas}
+\begin{graficas}
+{Donde realizar la comercializacion de su cosecha}{
+<< fig_treintayocho, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$DONDE.REALIZA.LA.COMERCIALIZACION.DE.SU.COSECHA[datos$DONDE.REALIZA.LA.COMERCIALIZACION.DE.SU.COSECHA == ""] <- NA
+  datos <- datos[!is.na(datos$DONDE.REALIZA.LA.COMERCIALIZACION.DE.SU.COSECHA), ]
+  crear_grafica(datos, "DONDE.REALIZA.LA.COMERCIALIZACION.DE.SU.COSECHA")
+	@
+}
+\end{graficas}
+\begin{fotos}
+{trabajo de campo}{36}
+\end{fotos}
+
+
+\begin{tablas}
+{Pertenece a alguna organizacion o asociacion}{
+<<tabla_treintaynueve, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$PERTECENE.A.ALGUNA.ORGANIZACION.U.ASOCIACION[datos$PERTECENE.A.ALGUNA.ORGANIZACION.U.ASOCIACION == ""] <- NA
+  datos <- datos[!is.na(datos$PERTECENE.A.ALGUNA.ORGANIZACION.U.ASOCIACION), ]
+	crear_tabla(datos, "PERTECENE.A.ALGUNA.ORGANIZACION.U.ASOCIACION", "Pertenece")
+@
+}
+\end{tablas}
+\begin{graficas}
+{Pertenece a alguna organizacion o asociacion}{
+<< fig_treintaynueve, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$PERTECENE.A.ALGUNA.ORGANIZACION.U.ASOCIACION[datos$PERTECENE.A.ALGUNA.ORGANIZACION.U.ASOCIACION == ""] <- NA
+  datos <- datos[!is.na(datos$PERTECENE.A.ALGUNA.ORGANIZACION.U.ASOCIACION), ]
+  crear_grafica(datos, "PERTECENE.A.ALGUNA.ORGANIZACION.U.ASOCIACION")
+	@
+}
+\end{graficas}
+\begin{fotos}
+{trabajo de campo}{37}
+\end{fotos}
+
+
+\begin{tablas}
+{Meses en los que realiza la cosecha}{
+<<tabla_cuarenta, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$MESES.EN.LOS.QUE.REALIZA.LA.COSECHA[datos$MESES.EN.LOS.QUE.REALIZA.LA.COSECHA == ""] <- NA
+  datos <- datos[!is.na(datos$MESES.EN.LOS.QUE.REALIZA.LA.COSECHA), ]
+	crear_tabla(datos, "MESES.EN.LOS.QUE.REALIZA.LA.COSECHA", "Meses")
+@
+}
+\end{tablas}
+\begin{graficas}
+{Meses en los que realiza la cosecha}{
+<< fig_cuarenta, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$MESES.EN.LOS.QUE.REALIZA.LA.COSECHA[datos$MESES.EN.LOS.QUE.REALIZA.LA.COSECHA == ""] <- NA
+  datos <- datos[!is.na(datos$MESES.EN.LOS.QUE.REALIZA.LA.COSECHA), ]
+  crear_grafica(datos, "MESES.EN.LOS.QUE.REALIZA.LA.COSECHA")
+	@
+}
+\end{graficas}
+\begin{fotos}
+{trabajo de campo}{38}
+\end{fotos}
+
+
+\begin{tablas}
+{Insumos que usa para la produccion y cosecha}{
+<<tabla_cuarentayuno, echo=FALSE, results='asis', warning=FALSE, message=FALSE>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO[datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO == ""] <- NA
+  datos <- datos[!is.na(datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO), ]
+	crear_tabla(datos, "QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO", "Insumo")
+@
+}
+\end{tablas}
+\begin{graficas}
+{Insumos que usa para la produccion y cosecha}{
+<< fig_cuarentayuno, echo = FALSE, fig.width=7, fig.height=5>>=
+  setwd("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego")
+  datos <- read.csv("H:/Gore Cusco/Geragri/programa/analisis datos/analisis2/programariego/base/encuestas.csv")
+	datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO[datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO == ""] <- NA
+  datos <- datos[!is.na(datos$QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO), ]
+  crear_grafica(datos, "QUE.UTILIZA.PARA.SU.PRODUCCIÓN.Y.COSECHA.DE.SU.CULTIVO")
+	@
+}
+\end{graficas}
+Se ha detectado que la mayori de lo adsas usasn esrtos insumso
+
+\begin{fotos}
+{trabajo de campo}{39}
 \end{fotos}
 
 \end{document}
