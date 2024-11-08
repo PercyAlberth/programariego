@@ -1840,7 +1840,6 @@ Se analizara el genero de los encuestados
 %para hacer push
 %git push origin main
 
-segundo cambio
 
 
 \end{document}
