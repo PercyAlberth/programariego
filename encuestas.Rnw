@@ -250,6 +250,9 @@ Se analizara el genero de los encuestados
 	@
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
+LOS USUARIOS EN CUESTADOS SIN DEL 90% EN LA COMUNIDAD DE Kana kjanansyaa lo cual implica la gran mayoria no esta dispuesto a renuncio //
+
+
 
 \begin{table}[H]
   \centering
