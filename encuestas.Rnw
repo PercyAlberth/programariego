@@ -88,6 +88,7 @@ return(grafica)
 
 modificacion desde github desktop\\
 Se realizara el analisis de las encuestas de todas la encuestas realizadas en el trabajo de campo.\\
+cambio desde main
 \begin{table}[H]
   \centering
   \caption{Edad de los encuestados}
