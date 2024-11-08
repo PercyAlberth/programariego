@@ -1829,7 +1829,6 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-Se ha detectado que la mayori de lo adsas usasn esrtos insumso
 
 %\begin{fotos}
 %{trabajo de campo}{39}
