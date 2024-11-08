@@ -138,7 +138,6 @@ Se realizara el analisis de las encuestas de todas la encuestas realizadas en el
 @
   \caption*{Fuente trabajo de campo}
 \end{table}
-Aca ira la interpretacion de la tabla
 \begin{figure}[H]
   \centering
   \caption{Porcentaje de edad de los encuestados}
@@ -172,6 +171,11 @@ Aca ira la interpretacion de la tabla
 	@
   \caption*{Fuente: trabajo de campo}
 \end{figure}
+
+aPORTE DE MARI\\
+NUEVA LINEA\\
+OTRA LINEA\\
+OTRA\\
 
 \begin{fotos}
 {Aplicacion de encuestas}{1}
