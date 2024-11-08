@@ -1877,6 +1877,12 @@ Se analizara el genero de los encuestados
 %para hacer push
 %git push origin main
 
+%para crear una nueva rama en la terminal
+%git branch Marina
+%para cambiar a la nueva rama 
+%git checkout Marina
+%para subir la nueva rama a github
+%git push -u origin Marina
 
 
 \end{document}
