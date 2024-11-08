@@ -1834,4 +1834,13 @@ Se analizara el genero de los encuestados
 %{trabajo de campo}{39}
 %\end{fotos}
 
+%para hacer commit desde la terminal:
+%git add .
+%git commit -m "Actualizacion de archivos (esto se puede modificar) .Rnw"
+%para hacer push
+%git push origin main
+
+segundo cambio
+
+
 \end{document}
