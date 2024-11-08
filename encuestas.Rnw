@@ -159,16 +159,11 @@ Aca ira la interpretacion de la tabla
 	@
   \caption*{Fuente: trabajo de campo}
 \end{figure}
-mas interpretacion de la grafica\\
-aca se inserta la imagen
 
+%\begin{fotos}
+%{Aplicacion de encuestas}{1}
+%\end{fotos}
 
-\begin{figure}[H]
-  \centering
-  \caption{Aplicando encuestas}
-  \includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/1.jpg}
-  \caption*{Fuente: trabajo de campo}
-\end{figure}
 
 Se analizara el genero de los encuestados
 \begin{table}[H]
@@ -297,12 +292,9 @@ Se analizara el genero de los encuestados
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
 
-\begin{figure}[H]
-  \centering
-  \caption{Aplicando encuestas}
-  \includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/2.jpg}
-  \caption*{Fuente: trabajo de campo}
-\end{figure}
+%\begin{fotos}
+%{Aplicacion de encuestas}{2}
+%\end{fotos}
 
 
 \begin{table}[H]
@@ -361,13 +353,10 @@ Se analizara el genero de los encuestados
 	@
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
+%\begin{fotos}
+%{Aplicacion de encuestas}{3}
+%\end{fotos}
 
-\begin{figure}[H]
-  \centering
-  \caption{Aplicacion de encuestas}
-  \includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/3.jpg}
-  \caption*{Fuente: trabajo de campo}
-\end{figure}
 
 \begin{table}[H]
   \centering
@@ -451,12 +440,9 @@ Se analizara el genero de los encuestados
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
 
-\begin{figure}[H]
-  \centering
-  \caption{Sensibililzacion a los beneficiarios}
-  \includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/4.jpg}
-  \caption*{Fuente: trabajo de campo}
-\end{figure}
+%\begin{fotos}
+%{Sensibililzacion a los beneficiarios}{4}
+%\end{fotos}
 
 
 \begin{table}[H]
@@ -513,13 +499,9 @@ Se analizara el genero de los encuestados
 	@
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
-
-\begin{figure}[H]
-  \centering
-  \caption{Sensibililzacion a los beneficiarios}
-  \includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/5.jpg}
-  \caption*{Fuente: trabajo de campo}
-\end{figure}
+%\begin{fotos}
+%{Aplicacion de encuestas en el area de influencia}{5}
+%\end{fotos}
 
 
 \begin{table}[H]
@@ -576,13 +558,9 @@ Se analizara el genero de los encuestados
 	@
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
-
-\begin{figure}[H]
-  \centering
-  \caption{Aplicacion de encuestas en el area de influencia}
-  \includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/6.jpg}
-  \caption*{Fuente: trabajo de campo}
-\end{figure}
+%\begin{fotos}
+%{Aplicacion de encuestas en el area de influencia}{6}
+%\end{fotos}
 
 
 \begin{table}[H]
@@ -640,12 +618,9 @@ Se analizara el genero de los encuestados
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
 
-\begin{figure}[H]
-  \centering
-  \caption{Aplicacion de encuestas en el area de influencia}
-  \includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/7.jpg}
-  \caption*{Fuente: trabajo de campo}
-\end{figure}
+%\begin{fotos}
+%{Aplicacion de encuestas en el area de influencia}{7}
+%\end{fotos}
 
 
 \begin{table}[H]
@@ -703,12 +678,9 @@ Se analizara el genero de los encuestados
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
 
-\begin{figure}[H]
-  \centering
-  \caption{Aplicacion de encuestas en el area de influencia}
-  \includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/8.jpg}
-  \caption*{Fuente: trabajo de campo}
-\end{figure}
+%\begin{fotos}
+%{sensibilizacion a la poblacion}{8}
+%\end{fotos}
 
 
 
@@ -767,14 +739,9 @@ Se analizara el genero de los encuestados
 	@
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
-
-\begin{figure}[H]
-  \centering
-  \caption{Sensibilizacion a los productores}
-  \includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/9.jpg}
-  \caption*{Fuente: trabajo de campo}
-\end{figure}
-
+%\begin{fotos}
+%{sensibilizacion a la poblacion}{9}
+%\end{fotos}
 
 \begin{table}[H]
   \centering
@@ -831,12 +798,10 @@ Se analizara el genero de los encuestados
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
 
-\begin{figure}[H]
-  \centering
-  \caption{Sensibilizacion a los productores}
-  \includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/10.jpg}
-  \caption*{Fuente: trabajo de campo}
-\end{figure}
+%\begin{fotos}
+%{sensibilizacion a la poblacion}{10}
+%\end{fotos}
+
 
 \begin{table}[H]
   \centering
@@ -957,12 +922,10 @@ Se analizara el genero de los encuestados
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
 
-\begin{figure}[H]
-  \centering
-  \caption{Sensibilizacion a los productores}
-  \includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/11.jpg}
-  \caption*{Fuente: trabajo de campo}
-\end{figure}
+
+%\begin{fotos}
+%{sensibilizacion a la poblacion}{11}
+%\end{fotos}
 
 
 \begin{table}[H]
@@ -1020,13 +983,9 @@ Se analizara el genero de los encuestados
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
 
-\begin{figure}[H]
-  \centering
-  \caption{Sensibilizacion a los productores}
-  \includegraphics[width=7cm, height=7cm]{H:/Gore Cusco/Geragri/programa/analisis datos/fotos/12.jpg}
-  \caption*{Fuente: trabajo de campo}
-\end{figure}
-
+%\begin{fotos}
+%{sensibilizacion a la poblacion}{12}
+%\end{fotos}
 
 
 \begin{tablas}
@@ -1083,9 +1042,9 @@ Se analizara el genero de los encuestados
 }
 \end{graficas}
 
-\begin{fotos}
-{sensibilizacion a la poblacion}{13}
-\end{fotos}
+%\begin{fotos}
+%{sensibilizacion a la poblacion}{13}
+%\end{fotos}
 
 
 
@@ -1142,9 +1101,9 @@ Se analizara el genero de los encuestados
 }
 \end{graficas}
 
-\begin{fotos}
-{aplicacion de encuestas}{14}
-\end{fotos}
+%\begin{fotos}
+%{aplicacion de encuestas}{14}
+%\end{fotos}
 
 
 \begin{tablas}
@@ -1200,9 +1159,9 @@ Se analizara el genero de los encuestados
 }
 \end{graficas}
 
-\begin{fotos}
-{reconocimiento en campo}{15}
-\end{fotos}
+%\begin{fotos}
+%{reconocimiento en campo}{15}
+%\end{fotos}
 
 
 \begin{tablas}
@@ -1236,9 +1195,9 @@ Se analizara el genero de los encuestados
 }
 \end{graficas}
 
-\begin{fotos}
-{reconocimiento en campo}{16}
-\end{fotos}
+%\begin{fotos}
+%{reconocimiento en campo}{16}
+%\end{fotos}
 
 \begin{tablas}
 {Organizacion a la que pertenece}{
@@ -1271,9 +1230,9 @@ Se analizara el genero de los encuestados
 }
 \end{graficas}
 
-\begin{fotos}
-{reconocimiento en campo}{17}
-\end{fotos}
+%\begin{fotos}
+%{reconocimiento en campo}{17}
+%\end{fotos}
 
 
 \begin{tablas}
@@ -1298,9 +1257,9 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-\begin{fotos}
-{reconocimiento en campo}{18}
-\end{fotos}
+%\begin{fotos}
+%{reconocimiento en campo}{18}
+%\end{fotos}
 
 
 \begin{tablas}
@@ -1325,9 +1284,9 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-\begin{fotos}
-{reconocimiento en campo}{19}
-\end{fotos}
+%\begin{fotos}
+%{reconocimiento en campo}{19}
+%\end{fotos}
 
 
 \begin{tablas}
@@ -1352,9 +1311,9 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-\begin{fotos}
-{reconocimiento en campo}{20}
-\end{fotos}
+%\begin{fotos}
+%{reconocimiento en campo}{20}
+%\end{fotos}
 
 \begin{tablas}
 {Infraestructura de riego}{
@@ -1378,9 +1337,9 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-\begin{fotos}
-{reconocimiento en campo}{21}
-\end{fotos}
+%\begin{fotos}
+%{reconocimiento en campo}{21}
+%\end{fotos}
 
 
 \begin{tablas}
@@ -1405,9 +1364,9 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-\begin{fotos}
-{reconocimiento en campo}{22}
-\end{fotos}
+%\begin{fotos}
+%{reconocimiento en campo}{22}
+%\end{fotos}
 
 
 \begin{tablas}
@@ -1432,9 +1391,9 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-\begin{fotos}
-{reconocimiento en campo}{23}
-\end{fotos}
+%\begin{fotos}
+%{reconocimiento en campo}{23}
+%\end{fotos}
 
 
 \begin{tablas}
@@ -1459,9 +1418,9 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-\begin{fotos}
-{reconocimiento en campo}{24}
-\end{fotos}
+%\begin{fotos}
+%{reconocimiento en campo}{24}
+%\end{fotos}
 
 
 \begin{tablas}
@@ -1486,9 +1445,9 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-\begin{fotos}
-{aplicacion de encuesta}{25}
-\end{fotos}
+%\begin{fotos}
+%{aplicacion de encuesta}{25}
+%\end{fotos}
 
 
 \begin{tablas}
@@ -1521,9 +1480,9 @@ Se analizara el genero de los encuestados
 	@
 %}
 %\end{graficas}
-\begin{fotos}
-{aplicacion de encuesta}{26}
-\end{fotos}
+%\begin{fotos}
+%{aplicacion de encuesta}{26}
+%\end{fotos}
 
 
 \begin{tablas}
@@ -1548,9 +1507,9 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-\begin{fotos}
-{socializacion del proyecto}{27}
-\end{fotos}
+%\begin{fotos}
+%{socializacion del proyecto}{27}
+%\end{fotos}
 
 
 \begin{tablas}
@@ -1575,9 +1534,9 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-\begin{fotos}
-{socializacion del proyecto}{28}
-\end{fotos}
+%\begin{fotos}
+%{socializacion del proyecto}{28}
+%\end{fotos}
 
 
 \begin{tablas}
@@ -1602,9 +1561,9 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-\begin{fotos}
-{socializacion del proyecto}{29}
-\end{fotos}
+%\begin{fotos}
+%{socializacion del proyecto}{29}
+%\end{fotos}
 
 \begin{tablas}
 {Registra la venta de su produccion}{
@@ -1628,9 +1587,9 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-\begin{fotos}
-{socializacion del proyecto}{30}
-\end{fotos}
+%\begin{fotos}
+%{socializacion del proyecto}{30}
+%\end{fotos}
 
 \begin{tablas}
 {Personas con las que realiza la cosecha}{
@@ -1654,9 +1613,9 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-\begin{fotos}
-{socializacion del proyecto}{31}
-\end{fotos}
+%\begin{fotos}
+%{socializacion del proyecto}{31}
+%\end{fotos}
 
 
 \begin{tablas}
@@ -1681,9 +1640,9 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-\begin{fotos}
-{socializacion del proyecto}{32}
-\end{fotos}
+%\begin{fotos}
+%{socializacion del proyecto}{32}
+%\end{fotos}
 
 
 \begin{tablas}
@@ -1708,9 +1667,9 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-\begin{fotos}
-{socializacion del proyecto}{33}
-\end{fotos}
+%\begin{fotos}
+%{socializacion del proyecto}{33}
+%\end{fotos}
 
 
 \begin{tablas}
@@ -1735,9 +1694,9 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-\begin{fotos}
-{trabajo de campo}{34}
-\end{fotos}
+%\begin{fotos}
+%{trabajo de campo}{34}
+%\end{fotos}
 
 
 \begin{tablas}
@@ -1762,9 +1721,9 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-\begin{fotos}
-{trabajo de campo}{35}
-\end{fotos}
+%\begin{fotos}
+%{trabajo de campo}{35}
+%\end{fotos}
 
 
 \begin{tablas}
@@ -1789,9 +1748,9 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-\begin{fotos}
-{trabajo de campo}{36}
-\end{fotos}
+%\begin{fotos}
+%{trabajo de campo}{36}
+%\end{fotos}
 
 
 \begin{tablas}
@@ -1816,9 +1775,9 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-\begin{fotos}
-{trabajo de campo}{37}
-\end{fotos}
+%\begin{fotos}
+%{trabajo de campo}{37}
+%\end{fotos}
 
 
 \begin{tablas}
@@ -1843,9 +1802,9 @@ Se analizara el genero de los encuestados
 	@
 }
 \end{graficas}
-\begin{fotos}
-{trabajo de campo}{38}
-\end{fotos}
+%\begin{fotos}
+%{trabajo de campo}{38}
+%\end{fotos}
 
 
 \begin{tablas}
@@ -1872,8 +1831,8 @@ Se analizara el genero de los encuestados
 \end{graficas}
 Se ha detectado que la mayori de lo adsas usasn esrtos insumso
 
-\begin{fotos}
-{trabajo de campo}{39}
-\end{fotos}
+%\begin{fotos}
+%{trabajo de campo}{39}
+%\end{fotos}
 
 \end{document}
