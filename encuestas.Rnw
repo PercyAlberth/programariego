@@ -172,11 +172,6 @@ Se realizara el analisis de las encuestas de todas la encuestas realizadas en el
   \caption*{Fuente: trabajo de campo}
 \end{figure}
 
-aPORTE DE MARI\\
-NUEVA LINEA\\
-OTRA LINEA\\
-OTRA\\
-
 \begin{fotos}
 {Aplicacion de encuestas}{1}
 \end{fotos}
@@ -287,6 +282,8 @@ LOS USUARIOS EN CUESTADOS SIN DEL 90% EN LA COMUNIDAD DE Kana kjanansyaa lo cual
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
 
+
+
 \begin{fotos}
 {Aplicacion de encuestas}{2}
 \end{fotos}
@@ -348,6 +345,7 @@ LOS USUARIOS EN CUESTADOS SIN DEL 90% EN LA COMUNIDAD DE Kana kjanansyaa lo cual
 	@
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
+
 \begin{fotos}
 {Aplicacion de encuestas}{3}
 \end{fotos}
