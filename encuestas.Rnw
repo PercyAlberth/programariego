@@ -171,6 +171,7 @@ Se realizara el analisis de las encuestas de todas la encuestas realizadas en el
 	@
   \caption*{Fuente: trabajo de campo}
 \end{figure}
+La Tabla que muestra las edades de los encuestados, revela que solo el 6.35\% de la muestra se encuentra en el rango de edad de (23.9, 33.3], lo que indica que hay una baja representación de jóvenes adultos, lo que podría sugerir que este grupo tiene un interés limitado, en el siguiente rango, de (33.3, 42.6], el porcentaje aumenta a 12.24\%, pero sigue siendo un grupo pequeño, lo que refuerza la idea de que los adultos jóvenes son poco representados en esta muestra a medida que se avanza hacia la mediana edad, en el rango de (42.6, 51.9], el porcentaje alcanza un 19.73\%, lo que refleja un aumento considerable en la representación de este grupo, el rango de (51.9, 61.1] tiene el mayor porcentaje, con un 28.80%, lo que indica que la mayoría de los encuestados se encuentran en una etapa de vida más avanzada, lo que podría influir en sus respuestas debido a la mayor experiencia acumulada, en el rango de (61.1, 70.4], el 22.00\% también representa una proporción significativa, lo que refuerza la tendencia hacia una población de mayor edad, aportando una perspectiva más madura y reflexiva, en cuanto al rango de (70.4, 79.7], se observa que el 7.94% de los encuestados pertenece a esta categoría, lo que sugiere que hay una presencia notable de personas mayores, mientras que el grupo de (79.7, 89.1] representa solo el 2.95%, lo que indica que la muestra cuenta con pocos participantes en el rango de edad más avanzada esto podría influir en la comprensión de las necesidades de este grupo, dado su bajo nivel de representación. En conclusión, estos datos reflejan una población principalmente adulta y mayor, lo que implica que las opiniones y necesidades que se recogen en la encuesta están influenciadas por las experiencias y circunstancias propias de estos grupos etarios.
 
 \begin{fotos}
 {Aplicacion de encuestas}{1}
@@ -245,7 +246,8 @@ Se analizara el genero de los encuestados
 	@
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
-LOS USUARIOS EN CUESTADOS SIN DEL 90% EN LA COMUNIDAD DE Kana kjanansyaa lo cual implica la gran mayoria no esta dispuesto a renuncio //
+La siguiente tabla  presenta la distribución de género entre los encuestados, donde el 47.97\% corresponde a mujeres y el 52.03\% a hombres, lo que refleja una ligera mayoría masculina en la muestra, aunque existe una ligera predominancia de varones, la representación femenina sigue siendo significativa y debe tenerse en cuenta al analizar los resultados, la diferencia de solo un 4.06\% entre ambos géneros sugiere que las experiencias y opiniones de los dos grupos están igualmente representadas, lo que podría aportar una diversidad de puntos de vista en las respuestas obtenidas. En conclusión, la distribución de género presentada en esta tabla muestra, una muestra equilibrada, aunque con una ligera inclinación hacia los varones, lo que es un aspecto importante a considerar en el análisis de los datos recopilados.
+esta dispuesto a renuncio //
 
 
 
@@ -281,9 +283,7 @@ LOS USUARIOS EN CUESTADOS SIN DEL 90% EN LA COMUNIDAD DE Kana kjanansyaa lo cual
 	@
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
-
-
-
+la tabla muestra la distribución del grado de instrucción de los encuestados, donde se observa que el 50\% no ha completado la educación primaria, lo que indica una alta proporción de personas con bajo nivel educativo en la muestra. En comparación, el 22.73\% de los encuestados no tiene ningún grado de instrucción, lo que resalta la necesidad de atención a la educación en estas poblaciones encuestadas, el 25.36% ha alcanzado la secundaria, lo que sugiere que una parte significativa ha completado al menos la educación básica, pero aún queda un porcentaje considerable que no ha avanzado más allá de este nivel, solo un 1.20% ha alcanzado la educación superior, lo que indica que la mayoría de los encuestados no ha tenido acceso a la educación universitaria, lo que podría limitar sus oportunidades laborales y de desarrollo personal, por último, el 0.72\% ha completado estudios técnicos, lo que sugiere que la formación técnica también es escasa en esta población. En conclusión, estos porcentajes reflejan un panorama educativo preocupante, donde la mayoría de los encuestados tiene un bajo nivel de instrucción, lo que puede tener implicaciones significativas en su calidad de vida y en su capacidad para acceder a mejores oportunidades económicas y sociales.
 \begin{fotos}
 {Aplicacion de encuestas}{2}
 \end{fotos}
@@ -328,7 +328,6 @@ LOS USUARIOS EN CUESTADOS SIN DEL 90% EN LA COMUNIDAD DE Kana kjanansyaa lo cual
   \caption*{Fuente: Trabajo de campo}
 \end{table}
 
-
 \begin{figure}[H]
   \centering
   \caption{Distribucion del tipo de ingreso familiar}
@@ -345,7 +344,7 @@ LOS USUARIOS EN CUESTADOS SIN DEL 90% EN LA COMUNIDAD DE Kana kjanansyaa lo cual
 	@
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
-
+INGRESO FAMILIAR
 \begin{fotos}
 {Aplicacion de encuestas}{3}
 \end{fotos}
