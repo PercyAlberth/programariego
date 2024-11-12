@@ -1891,6 +1891,7 @@ La Tabla muestra que un 93.85\% de los agricultores paga por el uso del agua par
 %git commit -m "Actualizacion de archivos (esto se puede modificar) .Rnw"
 %para hacer push
 %git push origin main
+%prueba
 
 
 
