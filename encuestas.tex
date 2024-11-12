@@ -544,16 +544,21 @@ La tabla  revela que el 57.27\% de las parcelas se utiliza para cultivos permane
 
 \begin{tablas}
 {Modalidad de tenencia de la parcela}{
+\begin{kframe}
 
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in `select()`:\\\#\# ! Can't select columns that don't exist.\\\#\# x Column `MODALIDAD.DE.TENENCIA.DE.LA.PARCELA` doesn't exist.}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in `rename()`:\\\#\# ! Can't rename columns that don't exist.\\\#\# x Column `MODALIDAD.DE.TENENCIA.DE.LA.PARCELA` doesn't exist.}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in `group\_by()`:\\\#\# ! Must group by variables found in `.data`.\\\#\# x Column `tenencia` is not found.}}\end{kframe}
 \begin{tabular}{lcl}
 \toprule
-\cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{tenencia}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Conteo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Porcentaje}}}\\
+\cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Uso\_parcela}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Conteo}}} & \cellcolor[HTML]{87A96B}{\textcolor{black}{\textbf{Porcentaje}}}\\
 \midrule
-ALQUILER & 1 & 0.22\\
-OTRO & 8 & 1.78\\
-PRESTADO O CEDIDO & 1 & 0.22\\
-PROPIA & 242 & 53.90\\
-TIERRAS COMUNALES & 197 & 43.88\\
+CULTIVOS PERMANENTES & 252 & 57.27\\
+CULTIVOS TRANSITORIOS & 165 & 37.50\\
+PASTOS NATURALES & 23 & 5.23\\
 \bottomrule
 \end{tabular}
 
@@ -1603,6 +1608,7 @@ MAQUINARIA AGRICOLA & 24 & 5.96\\
 %git commit -m "Actualizacion de archivos (esto se puede modificar) .Rnw"
 %para hacer push
 %git push origin main
+%prueba
 
 %para crear una nueva rama en la terminal
 %git branch Marina
