@@ -172,7 +172,7 @@ cambio desde main
 	@
   \caption*{Fuente: trabajo de campo}
 \end{figure}
-La Tabla que muestra las edades de los encuestados, revela que solo el 6.35\% de la muestra se encuentra en el rango de edad de (23.9, 33.3], lo que indica que hay una baja representación de jóvenes adultos, lo que podría sugerir que este grupo tiene un interés limitado, en el siguiente rango, de (33.3, 42.6], el porcentaje aumenta a 12.24\%, pero sigue siendo un grupo pequeño, lo que refuerza la idea de que los adultos jóvenes son poco representados en esta muestra a medida que se avanza hacia la mediana edad, en el rango de (42.6, 51.9], el porcentaje alcanza un 19.73\%, lo que refleja un aumento considerable en la representación de este grupo, el rango de (51.9, 61.1] tiene el mayor porcentaje, con un 28.80%, lo que indica que la mayoría de los encuestados se encuentran en una etapa de vida más avanzada, lo que podría influir en sus respuestas debido a la mayor experiencia acumulada, en el rango de (61.1, 70.4], el 22.00\% también representa una proporción significativa, lo que refuerza la tendencia hacia una población de mayor edad, aportando una perspectiva más madura y reflexiva, en cuanto al rango de (70.4, 79.7], se observa que el 7.94% de los encuestados pertenece a esta categoría, lo que sugiere que hay una presencia notable de personas mayores, mientras que el grupo de (79.7, 89.1] representa solo el 2.95%, lo que indica que la muestra cuenta con pocos participantes en el rango de edad más avanzada esto podría influir en la comprensión de las necesidades de este grupo, dado su bajo nivel de representación. En conclusión, estos datos reflejan una población principalmente adulta y mayor, lo que implica que las opiniones y necesidades que se recogen en la encuesta están influenciadas por las experiencias y circunstancias propias de estos grupos etarios.
+La Tabla que muestra las edades de los encuestados, revela que solo el 6.35\% de la muestra se encuentra en el rango de edad de (23.9, 33.3], lo que indica que hay una baja representación de jóvenes adultos, lo que podría sugerir que este grupo tiene un interés limitado, en el siguiente rango, de (33.3, 42.6], el porcentaje aumenta a 12.24\%, pero sigue siendo un grupo pequeño, lo que refuerza la idea de que los adultos jóvenes son poco representados en esta muestra a medida que se avanza hacia la mediana edad, en el rango de (42.6, 51.9], el porcentaje alcanza un 19.73\%, lo que refleja un aumento considerable en la representación de este grupo, el rango de (51.9, 61.1] tiene el mayor porcentaje, con un 28.80\%, lo que indica que la mayoría de los encuestados se encuentran en una etapa de vida más avanzada, lo que podría influir en sus respuestas debido a la mayor experiencia acumulada, en el rango de (61.1, 70.4], el 22.00\% también representa una proporción significativa, lo que refuerza la tendencia hacia una población de mayor edad, aportando una perspectiva más madura y reflexiva, en cuanto al rango de (70.4, 79.7], se observa que el 7.94\% de los encuestados pertenece a esta categoría, lo que sugiere que hay una presencia notable de personas mayores, mientras que el grupo de (79.7, 89.1] representa solo el 2.95\%, lo que indica que la muestra cuenta con pocos participantes en el rango de edad más avanzada esto podría influir en la comprensión de las necesidades de este grupo, dado su bajo nivel de representación. En conclusión, estos datos reflejan una población principalmente adulta y mayor, lo que implica que las opiniones y necesidades que se recogen en la encuesta están influenciadas por las experiencias y circunstancias propias de estos grupos etarios.
 
 \begin{fotos}
 {Aplicacion de encuestas}{1}
@@ -953,7 +953,7 @@ Respecto el acceso a la energía eléctrica muestra que un 94.17\% de los encues
 	@
   \caption*{Fuente: Trabajo de campo}
 \end{figure}
-
+Respecto a quien realiza las actividades de campo en la parcela destinada al cultivo, mediante la encuesta podemos detallar lo siguiente, el 90,16\% de los usuarios realiza sus propias actividades durante la siembra y cosecha, el 7,83\% de los agricultores realiza las actividades agrícolas o está a responsabilidad de un familiar,un 1,12\% de los productores agricoles esta a responsabilidad de un amigo y el 0.89\% prefiere que otra persona se lo haga el cultivo por lo tanto, se concluye que los usuarios del comité de agua prefieren ellos mismos hacer sus actividades agricolas, podemos apreciar la tabla y grafico:
 \begin{fotos}
 {sensibilizacion a la poblacion}{12}
 \end{fotos}
@@ -1012,7 +1012,7 @@ Respecto el acceso a la energía eléctrica muestra que un 94.17\% de los encues
 
 }
 \end{graficas}
-
+La tabla  revela que el 57.27\% de las parcelas se utiliza para cultivos permanentes, lo que sugiere que los agricultores están invirtiendo en prácticas agrícolas sostenibles y buscando estabilidad en su producción a largo plazo, este enfoque puede resultar en una mayor productividad y seguridad alimentaria, ya que los cultivos permanentes suelen ser más resistentes a las fluctuaciones del mercado, en comparación con, el 37.50\% de las parcelas se dedica a cultivos transitorios, lo que indica que los agricultores también están adoptando una estrategia de diversificación, permitiéndoles adaptarse a las demandas del mercado y maximizar sus ingresos en el corto plazo, sin embargo el bajo porcentaje de 5.23\% destinado a pastos naturales sugiere que la producción ganadera no es una prioridad en esta área, lo que podría limitar las oportunidades de diversificación de ingresos de los agricultores, ya que depender únicamente de cultivos puede hacerlos más vulnerables a cambios en el clima o en el mercado. En conclusión, aunque la combinación de cultivos permanentes y transitorios puede ofrecer un enfoque equilibrado hacia la productividad agrícola, la falta de atención a los pastos naturales podría ser un área de mejora para aumentar la rentabilidad y la sostenibilidad a largo plazo.
 \begin{fotos}
 {sensibilizacion a la poblacion}{13}
 \end{fotos}
@@ -1033,9 +1033,9 @@ Respecto el acceso a la energía eléctrica muestra que un 94.17\% de los encues
   #datos$GENERO[datos$GENERO == ""] <- "Femenino"
 	#para realizar un filtro
 	filtered_data <- datos %>% 
-	  select(MODAIDAD.DE.TENENCIA.DE.LA.PARCELA)
+	  select(MODALIDAD.DE.TENENCIA.DE.LA.PARCELA)
 	filtered_data <- filtered_data %>% 
-	  rename("tenencia" = MODAIDAD.DE.TENENCIA.DE.LA.PARCELA)
+	  rename("tenencia" = MODALIDAD.DE.TENENCIA.DE.LA.PARCELA)
 	
 	#caso porcentaje
 	#contar  el numero de edades en cada grupo
@@ -1072,6 +1072,7 @@ Respecto el acceso a la energía eléctrica muestra que un 94.17\% de los encues
 }
 \end{graficas}
 
+La Tabla muestra que el 53.90\% de las parcelas son de tenencia propia, lo que indica que la mayoría de los agricultores tienen un control directo sobre sus tierras, lo que puede fomentar una mayor inversión en prácticas agrícolas sostenibles y a largo plazo, ya que los propietarios suelen estar más motivados para mejorar la productividad de sus parcelas, por el contrario el 43.88\% de las parcelas son tierras comunales, lo que sugiere que una parte significativa de la producción agrícola depende de recursos compartidos, lo que podría limitar la capacidad de los agricultores para implementar mejoras individuales y optimizar la productividad, ademas el 1.78\% de las parcelas se encuentra en alquiler y el 0.22\% en prestado o cedido, lo que indica que la tenencia temporal puede ser menos común, pero también puede llevar a una menor inversión en la tierra, ya que los arrendatarios pueden no tener el mismo incentivo para mejorar la productividad a largo plazo. En conclusión, la predominancia de la tenencia propia sugiere un potencial significativo para la productividad agrícola, pero la dependencia de tierras comunales podría presentar desafíos en la implementación de prácticas agrícolas más eficientes y sostenibles.
 \begin{fotos}
 {aplicacion de encuestas}{14}
 \end{fotos}
@@ -1129,7 +1130,7 @@ Respecto el acceso a la energía eléctrica muestra que un 94.17\% de los encues
 	@
 }
 \end{graficas}
-
+La siguiente tabla indica que el 44.84\% de las parcelas cuenta con títulos comunales, lo que sugiere que una parte considerable de los agricultores tiene un reconocimiento formal de su propiedad, lo que puede facilitar el acceso a créditos y recursos para mejorar la productividad agrícola, un 7,85\% de los usuarios encuestados cuenta con un título propio, por otro lado el 31.17\% de las parcelas se clasifica como posesionario, lo que implica que estos agricultores pueden no tener un título formal, lo que podría limitar su capacidad para invertir en mejoras a largo plazo y acceder a financiamiento, afectando así su productividad además, el 9.19\% de las parcelas se destina a herencia y el 6.95\% a otros tipos de documentos, lo que sugiere que una porción menor de la población agrícola puede estar lidiando con incertidumbres legales sobre la tenencia de la tierra, lo que podría impactar negativamente en su motivación para invertir en la productividad. En conclusión, la predominancia de títulos comunales es un factor positivo para la productividad agrícola, mientras que la alta proporción de parcelas sin títulos formales puede representar un obstáculo significativo para el desarrollo y la mejora de las prácticas agrícolas en la región.
 \begin{fotos}
 {reconocimiento en campo}{15}
 \end{fotos}
@@ -1165,7 +1166,7 @@ Respecto el acceso a la energía eléctrica muestra que un 94.17\% de los encues
 	@
 }
 \end{graficas}
-
+La tabla muestra que el 45.48\% de los agricultores está asociado a una Comisión de Regantes, lo que refleja una fuerte organización en torno a la gestión del agua, un recurso clave para la producción agrícola, esto sugiere que estos agricultores están comprometidos con la cooperación para optimizar el uso del agua en sus cultivos, además el 38.69\% está vinculado a un Comité de Usuarios, lo que refuerza la idea de que la colaboración y la organización son esenciales para enfrentar desafíos comunes y mejorar la eficiencia en la producción, por otro lado el 15.84\% que forma parte de una Junta de Usuarios indica que, aunque existe una participación considerable en estas organizaciones, todavía hay un porcentaje importante de agricultores que podrían no estar aprovechando completamente los beneficios de la colaboración, lo que podría limitar su acceso a recursos, información y apoyo técnico. En conclusión, la alta participación en organizaciones relacionadas con la gestión del agua y los recursos refleja un gran potencial para mejorar la productividad agrícola a través de la cooperación.
 \begin{fotos}
 {reconocimiento en campo}{16}
 \end{fotos}
@@ -1229,6 +1230,7 @@ Respecto el acceso a la energía eléctrica muestra que un 94.17\% de los encues
 	@
 }
 \end{graficas}
+La tabla presentada indica que el 48.55\% de los agricultores utiliza manantiales como su principal fuente de agua para riego, lo que señala una considerable dependencia de fuentes naturales, las cuales pueden ser susceptibles a variaciones climáticas y estacionales, lo que podría afectar la estabilidad de la producción agrícola, un 46.76\% de los usuarios encuestados hace uso de ríos, lo que sugiere que una parte significativa de la actividad agrícola depende de cuerpos de agua superficiales, si bien esto puede ofrecer ventajas en cuanto a acceso, también provoca riesgos relacionados con la contaminación y fluctuaciones en el caudal, por otro lado, el empleo de pozos (0.45\%) y lagos o lagunas (0.22\%) es muy bajo, lo que indica que los agricultores no están aprovechando de manera óptima estas fuentes alternativas, lo cual podría restringir su capacidad para diversificar las fuentes de agua y asegurar el riego en períodos de escasez. En conclusión, la fuerte dependencia de manantiales y ríos para el riego subraya la necesidad urgente de implementar prácticas de gestión sostenible del agua, a fin de asegurar la productividad agrícola a largo plazo, particularmente ante la amenaza del cambio climático.
 \begin{fotos}
 {reconocimiento en campo}{18}
 \end{fotos}
@@ -1283,6 +1285,7 @@ Respecto el acceso a la energía eléctrica muestra que un 94.17\% de los encues
 	@
 }
 \end{graficas}
+La tabla muestra la frecuencia de riego de la parcela, el riego por turnos se utiliza en un 69\% es el método más utilizado por los agricultores, lo que sugiere una gestión más controlada y eficiente del recurso hídrico, favoreciendo así la productividad agrícola al permitir un uso más preciso del agua, en segundo lugar el 18.78\% de los agricultores emplea riego por días, lo que puede reflejar un enfoque más tradicional, pero potencialmente menos eficiente, ya que no se ajusta de manera flexible a las necesidades específicas de los cultivos o las condiciones climáticas y los métodos como el riego por horas (7.01\%) y el riego por turnos (4.52\%) son menos comunes ,aunque pueden ser útiles en ciertos contextos, presentan desafíos para una gestión eficiente del agua, por último  el 0.68\% de los agricultores utiliza el riego por volumen, una categoría que podría señalar la existencia de enfoques alternativos menos estandarizados. En general, aunque el riego por turnos parece ser el más beneficioso para optimizar el uso del agua, es crucial que los agricultores exploren y adopten métodos más eficientes y sostenibles para enfrentar los retos relacionados con la escasez de agua y garantizar una producción agrícola.
 \begin{fotos}
 {reconocimiento en campo}{20}
 \end{fotos}
@@ -1309,6 +1312,9 @@ Respecto el acceso a la energía eléctrica muestra que un 94.17\% de los encues
 	@
 }
 \end{graficas}
+La tabla indica que el 72.35\% de la infraestructura de riego empleada es de revestido, lo que indica que la mayoría de los agricultores utilizan sistemas más avanzados, probablemente más eficientes, lo que puede favorecer una mejor gestión del agua y, en consecuencia, aumentar la productividad agrícola, en cambio el 27.65\% de los encuestados emplea riego a tajo abierto, un método menos eficiente que tiende a generar mayores pérdidas de agua por evaporación, lo que podría restringir la capacidad de los agricultores para optimizar sus cosechas. En conclusion, la alta proporción de infraestructura de revestido es un aspecto positivo para la productividad agrícola, pero es crucial seguir invirtiendo en el perfeccionamiento de las prácticas de riego para asegurar una gestión más efectiva de los recursos hídricos y fomentar una agricultura más sostenible
+
+
 \begin{fotos}
 {reconocimiento en campo}{21}
 \end{fotos}
@@ -1336,6 +1342,7 @@ Respecto el acceso a la energía eléctrica muestra que un 94.17\% de los encues
 	@
 }
 \end{graficas}
+La tabla indica que el 88.01\% de los agricultores utiliza riego tecnificado, lo que refleja que este método sigue siendo el más común en la región, sin embargo también sugiere que la adopción de tecnologías más avanzadas es limitada, lo que podría ser un obstáculo para mejorar la eficiencia en el uso del agua y aumentar los rendimientos agrícolas, en cambio solo el 0.23\% de los agricultores recurre al uso de agua subterránea mediante pozos, mientras que el 9.73\% prefiere el riego por gravedad, un sistema tradicional que, aunque puede funcionar bien en ciertos terrenos, tiene limitaciones en cuanto a la eficiencia hídrica, este método no permite un control exacto sobre la cantidad de agua utilizada, lo que puede resultar en desperdicio y un uso ineficiente del recurso en la categoría otro el 0.23\% de usuarios encuestados sugiere que existen prácticas aún menos frecuentes, lo que refuerza la idea de que la mayoría de los agricultores sigue utilizando métodos tradicionales, lo que podría restringir su capacidad para adaptarse a cambios en el clima o mejorar su productividad. El análisis muestra que, a pesar de que el riego tecnificado es la opción predominante, su adopción limitada indica una posible brecha tecnológica que impide a muchos agricultores aprovechar al máximo los beneficios de métodos más precisos y eficientes en el uso del agua.
 \begin{fotos}
 {reconocimiento en campo}{22}
 \end{fotos}
@@ -1363,6 +1370,7 @@ Respecto el acceso a la energía eléctrica muestra que un 94.17\% de los encues
 	@
 }
 \end{graficas}
+La Tabla muestra que un 93.85\% de los agricultores paga por el uso del agua para riego, lo que indica una alta dependencia de este recurso y una conciencia sobre su valor, esto sugiere que el costo del agua podría fomentar la adopción de prácticas más sostenibles y eficientes en su utilización, solo el 6.15\% no realiza ningún tipo de pago, lo que podría implicar que estos agricultores tienen acceso a fuentes de agua gratuitas o no reguladas, lo que podría llevar a una gestión menos responsable del recurso. En conclusión, la elevada proporción de agricultores que paga por el uso de agua representa una oportunidad para fomentar la gestión responsable del agua, un factor esencial para maximizar la productividad agrícola en un contexto de creciente escasez de recursos hídricos.
 \begin{fotos}
 {reconocimiento en campo}{23}
 \end{fotos}
@@ -1884,6 +1892,7 @@ Respecto el acceso a la energía eléctrica muestra que un 94.17\% de los encues
 %git commit -m "Actualizacion de archivos (esto se puede modificar) .Rnw"
 %para hacer push
 %git push origin main
+%prueba
 
 %para crear una nueva rama en la terminal
 %git branch Marina
