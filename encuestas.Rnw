@@ -88,6 +88,7 @@ return(grafica)
 
 modificacion desde github desktop\\
 Se realizara el analisis de las encuestas de todas la encuestas realizadas en el trabajo de campo.\\
+cambio desde main
 \begin{table}[H]
   \centering
   \caption{Edad de los encuestados}
@@ -1893,6 +1894,12 @@ La Tabla muestra que un 93.85\% de los agricultores paga por el uso del agua par
 %git push origin main
 %prueba
 
+%para crear una nueva rama en la terminal
+%git branch Marina
+%para cambiar a la nueva rama 
+%git checkout Marina
+%para subir la nueva rama a github
+%git push -u origin Marina
 
-
+cambio desde main
 \end{document}
