@@ -1896,10 +1896,10 @@ En la tabla evidencia que el uso de herramientas y maquinaria agrícola es predo
 %prueba
 
 
-<<<<<<< HEAD
+
 cambio desde main
 mas cambios
 =======
 
->>>>>>> parent of c520611 (Merge branch 'main' into Marina)
+
 \end{document}
