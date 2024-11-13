@@ -88,7 +88,6 @@ return(grafica)
 
 modificacion desde github desktop\\
 Se realizara el analisis de las encuestas de todas la encuestas realizadas en el trabajo de campo.\\
-cambio desde main
 \begin{table}[H]
   \centering
   \caption{Edad de los encuestados}
@@ -1398,6 +1397,7 @@ La Tabla muestra que un 93.85\% de los agricultores paga por el uso del agua par
 	@
 }
 \end{graficas}
+La tabla muestra que la mayoría de los agricultores (85.93\%) prefieren realizar un pago anual por el uso de agua para riego, lo que sugiere que valoran la estabilidad financiera y la posibilidad de planificar a largo plazo sus actividades productivas, solo una pequeña fracción de ellos opta por pagos más frecuentes, ya sea diarios (5.93\%) o mensuales (4.44\%), lo que indica que la mayoría no enfrenta dificultades de liquidez que los obliguen a recurrir a pagos más frecuentes. Esta preferencia por el pago anual podría estar vinculada a una mayor seguridad respecto a la disponibilidad de agua, lo que, a su vez, podría mejorar la productividad agrícola al permitir una mejor planificación y manejo de los cultivos.
 \begin{fotos}
 {reconocimiento en campo}{24}
 \end{fotos}
@@ -1425,6 +1425,7 @@ La Tabla muestra que un 93.85\% de los agricultores paga por el uso del agua par
 	@
 }
 \end{graficas}
+Según la tabla presentada, se observa que un 98.64\% de los encuestados tiene acceso al derecho de uso de agua, mientras que únicamente un 1.36\% carece de este derecho, lo que refleja una disponibilidad prácticamente universal de este recurso esencial para la agricultura, este elevado porcentaje de acceso al agua indica que la mayoría de los agricultores tienen la capacidad de planificar y llevar a cabo sus actividades productivas sin el temor de enfrentar escasez de este recurso, lo cual es importante para el desarrollo y la continuidad de sus cultivos. En conclusión, el acceso casi total al derecho de uso del agua podría ser un factor determinante que favorece la productividad agrícola de las comunidades encuestadas, ya que facilita a los agricultores optimizar sus cosechas y garantizar la sostenibilidad.
 \begin{fotos}
 {aplicacion de encuesta}{25}
 \end{fotos}
@@ -1461,7 +1462,7 @@ La Tabla muestra que un 93.85\% de los agricultores paga por el uso del agua par
 	@
 }
 \end{graficas}
-
+La tabla muestra que el cultivo predominante es la producción de pastos, papa, maíz choclo y hortalizas con un 31.83\% de los encuestados cultivándolo, seguido por pastos (13.54\%) y papa, maíz choclo (10.61\%), lo que indica que el pasto, papa, maíz choclo y hortalizas son los principales productos agrícolas en las comunidades. Además, la combinación de maíz choclo con otros cultivos, como hortalizas y papa, sugiere una tendencia hacia la diversificación, lo que puede ser beneficioso para la resiliencia agrícola y la seguridad alimentaria. En conclusión, la predominancia de pastos, papa, maíz choclo y hortalizas, junto con la diversificación de cultivos, puede contribuir a una mayor productividad agrícola, ya que permite a los agricultores adaptarse a las condiciones del mercado y maximizar el uso de sus recursos.
 \begin{fotos}
 {aplicacion de encuesta}{26}
 \end{fotos}
@@ -1491,6 +1492,7 @@ La Tabla muestra que un 93.85\% de los agricultores paga por el uso del agua par
 }
 \end{graficas}
 
+En la tabla y figura presentadas, se observa que el 85.27\% de los encuestados ha estado involucrado en la actividad agrícola durante más de cinco años, lo que refleja una experiencia considerable en el cultivo, esta experiencia podría estar asociada con una mayor productividad, ya que el conocimiento adquirido y la adaptación a las condiciones locales favorecen una gestión más eficiente en producción de cultivos, un 13.30\% se dedica al cultivo más de 3 años, por otro lado solo el 0.71\% ha estado en el sector agrícola durante uno o dos años, lo que sugiere que la mayoría de los agricultores son veteranos con un largo historial en la práctica. Esta estabilidad de los productores experimentados puede ser un factor clave para la sostenibilidad y continuidad de la producción agrícola. Sin embargo, la escasa participación de nuevos agricultores podría señalar un posible reto para la renovación generacional del sector, lo que, si no se aborda con políticas que atraigan a las nuevas generaciones, podría comprometer la productividad a largo plazo y limitar la innovación dentro de la agricultura.
 \begin{fotos}
 {socializacion del proyecto}{27}
 \end{fotos}
@@ -1519,7 +1521,7 @@ La Tabla muestra que un 93.85\% de los agricultores paga por el uso del agua par
 	@
 }
 \end{graficas}
-
+En la tabla se observa que el 64.22\% de la cosecha se destina al consumo propio, lo que refleja que una parte significativa de la producción agrícola se utiliza para cubrir las necesidades alimentarias de los agricultores y sus familias, lo cual puede ser un factor positivo para garantizar la seguridad alimentaria local, sin embargo solo el 35.29\% de la cosecha se destina a la venta, lo que indica que la comercialización de los productos agrícolas es limitada, probablemente debido a factores como la falta de acceso a mercados adecuados o una preferencia por el autoconsumo. Esta tendencia podría tener implicaciones negativas para la productividad agrícola, ya que la baja proporción a la venta podría desincentivar a los agricultores a realizar inversiones en la mejora de sus técnicas de producción. Como resultado, esto podría restringir el crecimiento y la sostenibilidad del sector agrícola en las comunidades encuestadas.
 \begin{fotos}
 {socializacion del proyecto}{28}
 \end{fotos}
@@ -1561,7 +1563,7 @@ La Tabla muestra que un 93.85\% de los agricultores paga por el uso del agua par
 	@
 }
 \end{graficas}
-
+En la tabla se observa que la falta de agua y factores adversos es la causa principal de la disminución de la producción de cultivos, representando el 23.04\% de los casos, lo que resalta la importancia del acceso al agua para la agricultura y su impacto directo en la productividad, además el 61.52\% de los encuestados menciona combinaciones de factores adversos, suelos pobres y falta de agua, lo que indica que la interacción de múltiples factores agrava la situación, sugiriendo que no solo se trata de un problema de recursos hídricos, sino también de la calidad del suelo y las condiciones ambientales. Esta situación plantea un desafío significativo para la productividad agrícola, ya que la falta de recursos y condiciones adecuadas puede limitar la capacidad de los agricultores para mejorar sus rendimientos y por ende, su sostenibilidad económica a largo plazo.
 \begin{fotos}
 {socializacion del proyecto}{29}
 \end{fotos}
@@ -1589,7 +1591,7 @@ La Tabla muestra que un 93.85\% de los agricultores paga por el uso del agua par
 	@
 }
 \end{graficas}
-
+En la tabla se evidencia que el 59.5\% de los encuestados registra la venta de su producción, lo que sugiere que una mayoría significativa de los agricultores está involucrada en la comercialización de sus productos, lo que podría contribuir a una mayor rentabilidad y sostenibilidad de sus actividades agrícolas, sin embargo el 40.5\% que no registra ventas puede indicar una dependencia del autoconsumo o una falta de acceso a mercados, lo que limita su capacidad para generar ingresos adicionales y mejorar su situación económica, esta desigualdad en la comercialización de la producción puede afectar la productividad agrícola en general, ya que aquellos que no participan en el mercado pueden carecer de incentivos para invertir en mejoras de producción, lo que a largo plazo podría comprometer la viabilidad del sector agrícola en las comunidades.
 \begin{fotos}
 {socializacion del proyecto}{30}
 \end{fotos}
@@ -1617,8 +1619,7 @@ La Tabla muestra que un 93.85\% de los agricultores paga por el uso del agua par
 	@
 }
 \end{graficas}
-
-\begin{fotos}
+En la tabla mostrada se observa que el 85.01\% de los encuestados realiza la cosecha con familiares, lo que sugiere una fuerte dependencia de la mano de obra familiar en las actividades agrícolas, lo que puede facilitar la cooperación y el trabajo en equipo, pero también puede limitar la diversificación de habilidades y la incorporación de nuevas técnicas, por otro lado, solo un 5.43\% trabaja solo, lo que podría indicar que la mayoría de los agricultores prefieren contar con apoyo, aunque la baja participación de amigos y jornales (3\% y 7.75\% respectivamente) sugiere que la contratación de mano de obra externa es poco común. Esta dinámica puede impactar la productividad agrícola, ya que la falta de diversidad en la fuerza laboral podría restringir la adopción de innovaciones y mejores prácticas agrícolas, limitando así el potencial de crecimiento y eficiencia en la producción.
 {socializacion del proyecto}{31}
 \end{fotos}
 
@@ -1656,7 +1657,7 @@ La Tabla muestra que un 93.85\% de los agricultores paga por el uso del agua par
 	@
 }
 \end{graficas}
-
+En la tabla se observa que el 34.86\% de los encuestados practica la rotación de cultivos junto con el uso de abonos orgánicos, lo que indica una tendencia hacia métodos de conservación de suelos que pueden mejorar la fertilidad y la salud del suelo, contribuyendo así a una mayor productividad agrícola, en cambio 21.89\% practica la rotación de cultivos junto con  el uso de abonos orgánicos y materia orgánica,  sin embargo el uso de prácticas como la incorporación de materia orgánica y otros métodos de conservación es significativamente menor, con porcentajes que oscilan entre el 0.27\% y el 10\%, lo que sugiere que muchos agricultores aún no están adoptando técnicas que podrían ser beneficiosas para la sostenibilidad a largo plazo de sus cultivos. Esta situación resalta la necesidad de promover la educación y la capacitación en prácticas de conservación de suelos, ya que la adopción de estas técnicas es crucial para mejorar la productividad agrícola y enfrentar los desafíos ambientales actuales.
 \begin{fotos}
 {socializacion del proyecto}{32}
 \end{fotos}
@@ -1685,7 +1686,7 @@ La Tabla muestra que un 93.85\% de los agricultores paga por el uso del agua par
 	@
 }
 \end{graficas}
-
+De acuerdo con la tabla, se indica que el 55.18\% de los usuarios encuestados no realiza un manejo post cosecha, mientras que solo el 44.82\% sí lo hace, lo que indica una falta de atención a esta etapa crucial en la cadena de producción agrícola que puede afectar la calidad y la cantidad de los productos comercializados. La ausencia de prácticas adecuadas de manejo post cosecha puede resultar en pérdidas significativas de productos, deterioro de la calidad y, en última instancia, una reducción en la rentabilidad de los agricultores. Esta situación da como conclusion la necesidad de implementar programas de capacitación y concienciación sobre la importancia del manejo post cosecha, ya que mejorar esta área podría ser clave para aumentar la productividad agrícola y asegurar un mejor retorno económico para los productores.
 \begin{fotos}
 {socializacion del proyecto}{33}
 \end{fotos}
@@ -1714,7 +1715,7 @@ La Tabla muestra que un 93.85\% de los agricultores paga por el uso del agua par
 	@
 }
 \end{graficas}
-
+En la tabla se aprecia que el 71.04\% de los encuestados no ha recibido capacitación, mientras que solo el 28.96\% ha tenido acceso a formación, lo que sugiere una carencia de oportunidades educativas que podrían mejorar las habilidades y conocimientos de los agricultores, esta falta de capacitación puede limitar la adopción de prácticas agrícolas modernas y eficientes, afectando negativamente la productividad y la competitividad del sector agrícola en la región. Por lo tanto, es importante implementar programas de capacitación accesibles y relevantes para los agricultores, ya que esto podría optimizar sus técnicas de cultivo y manejo, lo que a su vez podría traducirse en un aumento en la productividad agrícola y en la sostenibilidad de sus actividades
 \begin{fotos}
 {trabajo de campo}{34}
 \end{fotos}
@@ -1783,7 +1784,7 @@ La Tabla muestra que un 93.85\% de los agricultores paga por el uso del agua par
 	@
 }
 \end{graficas}
-
+La tabla evidencia que el 67.73\% de los encuestados comercializa su cosecha en mercados locales, lo que indica una fuerte dependencia de canales de venta cercanos, mientras que solo un 5.67\% participa en ferias agropecuarias y un 10.28\% realiza ventas en mercados regionales, lo que sugiere limitaciones en el acceso a mercados más amplios y potencialmente más rentables, además un 14.18\% vende directamente en la parcela, lo que puede reflejar una estrategia de autoconsumo o una falta de infraestructura para la comercialización efectiva. Esta concentración en mercados locales y la escasa diversificación en los canales de venta pueden restringir las oportunidades de ingresos para los agricultores, lo que resalta la necesidad de fomentar el acceso a mercados más amplios y mejorar las estrategias de comercialización para aumentar la productividad agrícola y la rentabilidad de sus cosechas.
 \begin{fotos}
 {trabajo de campo}{36}
 \end{fotos}
@@ -1812,7 +1813,7 @@ La Tabla muestra que un 93.85\% de los agricultores paga por el uso del agua par
 	@
 }
 \end{graficas}
-
+En la tabla muestra que el 68.77\% de los encuestados no pertenece a ninguna organización o asociación, mientras que solo el 31.23\% sí lo hace, lo que indica una baja participación en redes de apoyo que podrían ofrecer recursos, capacitación y oportunidades de comercialización,esta falta de afiliación a organizaciones puede limitar el acceso a información valiosa y a prácticas agrícolas mejoradas, lo que a su vez puede afectar negativamente la productividad y la sostenibilidad de sus actividades. Fomentar la creación y participación en asociaciones agrícolas podría ser fundamental para fortalecer la colaboración entre productores, mejorar el intercambio de conocimientos y recursos, y, en última instancia, aumentar la productividad agrícola en la región.
 \begin{fotos}
 {trabajo de campo}{37}
 \end{fotos}
@@ -1882,7 +1883,7 @@ La Tabla muestra que un 93.85\% de los agricultores paga por el uso del agua par
 	@
 }
 \end{graficas}
-
+En la tabla evidencia que el uso de herramientas y maquinaria agrícola es predominante, con un 28.04\% de los encuestados utilizando herramientas y maquinaria agrícola, seguido por un 26.05\% que emplea animales y herramientas, lo que sugiere una combinación de métodos tradicionales y modernos en la producción y cosecha, sin embargo el uso de implementos tirados por animales y maquinaria agrícola es relativamente bajo, con solo un 5.96\% y 0.74\% respectivamente, lo que podría indicar una falta de inversión en tecnología que optimice la producción. Esta situación resalta la necesidad de promover el acceso a insumos más eficientes y modernos, ya que la adopción de mejores prácticas y herramientas podría mejorar significativamente la productividad agrícola y la rentabilidad de los agricultores.
 \begin{fotos}
 {trabajo de campo}{39}
 \end{fotos}
@@ -1894,12 +1895,11 @@ La Tabla muestra que un 93.85\% de los agricultores paga por el uso del agua par
 %git push origin main
 %prueba
 
-%para crear una nueva rama en la terminal
-%git branch Marina
-%para cambiar a la nueva rama 
-%git checkout Marina
-%para subir la nueva rama a github
-%git push -u origin Marina
+
 
 cambio desde main
+mas cambios
+=======
+
+
 \end{document}
