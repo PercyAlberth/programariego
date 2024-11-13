@@ -88,7 +88,6 @@ return(grafica)
 
 modificacion desde github desktop\\
 Se realizara el analisis de las encuestas de todas la encuestas realizadas en el trabajo de campo.\\
-cambio desde main
 \begin{table}[H]
   \centering
   \caption{Edad de los encuestados}
@@ -1896,13 +1895,11 @@ En la tabla evidencia que el uso de herramientas y maquinaria agrícola es predo
 %git push origin main
 %prueba
 
-%para crear una nueva rama en la terminal
-%git branch Marina
-%para cambiar a la nueva rama 
-%git checkout Marina
-%para subir la nueva rama a github
-%git push -u origin Marina
 
+<<<<<<< HEAD
 cambio desde main
 mas cambios
+=======
+
+>>>>>>> parent of c520611 (Merge branch 'main' into Marina)
 \end{document}
