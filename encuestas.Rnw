@@ -1897,9 +1897,7 @@ En la tabla evidencia que el uso de herramientas y maquinaria agrícola es predo
 
 
 
-cambio desde main
-mas cambios
-=======
+
 
 
 \end{document}
